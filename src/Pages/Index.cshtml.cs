@@ -10,6 +10,7 @@ namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary> 
     /// Priyanshu Desai
+    /// Kamie Sullivan
     /// </summary>
     public class IndexModel : PageModel
     {
