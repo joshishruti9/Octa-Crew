@@ -11,6 +11,7 @@ namespace ContosoCrafts.WebSite.Pages
     /// <summary> 
     /// Priyanshu Desai
     /// Kamie Sullivan
+    /// Nathan Swetzof
     /// </summary>
     public class IndexModel : PageModel
     {
