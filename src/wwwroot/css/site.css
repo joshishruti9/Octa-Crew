@@ -51,6 +51,10 @@ a.navbar-brand {
     text-align: right;
     word-break: break-all;
 }
+img.logo{
+    height:50px;
+    width: 50px;
+}
 
 /* Provide sufficient contrast against white background */
 a {
