@@ -1,5 +1,5 @@
 ﻿.checked {
-  color: orange;
+  color: #1b6ec2;
 }
 
 .fa-star {
@@ -16,7 +16,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-columns .card-body {
     height: 100px;
     font-family: 'Nunito', sans-serif;
-    background: #fbfafd;
+    background: #fffbc8;
 }
 
 .card-columns .card-img {
