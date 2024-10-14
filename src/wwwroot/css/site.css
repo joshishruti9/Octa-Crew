@@ -113,7 +113,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background-color: #FFD580;
+    background-color: #EEF2F3;
 }
 p {
     font-family: 'Nunito', sans-serif;
@@ -133,10 +133,10 @@ ul {
     font-family: 'Nunito', sans-serif;
 }
 /*Backgrounds*/
+.bg-navbar {
+    background-color: #EEF2F3;
+}
 
 .bg-footer {
-    background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
+    background-color: #febb8a;
 }
