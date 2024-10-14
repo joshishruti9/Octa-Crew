@@ -6,7 +6,10 @@
 }
 
 <div class="text-center">
-    <h1 class="display4">Cities</h1>
+    <h1
+        class="display4"
+        style="font-weight: 500;"
+    >Cities</h1>
 </div>
 
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
