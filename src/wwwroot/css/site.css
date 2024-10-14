@@ -15,8 +15,10 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-columns .card-body {
     height: 100px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: bold;
     background: #fffbc8;
+
 }
 
 .card-columns .card-img {
@@ -47,11 +49,12 @@ for details on configuring this project to bundle and minify static web assets. 
 
 a.navbar-brand {
     white-space: normal;
-    font-family: 'Noto Serif Oriya', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     text-align: right;
     word-break: break-all;
+    font-size: 24px;
     padding-left: 0px;
-    font-weight: bold;
+    font-weight:800;
 }
 
 img.logo{
@@ -79,12 +82,14 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 20px;
+   
 }
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+       font-size: 16px;
+       text-align: justify;
+    }
 }
 
 .border-top {
@@ -116,13 +121,17 @@ body {
     background-color: #EEF2F3;
 }
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Century Gothic';
+    text-align: justify;
+    font-weight: 200;
 }
 h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
+    text-align:center;
+    
 }
 ul {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
 }
 .footer {
     position: absolute;
