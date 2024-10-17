@@ -3,6 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace ContosoCrafts.WebSite.Models
 {
+    // enum to restrict values in BestSeason
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Fall,
+        Winter
+    }
+
     public class ProductModel
     {
         public string Id { get; set; }
