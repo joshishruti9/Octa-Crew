@@ -6,10 +6,10 @@ namespace ContosoCrafts.WebSite.Models
     // enum to restrict values in BestSeason
     public enum Season
     {
-        Spring,
-        Summer,
-        Fall,
-        Winter
+        Spring = 0,
+        Summer = 1,
+        Fall = 2,
+        Winter = 3
     }
 
     public class ProductModel
