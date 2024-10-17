@@ -20,7 +20,7 @@ namespace ContosoCrafts.WebSite.Models
         public string[] Images { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Season BestSeason { get; set; }
+        public Season? BestSeason { get; set; }
         public string Currency { get; set; }
         public string TimeZone { get; set; }
         public string[] Attractions { get; set; }
