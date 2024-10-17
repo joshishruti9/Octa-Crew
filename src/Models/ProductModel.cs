@@ -16,8 +16,8 @@ namespace ContosoCrafts.WebSite.Models
     {
         public string Id { get; set; }
 
-        [JsonPropertyName("img")]
-        public string Image { get; set; }
+        [JsonPropertyName("imgs")]
+        public string[] Images { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public Season BestSeason { get; set; }
