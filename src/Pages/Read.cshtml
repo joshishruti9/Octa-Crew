@@ -1,5 +1,6 @@
 ﻿@page "{id}"
 @using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Models
 @inject JsonFileProductService ProductService
 @model ContosoCrafts.WebSite.Pages.ReadModel
 @{
@@ -36,4 +37,16 @@
             <li>@attraction</li>
         }
     </ul>
+
+    <p>Rating: @GetCityRating(Model.Product)</p>
 </div>
+
+@{
+    int GetCityRating(ProductModel model)
+    {
+        if (model.Ratings == null)
+            return 0;
+
+        return model.Ratings.Sum() / model.Ratings.Count();
+    }
+}
