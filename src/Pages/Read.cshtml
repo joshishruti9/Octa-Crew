@@ -1,6 +1,7 @@
-﻿@page
-@using ContosoCrafts.WebSite.Components
-@model ReadModel
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.ReadModel
 @{
     ViewData["Title"] = "Read page";
 }
@@ -8,6 +9,10 @@
 <div class="text-center">
     <h1 class="display4"
         style="font-weight: 500;">
-        &ltCity Name&gt
+        Read
     </h1>
+</div>
+
+<div class="container">
+    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
 </div>
