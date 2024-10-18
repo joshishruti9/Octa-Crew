@@ -6,7 +6,7 @@
     "Description": "Full of iconic monuments, world class art, and delicious cuisine, Paris is a must see city.  As one of the fashion capitals of the world, Paris offers the chance to shop at some of the biggest designers or in countless boutiques.  The city blends history and modernity, offering endless opportunities to explore, from sidewalk cafes to picturesque neighborhoods.  You won’t run out of things to do in Paris.",
     "BestSeason": 2,
     "Currency": "Euro",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
     "Ratings": [
       5,
@@ -24,7 +24,7 @@
     "Description": "With its many ancient structures and churches, Rome offers the chance to see a time long past.  Rome also boasts an amazing art scene, with Vatican museums and modern art galleries.  Walk around the sun-drenched piazzas or the intricate fountains found throughout the city and don’t miss all the splendid Italian cuisine.  There’s so much to see and do.",
     "BestSeason": 2,
     "Currency": "Euro",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": ["Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain"],
     "Ratings": null
   },
@@ -35,7 +35,7 @@
     "Description": "A world leader in banking, fashion, and music, London is a dynamic metropolis where tradition meets innovation.  Historic and modern sites can be seen in close proximity and help form its unique character.  Explore the iconic sites, world class theaters, lush royal parks, and trendy neighborhoods in a city full of energy.",
     "BestSeason": 1,
     "Currency": "Pound",
-    "TimeZone": null,
+    "TimeZone": "GMT+1",
     "Attractions": ["Big Ben & Houses of Parliament", "Tower of London", "British Museum"],
     "Ratings": null
   },
@@ -46,7 +46,7 @@
     "Description": "The most populous city in the world, Tokyo is a city full of bright lights and loud signs.  An exceptionally modern city, Tokyo integrates the cutting edge of technology into daily life.  But there are plenty of ancient attractions to explore too, from the imperial palace to the numerous shrines and temples scattered throughout.  And with over 200 Michelin-starred restaurants, the food is not to be missed.",
     "BestSeason": 0,
     "Currency": "Yen",
-    "TimeZone": null,
+    "TimeZone": "GMT+9",
     "Attractions": ["Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree"],
     "Ratings": null
   },
@@ -57,7 +57,7 @@
     "Description": "Vancouver is a vibrant coastal city, great to visit any time of year.  A young city, Vancouver still contains a long indigenous heritage with its historic sites, boutiques, and museums.  Many popular TV shows and movies have been filmed here, so numerous sites throughout the city will be recognizable.  Surrounded by mountains and beaches, the city offers an array of opportunities for outdoor activities such as hiking, mountain biking, kayaking, whitewater rafting and skiing.",
     "BestSeason": 2,
     "Currency": "Canadian Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT-7",
     "Attractions": ["Stanley Park", "Granville Island", "Capilano Suspension Bridge"],
     "Ratings": null
   },
@@ -68,7 +68,7 @@
     "Description": "The capital of the Netherlands, Amsterdam is a beautiful city full of winding canals and unique architecture.  As one of the most bike friendly cities in the world, it’s easy to get around and explore, full of small shops, fashion boutiques, and great museums.  The easygoing atmosphere and rich history make for an unforgettable urban experience.",
     "BestSeason": 1,
     "Currency": "Euro",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": ["Rijksmuseum", "Anne Frank House", "Van Gogh Museum"],
     "Ratings": null
   },
@@ -79,7 +79,7 @@
     "Description": "Located on the south shore of Oahu, Honolulu combines breathtaking scenery with urban appeal.  The city contains high end shopping and high rise resorts while also giving visitors access to lush forests and mountains with panoramic views.  Honolulu is home to sprawling white sand beaches, providing a place for amazing surfing or just a place to relax while taking in the beautiful coastline.",
     "BestSeason": 2,
     "Currency": "US Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT-10",
     "Attractions": ["Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial"],
     "Ratings": null
   },
@@ -90,7 +90,7 @@
     "Description": "This coastal city has an artistic culture and a mix of historic and eclectic architecture.  Known for its lively nightlife, Barcelona has activities for all hours, and is packed with restaurants, cafes, and nightclubs.  The friendly culture, assortment of museums, parks, and excellent food and wine will make for plenty to do during any visit.",
     "BestSeason": 0,
     "Currency": "Euro",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": [ "Sagrada Familia", "Park Güell", "La Rambla" ],
     "Ratings": [
       4
@@ -103,7 +103,7 @@
     "Description": "The most populous city in Australia, Sydney has something for everyone.  It’s a modern coastal city in the middle of nature, allowing visitors to enjoy fine dining, art galleries, surfing, and coastal walks all in one location.  Sydney also offers different seasonal festivals throughout the year so there’s something unique for anyone who visits.",
     "BestSeason": 0,
     "Currency": "Australian Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT+11",
     "Attractions": ["Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach"],
     "Ratings": null
   },
@@ -114,7 +114,7 @@
     "Description": "A city separated from the rest of Africa by a ring of mountains, Cape Town stands out among the natural landscape.  It offers beaches and breathtaking landscapes alongside fantastic restaurants and nightlife.  A cosmopolitan city, Cape Town has eclectic music, food, and festival scenes.  Museums and tours are also available, which highlight its darker past under a system of apartheid and help others recognize the challenges its citizens have had to endure.",
     "BestSeason": 0,
     "Currency": "South African Rand",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": ["Table Mountain", "V&A Waterfront", "Cape of Good Hope"],
     "Ratings": null
   },
@@ -125,7 +125,7 @@
     "Description": "Straddling Asia and Europe, Istanbul is a bustling metropolis which stood at key moments in history as capital of the Byzantine and Ottoman empires.  Much of that history can be seen today in the multitude of ancient architecture and monuments. There’s no lack of high end shopping or trendy restaurants either, in addition to its numerous bazaars selling foods, spices, crafts, and many other items.",
     "BestSeason": 2,
     "Currency": "Lira",
-    "TimeZone": null,
+    "TimeZone": "GMT+3",
     "Attractions": ["Hagia Sophia", "Blue Mosque", "Grand Bazaar"],
     "Ratings": null
   },
@@ -136,7 +136,7 @@
     "Description": "This modern city maintains a mix of green space and skyscrapers and is home to a huge number of attractions.  The city blends many cultures together, which is reflected in the Chinatown, Little India, and Kampong Gelam historical districts.  World class restaurants mix with famously delicious street food.  For such a large and modern city, there is a rich assortment of gardens, reservoirs, and nature preserves, all of which serve to add variety and enrich the experience of traveling in the city.",
     "BestSeason": 0,
     "Currency": "Singapore Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT+8",
     "Attractions": ["Marina Bay Sands", "Gardens by the Bay", "Sentosa Island"],
     "Ratings": null
   },
@@ -147,7 +147,7 @@
     "Description": "Kyoto had a long history as the capital of Japan from 794 to 1868 and remains a cultural and historical hub.  Buddhist temples and Shinto shrines are scattered throughout the city and formal traditions such as kaiseki dining are still present.  At the same time, Kyoto is a modern city, home to the likes of Nintendo and Kyocera.",
     "BestSeason": 2,
     "Currency": "Yen",
-    "TimeZone": null,
+    "TimeZone": "GMT+9",
     "Attractions": ["Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove"],
     "Ratings": null
   },
@@ -158,7 +158,7 @@
     "Description": "A huge, multicultural city, which is distinct from other Chinese cities, Hong Kong offers a wide range of experiences.  A dense urban city, it has a beautiful skyline and boasts urban attractions such as amazing restaurants and museums.  Plus, between the sandy beaches, surrounding lush greenery, and over 200 offshore islands to explore, there’s plenty to keep visitors busy.",
     "BestSeason": 2,
     "Currency": "Hong Kong Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT+8",
     "Attractions": ["Victoria Peak", "Star Ferry", "Temple Street Night Market"],
     "Ratings": null
   },
@@ -169,7 +169,7 @@
     "Description": "As the largest city in the US, New York City has a lot to offer.  It’s known for being at the forefront of food, fashion, and the arts.  The concrete jungle with activities on every corner has a fast-paced atmosphere with blocks full of people at all hours.  It is also home to many famous structures and landmarks such as the Statue of Liberty and the Empire State Building that are recognizable all over the world.",
     "BestSeason": 2,
     "Currency": "US Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT-4",
     "Attractions": ["Statue of Liberty", "Central Park", "Times Square"],
     "Ratings": null
   },
@@ -180,7 +180,7 @@
     "Description": "Athens is a city with a long history.  With monuments and ruins dating as far back as the 5th century B.C., the city shows a glimpse into the distant past.  But unlike other European cities with ancient monuments, the ancient sites and historic neighborhoods of Athens are integrated into the daily lives of its residents rather than being dominated by tourists, giving it a more lived in feel.",
     "BestSeason": 2,
     "Currency": "Euro",
-    "TimeZone": null,
+    "TimeZone": "GMT+3",
     "Attractions": ["Acropolis", "Temple of Olympian Zeus", "Plaka"],
     "Ratings": null
   },
@@ -191,7 +191,7 @@
     "Description": "A cultural hub and fashion capital of Canada, Montreal is a unique city just 40 miles north of the U.S. border.  It contains a mix of old and new world style architecture and is home to world class museums, outdoor marketplaces, and high end shopping.  Most residents are English and French bilingual, reflecting the city’s diverse history.  Visitors should be sure to see RÉSO, the huge underground city formed of the underground connections between the buildings in Montreal’s downtown.",
     "BestSeason": 0,
     "Currency": "Canadian Dollar",
-    "TimeZone": null,
+    "TimeZone": "GMT-4",
     "Attractions": [ "Old Montreal (Vieux-Montréal)", "Mount Royal Park", "Notre-Dame Basilica" ],
     "Ratings": null
   },
@@ -202,7 +202,7 @@
     "Description": "With the world’s largest tower, longest zipline, and deepest pool, Dubai doesn’t do anything small.  This big and bright city combines a larger than life atmosphere with gorgeous beaches, international foods, and a vibrant nightlife.  Yet it still retains aspects of its past with traditional gold and spice marketplaces, important religious sites, and historical neighborhoods.",
     "BestSeason": 3,
     "Currency": "Dirham",
-    "TimeZone": null,
+    "TimeZone": "GMT+4",
     "Attractions": ["Burj Khalifa", "The Dubai Mall", "Palm Jumeirah"],
     "Ratings": null
   },
@@ -213,7 +213,7 @@
     "Description": "Bangkok contrasts ancient features with modern, from temples to shopping malls.  It is a fast-paced city full of skyscrapers, bustling street markets - including the largest open air market - and nonstop nightlife.  One of the world’s largest open-air markets, a world-class aquarium inside a shopping mall, and a 150-foot gold Buddha statue are all part of what this city has to offer and visitors are sure to find plenty of surprises.",
     "BestSeason": 3,
     "Currency": "Baht",
-    "TimeZone": null,
+    "TimeZone": "GMT+7",
     "Attractions": ["Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market"],
     "Ratings": null
   },
@@ -224,7 +224,7 @@
     "Description": "Despite suffering from many invasions as well as political and natural disasters in its history, Prague has become a uniquely picturesque city.  With architecture dating back to the 9th century, an incredible range of styles can be seen, from Gothic cathedrals to Baroque palaces.  To add to the scenery, Prague has over 200 gardens scattered throughout the city.  The city is also one of the classical music capitals in the world.  With so many things to see and the relatively affordable prices in the city, Prague is a no brainer to visit.",
     "BestSeason": 0,
     "Currency": "Czech Koruna",
-    "TimeZone": null,
+    "TimeZone": "GMT+2",
     "Attractions": ["Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock"],
     "Ratings": null
   }
