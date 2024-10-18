@@ -15,4 +15,9 @@
 
 <div class="container">
     <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+
+    @foreach (string image in Model.Product.Images)
+    {
+        <img class="card-img" src='@image' alt="Image for @Model.Product.Title" />
+    }
 </div>
