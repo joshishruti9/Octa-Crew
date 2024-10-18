@@ -26,4 +26,12 @@
     <p>Currency: @Model.Product.Currency</p>
 
     <p>Timezone: @Model.Product.TimeZone</p>
+
+    <h5>Attractions:</h5>
+    <ul>
+        @foreach (string attraction in Model.Product.Attractions)
+        {
+            <li>@attraction</li>
+        }
+    </ul>
 </div>
