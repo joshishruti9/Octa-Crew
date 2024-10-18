@@ -43,7 +43,7 @@
         @{
             int currentRating = GetCityRating(Model.Product);
 
-            @for (int i = 1; i < 6; i++)
+            for (int i = 1; i < 6; i++)
             {
                 if (i <= currentRating)
                 {
@@ -54,9 +54,30 @@
                     <span class="fa fa-star"></span>
                 }
             }
+
+            string voteString;
+            if (Model.Product.Ratings == null)
+            {
+                voteString = "0 Votes";
+            }
+            else
+            {
+                int voteCount = Model.Product.Ratings.Count();
+                voteString = voteCount + (voteCount == 1 ? " Vote" : " Votes");
+            }
+
+            <span>@voteString</span>
         }
-        @Model.Product.Ratings.Count() Votes
     </p>
+
+</div>
+
+<div class="row">
+
+    <br />
+    <br />
+
+    @* <a asp-page *@
 
 </div>
 
