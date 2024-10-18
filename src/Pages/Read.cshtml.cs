@@ -2,6 +2,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections;
 using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages
@@ -28,7 +29,17 @@ namespace ContosoCrafts.WebSite.Pages
         /// <param name="id"></param>
         public void OnGet(string id)
         {
-            Product = ProductService.GetProducts().FirstOrDefault(x => x.Id.Equals(id));
+            Product = ReadData(id);
+        }
+
+        /// <summary>
+        /// Return the city matching a given ID
+        /// </summary>
+        /// <param name="id">The city ID</param>
+        /// <returns></returns>
+        private ProductModel ReadData(string id)
+        {
+            return ProductService.GetProducts().FirstOrDefault(x => x.Id.Equals(id));
         }
     }
 }
