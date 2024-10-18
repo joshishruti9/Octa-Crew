@@ -7,7 +7,7 @@
     "BestSeason": 2,
     "Currency": "Euro",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
     "Ratings": [
       5,
       5,
@@ -25,7 +25,7 @@
     "BestSeason": 2,
     "Currency": "Euro",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain"],
     "Ratings": null
   },
   {
@@ -36,7 +36,7 @@
     "BestSeason": 1,
     "Currency": "Pound",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Big Ben & Houses of Parliament", "Tower of London", "British Museum"],
     "Ratings": null
   },
   {
@@ -47,7 +47,7 @@
     "BestSeason": 0,
     "Currency": "Yen",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree"],
     "Ratings": null
   },
   {
@@ -58,7 +58,7 @@
     "BestSeason": 2,
     "Currency": "Canadian Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Stanley Park", "Granville Island", "Capilano Suspension Bridge"],
     "Ratings": null
   },
   {
@@ -69,7 +69,7 @@
     "BestSeason": 1,
     "Currency": "Euro",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Rijksmuseum", "Anne Frank House", "Van Gogh Museum"],
     "Ratings": null
   },
   {
@@ -80,7 +80,7 @@
     "BestSeason": 2,
     "Currency": "US Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial"],
     "Ratings": null
   },
   {
@@ -91,7 +91,7 @@
     "BestSeason": 0,
     "Currency": "Euro",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": [ "Sagrada Familia", "Park Güell", "La Rambla" ],
     "Ratings": [
       4
     ]
@@ -104,7 +104,7 @@
     "BestSeason": 0,
     "Currency": "Australian Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach"],
     "Ratings": null
   },
   {
@@ -115,7 +115,7 @@
     "BestSeason": 0,
     "Currency": "South African Rand",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Table Mountain", "V&A Waterfront", "Cape of Good Hope"],
     "Ratings": null
   },
   {
@@ -126,7 +126,7 @@
     "BestSeason": 2,
     "Currency": "Lira",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Hagia Sophia", "Blue Mosque", "Grand Bazaar"],
     "Ratings": null
   },
   {
@@ -137,7 +137,7 @@
     "BestSeason": 0,
     "Currency": "Singapore Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Marina Bay Sands", "Gardens by the Bay", "Sentosa Island"],
     "Ratings": null
   },
   {
@@ -148,7 +148,7 @@
     "BestSeason": 2,
     "Currency": "Yen",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove"],
     "Ratings": null
   },
   {
@@ -159,7 +159,7 @@
     "BestSeason": 2,
     "Currency": "Hong Kong Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Victoria Peak", "Star Ferry", "Temple Street Night Market"],
     "Ratings": null
   },
   {
@@ -170,7 +170,7 @@
     "BestSeason": 2,
     "Currency": "US Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Statue of Liberty", "Central Park", "Times Square"],
     "Ratings": null
   },
   {
@@ -181,7 +181,7 @@
     "BestSeason": 2,
     "Currency": "Euro",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Acropolis", "Temple of Olympian Zeus", "Plaka"],
     "Ratings": null
   },
   {
@@ -192,7 +192,7 @@
     "BestSeason": 0,
     "Currency": "Canadian Dollar",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": [ "Old Montreal (Vieux-Montréal)", "Mount Royal Park", "Notre-Dame Basilica" ],
     "Ratings": null
   },
   {
@@ -203,7 +203,7 @@
     "BestSeason": 3,
     "Currency": "Dirham",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Burj Khalifa", "The Dubai Mall", "Palm Jumeirah"],
     "Ratings": null
   },
   {
@@ -214,7 +214,7 @@
     "BestSeason": 3,
     "Currency": "Baht",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market"],
     "Ratings": null
   },
   {
@@ -225,7 +225,7 @@
     "BestSeason": 0,
     "Currency": "Czech Koruna",
     "TimeZone": null,
-    "Attractions": null,
+    "Attractions": ["Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock"],
     "Ratings": null
   }
 ]
