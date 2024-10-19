@@ -18,11 +18,25 @@ for details on configuring this project to bundle and minify static web assets. 
     height: 100px;
     font-family: 'Century Gothic', sans-serif;
     font-weight: bold;
-    background: #fffbc8;
-    color:orangered;
-    text-align : center;
+    background: #fff8e7;
+    color: orangered;
+    text-align: center;
+}
+.container1 {
+    position: relative;
+    text-align: center;
+    color:#faf0e6;
+    font-family: 'Century Gothic';
+    margin-bottom: 50px;
 }
 
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
 .card-columns .card-img {
   height: 330px;
   vertical-align: bottom;
@@ -45,16 +59,42 @@ for details on configuring this project to bundle and minify static web assets. 
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
     background-color: indianred;
 }
-#productTitle{
+.productTitle{
    font-family:'Century Gothic';
    text-align: center;
    color:red;
    
 }
 .card-footer {
-    background: #fbfafd;
+    background: #fefefa;
+}
+html {
+    scroll-behavior: smooth;
+    
+}
+ .styled-button {
+    background-color: #f5f5dc; /* Initial background color */
+    color: red; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Removes border */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    display:inline-block;
+    
+}
+.buttontext {
+    padding-top:5px;
+    color: orangered;
+    
 }
 
+    /* Change color on hover */
+    .styled-button:hover {
+        background-color: #ffd3a5; /* Color when hovered */
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+    }
 
 a.navbar-brand {
     white-space: normal;
@@ -63,7 +103,7 @@ a.navbar-brand {
     word-break: break-all;
     font-size: 24px;
     padding-left: 0px;
-    font-weight:800;
+    font-weight: 800;
 }
 
 img.logo{
@@ -153,6 +193,7 @@ ul {
 /*Backgrounds*/
 .bg-navbar {
     background-color: #EEF2F3;
+    
 }
 
 .bg-footer {
