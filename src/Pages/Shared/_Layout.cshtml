@@ -44,10 +44,14 @@
             <div class="centered">
                 <h1>City</h1>
                 <h5>Cities are buzzing with energy—where cool people, new ideas, and endless opportunities collide. It’s where life happens!</h5>
-                <button class="styled-button" onclick="window.location.href='#card-body'"> <h6 class="buttontext">Explore Now!</h6></button>
-                <div id="card-body">
-        
-                </div>
+                <button class="styled-button" onclick="scrollToBottom()"> <h6 class="buttontext">Explore Now!</h6></button>
+                <script>
+                    function scrollToBottom() {
+                        window.scrollTo({
+                            top: document.body.scrollHeight/6,               
+                        });
+                    }
+                </script>
             </div>
                
         </div>
