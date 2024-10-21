@@ -50,7 +50,28 @@ for details on configuring this project to bundle and minify static web assets. 
   opacity: .8;
 }
 .table th, .table td {
-    padding: 1.00rem;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff7f50; 
+    
+}
+tr:nth-child(even) {
+    background-color: #fdefb2;
+}
+tr:nth-child(odd) {
+    background-color :white;
+}
+
+
+
+tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+    
 }
 .modal .card-img {
   height: 500px;
@@ -189,6 +210,7 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     background-color: #f7f8fa;
+
 }
 p {
     font-family: 'Century Gothic';
@@ -220,4 +242,7 @@ ul {
 .bg-footer {
     background-color: #febb8a;
 }
-
+.tabledata{
+    color:darkorange;
+    text-emphasis:initial;
+}
