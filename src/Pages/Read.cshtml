@@ -18,10 +18,12 @@
 <div class="container">
     <h4 class="title" id="productTitle">@Model.Product.Title</h4>
 
-    @foreach (string image in Model.Product.Images)
-    {
-        <img class="card-img" src='@image' alt="Image for @Model.Product.Title" />
-    }
+    <div class="card-columns">
+        @foreach (string image in Model.Product.Images)
+        {
+            <img class="card-img" src='@image' alt="Image for @Model.Product.Title" />
+        }
+    </div>
 
     <p class="description">@Model.Product.Description</p>
     
