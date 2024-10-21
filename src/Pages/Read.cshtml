@@ -16,28 +16,31 @@
 </div>
 
 <div class="container">
-    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+    <h4 class="title" id="productTitle">@Model.Product.Title</h4>
 
     @foreach (string image in Model.Product.Images)
     {
         <img class="card-img" src='@image' alt="Image for @Model.Product.Title" />
     }
 
-    <p class="card-text">@Model.Product.Description</p>
+    <p class="description">@Model.Product.Description</p>
+    
+    <dl>
+        <dt>Information:</dt>
 
-    <p>Best season to visit: @Model.Product.BestSeason.ToString()</p>
+        <dd>Best season to visit: @Model.Product.BestSeason.ToString()</dd>
 
-    <p>Currency: @Model.Product.Currency</p>
+        <dd>Currency: @Model.Product.Currency</dd>
 
-    <p>Timezone: @Model.Product.TimeZone</p>
+        <dd>Timezone: @Model.Product.TimeZone</dd>
 
-    <h5>Attractions:</h5>
-    <ul>
+        <dt>Attractions:
         @foreach (string attraction in Model.Product.Attractions)
         {
-            <li>@attraction</li>
+            <dd class="card-text">@attraction</dd>
         }
-    </ul>
+        </dt>
+    </dl>
 
     <p>Rating: 
         @{
