@@ -74,6 +74,21 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-footer {
     background: #fefefa;
 }
+
+/* Styles for read page */
+.description {
+    margin-top: 20px;
+}
+
+dt {
+    font-family: 'Century Gothic';
+}
+
+dd {
+    font-family: 'Century Gothic';
+    margin-bottom: 4px;
+}
+
 html {
     scroll-behavior: smooth;
     
