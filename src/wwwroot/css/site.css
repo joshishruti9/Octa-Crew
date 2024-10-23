@@ -163,6 +163,18 @@ a {
     border-color: #fff;
 }
 
+.btn-update {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-update:hover {
+    background-color: var(--cyan);
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
