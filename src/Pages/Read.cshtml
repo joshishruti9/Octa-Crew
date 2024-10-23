@@ -27,22 +27,22 @@
 
     <p class="description">@Model.Product.Description</p>
     
-    <dl>
-        <dt>Information:</dt>
+            <dl>
+                <dt>Information:</dt>
 
-        <dd>Best season to visit: @Model.Product.BestSeason.ToString()</dd>
+                <dd>Best season to visit: @Model.Product.BestSeason.ToString()</dd>
 
-        <dd>Currency: @Model.Product.Currency</dd>
+                <dd>Currency: @Model.Product.Currency</dd>
 
-        <dd>Timezone: @Model.Product.TimeZone</dd>
+                <dd>Timezone: @Model.Product.TimeZone</dd>
 
-        <dt>Attractions:
-        @foreach (string attraction in Model.Product.Attractions)
-        {
-            <dd class="card-text">@attraction</dd>
-        }
-        </dt>
-    </dl>
+            <dt>Attractions:
+            @foreach (string attraction in Model.Product.Attractions)
+            {
+                <dd class="card-text">@attraction</dd>
+            }
+            </dt>
+        </dl>
 
     <p>Rating: 
         @{
@@ -73,19 +73,16 @@
 
             <span>@voteString</span>
         }
+        <div>
+
+            <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-update">Update</a>
+            <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
+
+        </div>
     </p>
 
 </div>
 
-<div class="row">
-
-    <br />
-    <br />
-
-    <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-update">Update</a>
-    <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
-
-</div>
 
 
 @{
