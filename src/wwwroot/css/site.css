@@ -29,7 +29,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .container1 {
     position: relative;
     text-align: center;
-    color:#faf0e6;
+    color: #faf0e6;
     font-family: 'Century Gothic';
     margin-bottom: 50px;
 }
@@ -255,4 +255,6 @@ ul {
 }
 .tabledata{
     text-emphasis:initial;
+    font-family:'Century Gothic';
 }
+
