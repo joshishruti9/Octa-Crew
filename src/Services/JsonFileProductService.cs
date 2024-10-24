@@ -10,20 +10,33 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
 {
-   public class JsonFileProductService
+   /// <summary>
+   /// Service class with methods for managing city data
+   /// </summary>
+    public class JsonFileProductService
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="webHostEnvironment">Hosting environment used</param>
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
 
+        // Web hosting environment used
         public IWebHostEnvironment WebHostEnvironment { get; }
 
+        // Full path to JSON file database
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
+        /// <summary>
+        /// Gets a list of cities with their data from the database
+        /// </summary>
+        /// <returns>List of ProductModels containing city data</returns>
         public IEnumerable<ProductModel> GetProducts()
         {
             using(var jsonFileReader = File.OpenText(JsonFileName))
@@ -36,6 +49,10 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Gets a list of cities with their data from the database
+        /// </summary>
+        /// <returns>List of ProductModels containing city data</returns>
         public IEnumerable<ProductModel> GetAllData()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
@@ -48,16 +65,27 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Adds a rating to the given city by its ID.
+        /// If the city doesn't have any ratings yet, it initializes the ratings array for that city.
+        /// If the city already has ratings, it adds the new rating to the array that already exists.
+        /// </summary>
+        /// <param name="productId">ID of city being rated</param>
+        /// <param name="rating">Rating to be added to the city</param>
         public void AddRating(string productId, int rating)
         {
+            // List of all cities
             var products = GetProducts();
 
+            // If the city does not already have a ratings array, initialize one for it
             if(products.First(x => x.Id == productId).Ratings == null)
             {
                 products.First(x => x.Id == productId).Ratings = new int[] { rating };
             }
+            // The city does have a ratings array, so add the new rating to the array
             else
             {
+                // Get the ratings array for the city
                 var ratings = products.First(x => x.Id == productId).Ratings.ToList();
                 ratings.Add(rating);
                 products.First(x => x.Id == productId).Ratings = ratings.ToArray();
