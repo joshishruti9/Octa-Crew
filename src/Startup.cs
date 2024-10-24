@@ -7,16 +7,32 @@ using Microsoft.Extensions.Hosting;
 
 namespace ContosoCrafts.WebSite
 {
+    /// <summary>
+    ///     Configures services and request pipeline.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        ///     Constructor
+        /// </summary>
+        /// <param name="configuration">
+        ///     IConfiguration object with configuration settings
+        /// </param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        // Configuration settings
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        ///     This method gets called by the runtime.
+        ///     Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services">
+        ///     Service descriptors for dependency injection
+        /// </param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
@@ -26,17 +42,30 @@ namespace ContosoCrafts.WebSite
             services.AddTransient<JsonFileProductService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        ///     This method gets called by the runtime.
+        ///     Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">
+        ///     Application builder used to configure the middleware pipeline
+        /// </param>
+        /// <param name="env">
+        ///     Hosting environment
+        /// </param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // If in Development, provide a detailed error page for debugging
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            // In Production, so use an error handling page that is more user-friendly
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // The default HSTS value is 30 days.
+                // You may want to change this for production scenarios,
+                // see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
