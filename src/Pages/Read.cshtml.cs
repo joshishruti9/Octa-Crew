@@ -41,7 +41,7 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         /// <param name="id">The city ID</param>
         /// <returns>ProductModel object for the given city, or null if not found</returns>
-        private ProductModel ReadData(string id)
+        public ProductModel ReadData(string id)
         {
             return ProductService.GetProducts().FirstOrDefault(x => x.Id.Equals(id));
         }
