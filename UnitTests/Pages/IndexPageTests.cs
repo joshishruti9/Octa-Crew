@@ -25,5 +25,25 @@ namespace UnitTests.Pages
         }
 
         #endregion TestSetup
+
+        /// <summary>
+        /// Checking whether product user want is there in result or not.
+        /// </summary>
+        #region OnGet
+        [Test]
+        public void OnGet_Valid_Should_Return_Products()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet();
+
+            // Assert 
+            // How many are there?
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            // Are there any in existence?
+            Assert.AreEqual(true, pageModel.Products.ToList().Any());
+        }
+        #endregion OnGet
     }
 }
