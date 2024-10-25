@@ -31,9 +31,6 @@ namespace ContosoCrafts.WebSite.Pages
         // Service for getting data from database
         public JsonFileProductService ProductService { get; }
         
-        // List of city titles
-        public IEnumerable<string> titles { get; private set; }
-
         // List of cities and their data
         public IEnumerable<ProductModel> Products { get; set; }
 
