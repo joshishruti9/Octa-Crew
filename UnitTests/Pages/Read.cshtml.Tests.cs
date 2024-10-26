@@ -82,7 +82,50 @@ namespace UnitTests.Pages
 
         #region OnGet
 
+        /// <summary>
+        /// Test that no product is assigned when null id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Null_Id_Default_Should_Return_Null()
+        {
+            // Arrange
 
+            // Act
+            pageModel.OnGet(null);
+
+            // Assert
+            Assert.AreEqual(null, pageModel.Product);
+        }
+
+        /// <summary>
+        /// Test that no product is assigned when invalid id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_Id_Default_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet("unitedstates");
+
+            // Assert
+            Assert.AreEqual(null, pageModel.Product);
+        }
+
+        /// <summary>
+        /// Test that correct product is assigned when valid id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Id_Default_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet("paris");
+
+            // Assert
+            Assert.AreEqual("Paris", pageModel.Product.Title);
+        }
 
         #endregion Onget
     }
