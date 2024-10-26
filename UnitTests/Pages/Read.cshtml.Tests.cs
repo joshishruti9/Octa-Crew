@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 using ContosoCrafts.WebSite.Pages;
-using ContosoCrafts.WebSite.Services;
-using Microsoft.AspNetCore.Hosting;
-using Moq;
 
 namespace UnitTests.Pages
 {
