@@ -4,7 +4,9 @@ using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages
 {
-
+    /// <summary>
+    /// Unit testing class for Read page model
+    /// </summary>
     public class ReadTests
     {
         #region TestSetup
