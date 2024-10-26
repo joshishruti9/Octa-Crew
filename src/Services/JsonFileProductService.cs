@@ -80,17 +80,14 @@ namespace ContosoCrafts.WebSite.Services
             // If the city does not already have a ratings array, initialize one for it
             if(products.First(x => x.Id == productId).Ratings == null)
             {
-                products.First(x => x.Id == productId).Ratings = new int[] { rating };
+                products.First(x => x.Id == productId).Ratings = new int[] { };
             }
             // The city does have a ratings array, so add the new rating to the array
-            else
-            {
-                // Get the ratings array for the city
-                var ratings = products.First(x => x.Id == productId).Ratings.ToList();
-                ratings.Add(rating);
-                products.First(x => x.Id == productId).Ratings = ratings.ToArray();
-            }
-
+            // Get the ratings array for the city
+            var ratings = products.First(x => x.Id == productId).Ratings.ToList();
+            ratings.Add(rating);
+            products.First(x => x.Id == productId).Ratings = ratings.ToArray();
+          
             using(var outputStream = File.OpenWrite(JsonFileName))
             {
                 JsonSerializer.Serialize<IEnumerable<ProductModel>>(
