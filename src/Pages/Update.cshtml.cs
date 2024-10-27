@@ -20,9 +20,17 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
-        // The data to show
+         // The data to show
         public ProductModel Product;
 
+        /// <summary>
+        /// REST get request
+        /// </summary>
+        /// <param name="id">ID of the city to be displayed</param>
+        public void OnGet(string id)
+        {
+            Product = ReadData(id);
+        }
 
         /// <summary>
         /// Return the city matching a given ID
