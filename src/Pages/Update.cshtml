@@ -15,25 +15,26 @@
 
         
         <label for="city-name">City Name:</label><br>
-        <input type="text" id="city-name" name="city-name" placeholder="City Name" required><br><br>
+        <input type="text" id="city-name" name="city-name" placeholder="City Name" value="@Model.Product.Title" required><br><br>
 
         
         <label for="image1">Image URL 1:</label><br>
-        <input type="url" id="image1" name="image1" placeholder="Url of the image" required><br><br>
+        <input type="url" id="image1" name="image1" placeholder="Url of the image" value="@Model.Product.Images[0]" required><br><br>
 
         <label for="image2">Image URL 2:</label><br>
-        <input type="url" id="image2" name="image2" placeholder="Url of the image"><br><br>
+        <input type="url" id="image2" name="image2" placeholder="Url of the image" value="@Model.Product.Images[1]"><br><br>
 
         <label for="image3">Image URL 3:</label><br>
-        <input type="url" id="image3" name="image3" placeholder="Url of the image"><br><br>
+        <input type="url" id="image3" name="image3" placeholder="Url of the image" value="@Model.Product.Images[2]"><br><br>
 
         
         <label for="description">Description of the City:</label><br>
-        <textarea id="description" name="description" rows="10" cols="" placeholder="Add some info about the City" required></textarea><br><br>
+        <textarea id="description" name="description" rows="10" cols="90" placeholder="Add some info about the City" required>@Model.Product.Description</textarea><br><br>
 
         
         <label for="season">Best Season to Visit:</label><br>
         <select id="season" name="season" required>
+            <option value="@Model.Product.BestSeason">@Model.Product.BestSeason</option>
             <option value="spring">Spring</option>
             <option value="summer">Summer</option>
             <option value="fall">Fall</option>
@@ -41,20 +42,20 @@
         </select><br><br>
 
         <label for="currency">Currency</label><br>
-        <input type="text" id="currency" name="currency" placeholder="Currency" required><br><br>
+        <input type="text" id="currency" name="currency" placeholder="Currency" value="@Model.Product.Currency" required><br><br>
 
         <label for="timezone">Time Zone</label><br>
-        <input type="text" id="timezone" name="timezone" placeholder="Time Zone" required><br><br>
+        <input type="text" id="timezone" name="timezone" placeholder="Time Zone" value="@Model.Product.TimeZone" required><br><br>
 
         
         <label for="attraction1">Top Attraction 1:</label><br>
-        <input type="text" id="attraction1" name="attraction1" placeholder="Attraction 1" required><br><br>
+        <input type="text" id="attraction1" name="attraction1" placeholder="Attraction 1" value="@Model.Product.Attractions[0]" required><br><br>
 
         <label for="attraction2">Top Attraction 2:</label><br>
-        <input type="text" id="attraction2" name="attraction2" placeholder="Attraction 2" required><br><br>
+        <input type="text" id="attraction2" name="attraction2" placeholder="Attraction 2" value="@Model.Product.Attractions[1]" required><br><br>
 
         <label for="attraction3">Top Attraction 3:</label><br>
-        <input type="text" id="attraction3" name="attraction3" placeholder="Attraction 3" required><br><br>
+        <input type="text" id="attraction3" name="attraction3" placeholder="Attraction 3" value="@Model.Product.Attractions[2]" required><br><br>
 
         
         <button type="submit">Submit</button>    <button type="reset">Cancel</button>
