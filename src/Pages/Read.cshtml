@@ -54,7 +54,7 @@
                 {
                     <span class="fa fa-star checked"></span>
                 }
-                else
+                if(i > currentRating)
                 {
                     <span class="fa fa-star"></span>
                 }
@@ -64,14 +64,15 @@
             if (Model.Product.Ratings == null)
             {
                 voteString = "0 Votes";
+                <span>@voteString</span>
             }
-            else
+            if(!Model.Product.Ratings.Equals(null))
             {
                 int voteCount = Model.Product.Ratings.Count();
                 voteString = voteCount + (voteCount == 1 ? " Vote" : " Votes");
+                <span>@voteString</span>
             }
 
-            <span>@voteString</span>
         }
         <div>
 
