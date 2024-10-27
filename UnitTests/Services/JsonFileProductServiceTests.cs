@@ -12,6 +12,9 @@ namespace UnitTests.Services
 
         #region AddRating
 
+        /// <summary>
+        /// Test AddRating returns false when null product is passed
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Null_Should_Return_False()
         {
@@ -24,6 +27,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating returns false when an empty product id is passed
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Empty_Should_Return_False()
         {
@@ -36,6 +42,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating returns false when a product id not in the database is passed
+        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Does_Not_Exist_Should_Return_False()
         {
@@ -48,6 +57,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating returns false when attempting to add a negative rating
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Negative_Rating_Should_Return_False()
         {
@@ -63,6 +75,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating returns false when attempting to add a rating > 5
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Rating_Above_5_Should_Return_False()
         {
@@ -78,6 +93,9 @@ namespace UnitTests.Services
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Test AddRating successfully updates the database and returns true when ratings list is null
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Rating_Null_Should_Return_True()
         {
@@ -95,6 +113,9 @@ namespace UnitTests.Services
             Assert.AreEqual(5, dataNewList.Ratings[0]);
         }
 
+        /// <summary>
+        /// Test AddRating successfully updates the database and returns true when ratings list is non-empty
+        /// </summary>
         [Test]
         public void AddRating_Valid_Product_Rating_5_Should_Return_True()
         {
