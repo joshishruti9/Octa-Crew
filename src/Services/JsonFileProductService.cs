@@ -75,11 +75,36 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns>True if database is successfully updated, false otherwise</returns>
         public bool AddRating(string productId, int rating)
         {
+            // If the ID of the city is invalid, return
+            if (string.IsNullOrEmpty(productId))
+            {
+                return false;
+            }
+
             // List of all cities
             var products = GetProducts();
 
+            // Look up the city, if it does not exist, return
+            var data = products.FirstOrDefault(x => x.Id.Equals(productId));
+            if (data == null)
+            {
+                return false;
+            }
+
+            // Check Rating for boundaries, do not allow ratings below 0
+            if (rating < 0)
+            {
+                return false;
+            }
+
+            // Check Rating for boundaries, do not allow ratings above 5
+            if (rating > 5)
+            {
+                return false;
+            }
+
             // If the city does not already have a ratings array, initialize one for it
-            if(products.First(x => x.Id == productId).Ratings == null)
+            if (products.First(x => x.Id == productId).Ratings == null)
             {
                 products.First(x => x.Id == productId).Ratings = new int[] { };
             }
