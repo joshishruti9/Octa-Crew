@@ -50,22 +50,6 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Gets a list of cities with their data from the database
-        /// </summary>
-        /// <returns>List of ProductModels containing city data</returns>
-        public IEnumerable<ProductModel> GetAllData()
-        {
-            using (var jsonFileReader = File.OpenText(JsonFileName))
-            {
-                return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-            }
-        }
-
-        /// <summary>
         /// Adds a rating to the given city by its ID.
         /// If the city doesn't have any ratings yet, it initializes the ratings array for that city.
         /// If the city already has ratings, it adds the new rating to the array that already exists.

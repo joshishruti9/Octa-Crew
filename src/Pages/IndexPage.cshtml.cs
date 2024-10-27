@@ -39,7 +39,7 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         public void OnGet()
         {
-            Products = ProductService.GetAllData();
+            Products = ProductService.GetProducts();
         }
     }
 }
