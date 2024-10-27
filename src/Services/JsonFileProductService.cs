@@ -72,7 +72,8 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         /// <param name="productId">ID of city being rated</param>
         /// <param name="rating">Rating to be added to the city</param>
-        public void AddRating(string productId, int rating)
+        /// <returns>True if database is successfully updated, false otherwise</returns>
+        public bool AddRating(string productId, int rating)
         {
             // List of all cities
             var products = GetProducts();
@@ -99,6 +100,8 @@ namespace ContosoCrafts.WebSite.Services
                     products
                 );
             }
+
+            return true;
         }
     }
 }
