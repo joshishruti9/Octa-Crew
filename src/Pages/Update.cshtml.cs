@@ -20,5 +20,18 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
+        // The data to show
+        public ProductModel Product;
+
+
+        /// <summary>
+        /// Return the city matching a given ID
+        /// </summary>
+        /// <param name="id">The city ID</param>
+        /// <returns>ProductModel object for the given city, or null if not found</returns>
+        public ProductModel ReadData(string id)
+        {
+            return ProductService.GetProducts().First(x => x.Id.Equals(id));
+        }
     }
 }
