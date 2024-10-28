@@ -28,5 +28,27 @@ namespace UnitTests.Pages.Error
         }
 
         #endregion TestSetup
+
+        #region OnGet
+        [Test]
+        public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
+        {
+            // Arrange
+
+            Activity activity = new Activity("activity");
+            activity.Start();
+
+            // Act
+            pageModel.OnGet();
+
+            // Reset
+            activity.Stop();
+
+            // Assert
+            Assert.That(pageModel.ModelState.IsValid, Is.EqualTo(true));
+            Assert.That(pageModel.RequestId, Is.EqualTo(activity.Id));
+        }
+
+        #endregion OnGet
     }
 }
