@@ -6,7 +6,7 @@ using Moq;
 
 using ContosoCrafts.WebSite.Pages;
 
-namespace UnitTests.Pages.Privacy
+namespace UnitTests.Pages
 {
     public class PrivacyTests
     {
