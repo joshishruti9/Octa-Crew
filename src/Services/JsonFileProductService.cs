@@ -48,6 +48,18 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+        public IEnumerable<ProductModel> GetAllData()
+        {
+            using (var jsonFileReader = File.OpenText(JsonFileName))
+            {
+                return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+            }
+        }
+        
 
         /// <summary>
         /// Adds a rating to the given city by its ID.
