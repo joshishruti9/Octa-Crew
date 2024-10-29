@@ -66,7 +66,7 @@
                 voteString = "0 Votes";
                 <span>@voteString</span>
             }
-            if(!Model.Product.Ratings.Equals(null))
+            if(Model.Product.Ratings != null)
             {
                 int voteCount = Model.Product.Ratings.Count();
                 voteString = voteCount + (voteCount == 1 ? " Vote" : " Votes");
