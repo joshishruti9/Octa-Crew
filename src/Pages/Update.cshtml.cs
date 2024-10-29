@@ -1,45 +1,42 @@
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
 using System.Linq;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace ContosoCrafts.WebSite.Pages.Product
 {
     public class UpdateModel : PageModel
     {
-        // Accesses city data from database
+        // Data #middletier
         public JsonFileProductService ProductService { get; }
 
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <param name="productService">Set to ProductService</param>
+        /// <summary> Default Constructor </summary>
         public UpdateModel(JsonFileProductService productService)
         {
             ProductService = productService;
         }
 
-         // The data to show
-        public ProductModel Product;
+        // The data to show, bind to it for the post
+        [BindProperty]
+        public ProductModel Product { get; set; }
 
-        /// <summary>
-        /// REST get request
-        /// </summary>
-        /// <param name="id">ID of the city to be displayed</param>
+        /// <summary> REST Get request Loads the Data </summary>
         public void OnGet(string id)
         {
-            Product = ReadData(id);
+            Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
-        /// <summary>
-        /// Return the city matching a given ID
-        /// </summary>
-        /// <param name="id">The city ID</param>
-        /// <returns>ProductModel object for the given city, or null if not found</returns>
-        public ProductModel ReadData(string id)
+        /// <summary> Post the model back to the page. The model is in the class variable. </summary>
+        public IActionResult OnPost()
         {
-            return ProductService.GetProducts().FirstOrDefault(x => x.Id.Equals(id));
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            ProductService.UpdateData(Product);
+            return RedirectToPage("./Index");
         }
     }
 }
