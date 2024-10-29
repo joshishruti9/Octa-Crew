@@ -98,22 +98,7 @@ namespace UnitTests.Pages
 
         #region OnPost
 
-        /// <summary>
-        /// Test OnPost method when ModelState is valid and Product is correctly assigned
-        /// </summary>
-        [Test]
-        public void OnPost_Valid_ModelState_Should_Update_Product()
-        {
-            // Arrange
-            pageModel.Product = new ProductModel { Id = "paris", Title = "Updated Paris" };
-
-            // Act
-            var result = pageModel.OnPost() as PageResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual("Updated Paris", pageModel.Product.Title);
-        }
+       
         /// <summary>
         /// Test OnPost method to ensure it redirects to Index when ModelState is valid.
         /// </summary>
