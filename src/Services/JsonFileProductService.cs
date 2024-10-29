@@ -59,7 +59,32 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+        public ProductModel UpdateData(ProductModel data)
+        {
+            var products = GetAllData();
+            var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+            if (productData == null)
+            {
+                return null;
+            }
+
+            // Update the data to the new passed in values
+            productData.Title = data.Title;
+            productData.Description = data.Description.Trim();
+            productData.Images = data.Images;
+            productData.TimeZone = data.TimeZone;
+
+            productData.BestSeason = data.BestSeason;
+            productData.Currency = data.Currency;
+
+            productData.Attractions = data.Attractions;
+
+            SaveData(products);
+
+            return productData;
+        }
         
+
 
         /// <summary>
         /// Adds a rating to the given city by its ID.
