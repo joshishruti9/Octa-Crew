@@ -114,6 +114,6 @@
 
     void NavigateToReadPage(string productId)
     {
-        Navigation.NavigateTo($"/Read/{productId}");
+        Navigation.NavigateTo($"/Read/{productId}", forceLoad: true);
     }
 }
