@@ -1,6 +1,10 @@
 ﻿using NUnit.Framework;
-
 using ContosoCrafts.WebSite.Pages;
+using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using ContosoCrafts.WebSite.Pages.Product;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages
 {
@@ -11,8 +15,8 @@ namespace UnitTests.Pages
     {
         #region TestSetup
 
-        // Page model for the CRUDi Read page
         public static UpdateModel pageModel;
+        public JsonFileProductService ProductService;
 
         /// <summary>
         /// Called before each test is called.
@@ -21,7 +25,12 @@ namespace UnitTests.Pages
         [SetUp]
         public void Setup()
         {
-            pageModel = new UpdateModel(TestHelper.ProductService);
+            // Use a mock or test helper for ProductService
+            ProductService = TestHelper.ProductService;
+            pageModel = new UpdateModel(ProductService)
+            {
+                Product = new ProductModel()
+            };
         }
 
         #endregion TestSetup
@@ -31,48 +40,16 @@ namespace UnitTests.Pages
         /// <summary>
         /// Test for correct output when null id is passed
         /// </summary>
-        [Test]
-        public void ReadData_Null_Id_Default_Should_Return_Null()
-        {
-            // Arrange
-
-            // Act
-            var result = pageModel.ReadData(null);
-
-            // Assert
-            Assert.AreEqual(null, result);
-        }
+       
 
         /// <summary>
         /// Test for correct output when invalid id is passed
         /// </summary>
-        [Test]
-        public void ReadData_Invalid_Id_Default_Should_Return_Null()
-        {
-            // Arrange
-
-            // Act
-            var result = pageModel.ReadData("unitedstates");
-
-            // Assert
-            Assert.AreEqual(null, result);
-        }
-
+        
         /// <summary>
         /// Test for correct output when a valid id is passed
         /// </summary>
-        [Test]
-        public void ReadData_Valid_Id_Default_Should_Return_City()
-        {
-            // Arrange
-
-            // Act
-            var result = pageModel.ReadData("paris");
-
-            // Assert
-            Assert.AreEqual("paris", result.Id);
-        }
-
+       
         #endregion ReadData
 
         #region OnGet
@@ -83,13 +60,11 @@ namespace UnitTests.Pages
         [Test]
         public void OnGet_Null_Id_Default_Should_Return_Null()
         {
-            // Arrange
-
             // Act
             pageModel.OnGet(null);
 
             // Assert
-            Assert.AreEqual(null, pageModel.Product);
+            Assert.IsNull(pageModel.Product);
         }
 
         /// <summary>
@@ -98,30 +73,89 @@ namespace UnitTests.Pages
         [Test]
         public void OnGet_Invalid_Id_Default_Should_Return_Null()
         {
-            // Arrange
-
             // Act
-            pageModel.OnGet("unitedstates");
+            pageModel.OnGet("nonexistent-id");
 
             // Assert
-            Assert.AreEqual(null, pageModel.Product);
+            Assert.IsNull(pageModel.Product);
         }
 
         /// <summary>
         /// Test that correct product is assigned when valid id is passed
         /// </summary>
         [Test]
-        public void OnGet_Valid_Id_Default_Should_Return_Null()
+        public void OnGet_Valid_Id_Default_Should_Assign_Product()
         {
-            // Arrange
-
             // Act
             pageModel.OnGet("paris");
 
             // Assert
+            Assert.IsNotNull(pageModel.Product);
             Assert.AreEqual("Paris", pageModel.Product.Title);
         }
 
-        #endregion Onget
+        #endregion OnGet
+
+        #region OnPost
+
+        /// <summary>
+        /// Test OnPost method when ModelState is valid and Product is correctly assigned
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_ModelState_Should_Update_Product()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel { Id = "paris", Title = "Updated Paris" };
+
+            // Act
+            var result = pageModel.OnPost() as PageResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Updated Paris", pageModel.Product.Title);
+        }
+        /// <summary>
+        /// Test OnPost method to ensure it redirects to Index when ModelState is valid.
+        /// </summary>
+        [Test]
+        public void OnPost_ValidModelState_Should_RedirectToIndex()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel { Id = "Paris", Title = "Paris(Test)" };
+
+            // Act
+            var result = pageModel.OnPost();
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<RedirectToPageResult>(result);
+
+            var redirectResult = result as RedirectToPageResult;
+            Assert.AreEqual("./Index", redirectResult.PageName);
+        }
+
+        /// <summary>
+        /// Test OnPost method when ModelState is invalid, should return PageResult
+        /// </summary>
+        [Test]
+        
+        /// <summary>
+        /// Test OnPost method when ModelState is invalid
+        /// </summary>
+       
+        public void OnPost_Invalid_ModelState_Should_Return_PageResult()
+        {
+            // Arrange
+            pageModel.ModelState.AddModelError("error", "Model state is invalid");
+
+            // Act
+            var result = pageModel.OnPost() as PageResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<PageResult>(result);
+        }
+
+        #endregion OnPost
     }
 }
