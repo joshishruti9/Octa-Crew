@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
@@ -13,18 +12,12 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class IndexModel : PageModel
     {
-        // Keeps logs for IndexModel
-        private readonly ILogger<IndexModel> _logger;
-
         /// <summary>
         /// Initializer constructor
         /// </summary>
-        /// <param name="logger">Set to _logger</param>
         /// <param name="productService">Set to ProductService</param>
-        public IndexModel(ILogger<IndexModel> logger,
-            JsonFileProductService productService)
+        public IndexModel(JsonFileProductService productService)
         {
-            _logger = logger;
             ProductService = productService;
         }
 
