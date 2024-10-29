@@ -43,7 +43,11 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary mr-auto">Read More</button>
+        <button type="button"
+                class="btn btn-primary mr-auto"
+                @onclick="(e => NavigateToReadPage(selectedProduct.Id))">
+            Read More
+        </button>
           @if(voteCount == 0)
           {
             <span>Be the first to vote!</span>
