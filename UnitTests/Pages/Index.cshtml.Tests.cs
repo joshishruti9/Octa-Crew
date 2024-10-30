@@ -36,7 +36,6 @@ namespace UnitTests.Pages
 
             // Act
             pageModel.OnGet();
-            var result = TestHelper.ProductService.GetProducts();
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
