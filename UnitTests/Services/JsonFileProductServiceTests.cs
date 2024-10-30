@@ -1,6 +1,10 @@
-﻿using System.Linq;
-
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
+using UnitTests.Pages;
+
 
 namespace UnitTests.Services
 {
@@ -135,6 +139,89 @@ namespace UnitTests.Services
             Assert.AreEqual(5, dataNewList.Ratings.Last());
         }
 
-        #endregion AddRating
+        #endregion AddRating[Test]
+
+        /// <summary>
+        /// Test UpdateData method when product exists in the data source
+        /// </summary>
+        #region UpdateData
+
+        [Test]
+        public void UpdateData_Should_Update_Existing_Product()
+        {
+            // Arrange
+            var existingProduct = TestHelper.ProductService.GetAllData().First();
+            var updatedProduct = new ProductModel
+            {
+                Id = existingProduct.Id,
+                Title = "Updated Title",
+                Description = "Updated Description",
+                Images = new List<string> { "updated-image.jpg" }.ToArray(),
+                TimeZone = "PST",
+                
+                Currency = "USD",
+                Attractions = new List<string> { "Attraction1", "Attraction2", "Attraction3" }.ToArray()
+            };
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(updatedProduct);
+
+            // Assert
+            Assert.That(result, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.That(result.Title, Is.EqualTo("Updated Title"));
+                Assert.That(result.Description, Is.EqualTo("Updated Description"));
+                Assert.That(result.Images, Is.EqualTo(new List<string> { "updated-image.jpg" }));
+                Assert.That(result.TimeZone, Is.EqualTo("PST"));
+                Assert.That(result.BestSeason, Is.EqualTo("Winter"));
+                Assert.That(result.Currency, Is.EqualTo("USD"));
+                Assert.That(result.Attractions, Is.EqualTo(new List<string> { "Attraction1", "Attraction2" }));
+            });
+        }
+
+        [Test]
+        public void UpdateData_Should_Return_Null_If_Product_Not_Found()
+        {
+            // Arrange
+            var nonExistentProduct = new ProductModel
+            {
+                Id = "999",  // Assuming this ID does not exist
+                Title = "Non-existent Product",
+                Description = "Non-existent Description"
+            };
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(nonExistentProduct);
+
+            // Assert
+            Assert.That(result, Is.Null);
+        }
+
+        [Test]
+        public void UpdateData_Should_Trim_Description()
+        {
+            // Arrange
+            var existingProduct = TestHelper.ProductService.GetAllData().First();
+            var updatedProduct = new ProductModel
+            {
+                Id = existingProduct.Id,
+                Title = "Updated Title",
+                Description = "  Updated Description with extra spaces  "
+            };
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(updatedProduct);
+
+            // Assert
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.Description, Is.EqualTo("Updated Description with extra spaces"));
+        }
+
+        #endregion UpdateData
+
+
+
+
     }
 }
