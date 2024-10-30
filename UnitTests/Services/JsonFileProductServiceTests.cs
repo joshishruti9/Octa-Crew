@@ -174,7 +174,7 @@ namespace UnitTests.Services
                 Assert.That(result.Description, Is.EqualTo("Updated Description"));
                 Assert.That(result.Images, Is.EqualTo(new List<string> { "updated-image.jpg" }));
                 Assert.That(result.TimeZone, Is.EqualTo("PST"));
-                Assert.That(result.BestSeason, Is.EqualTo("Winter"));
+                Assert.That(result.BestSeason, Is.EqualTo(Season.Winter));
                 Assert.That(result.Currency, Is.EqualTo("USD"));
                 Assert.That(result.Attractions, Is.EqualTo(new List<string> { "Attraction1", "Attraction2" }));
             });
