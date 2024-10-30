@@ -158,9 +158,9 @@ namespace UnitTests.Services
                 Description = "Updated Description",
                 Images = new List<string> { "updated-image.jpg" }.ToArray(),
                 TimeZone = "PST",
-                
+                BestSeason = Season.Winter,
                 Currency = "USD",
-                Attractions = new List<string> { "Attraction1", "Attraction2", "Attraction3" }.ToArray()
+                Attractions = new List<string> { "Attraction1", "Attraction2" }.ToArray()
             };
 
             // Act
