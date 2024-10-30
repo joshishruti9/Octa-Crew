@@ -59,6 +59,11 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+        /// <summary>
+        /// Update all the fields of a city in the database
+        /// </summary>
+        /// <param name="data">The new data values</param>
+        /// <returns></returns>
         public ProductModel UpdateData(ProductModel data)
         {
             var products = GetAllData();
@@ -83,6 +88,10 @@ namespace ContosoCrafts.WebSite.Services
 
             return productData;
         }
+        
+    /// <summary>
+    /// Stores the list of cities and their associated data in the database
+    /// </summary>
         private void SaveData(IEnumerable<ProductModel> products)
         {
 
