@@ -47,7 +47,11 @@ namespace ContosoCrafts.WebSite.Services
                         PropertyNameCaseInsensitive = true
                     });
             }
-        }
+        } 
+        /// <summary>
+        /// Gets a list of cities with their data from the database
+        /// </summary>
+        /// <returns>List of ProductModels containing city data</returns>
         public IEnumerable<ProductModel> GetAllData()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
