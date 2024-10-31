@@ -2,6 +2,7 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.Pages;
+using System.Diagnostics;
 
 namespace UnitTests.Pages
 {
@@ -28,5 +29,22 @@ namespace UnitTests.Pages
 		}
 
 		#endregion TestSetup
+
+		#region OnGet
+		[Test]
+		public void OnGet_Valid_Activity_Set_Should_Have_Valid_State()
+		{
+			// Arrange
+
+			// Act
+			pageModel.OnGet();
+
+			// Reset
+
+			// Assert
+			Assert.That(pageModel.ModelState.IsValid, Is.EqualTo(true));
+		}
+
+		#endregion OnGet
 	}
 }
