@@ -103,14 +103,14 @@ namespace UnitTests.Pages
         {
             // Arrange
             pageModel.ModelState.AddModelError("Title", "Invalid title");
-            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+            var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
             var result = pageModel.OnPost();
 
             // Assert
             Assert.AreEqual(true, result.GetType().Equals(typeof(PageResult)));
-            Assert.AreEqual(countOriginal, TestHelper.ProductService.GetProducts().Count());
+            Assert.AreEqual(countOriginal, TestHelper.ProductService.GetAllData().Count());
         }
 
         /// <summary>
@@ -123,12 +123,12 @@ namespace UnitTests.Pages
             // Arrange
             pageModel.Product = defaultModel;
             var data = pageModel.Product;
-            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+            var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
             var result = pageModel.OnPost();
-            var dataNewList = TestHelper.ProductService.GetProducts();
-            var newProduct = TestHelper.ProductService.GetProducts().First(x => x.Id.Equals(data.Id));
+            var dataNewList = TestHelper.ProductService.GetAllData();
+            var newProduct = TestHelper.ProductService.GetAllData().First(x => x.Id.Equals(data.Id));
 
             // Assert
             Assert.AreEqual(countOriginal + 1, dataNewList.Count());
@@ -165,12 +165,12 @@ namespace UnitTests.Pages
             };
             // ProductModel for the page
             var data = pageModel.Product;
-            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+            var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
             var result = pageModel.OnPost();
-            var dataNewList = TestHelper.ProductService.GetProducts();
-            var newProduct = TestHelper.ProductService.GetProducts().First(x => x.Id.Equals(data.Id));
+            var dataNewList = TestHelper.ProductService.GetAllData();
+            var newProduct = TestHelper.ProductService.GetAllData().First(x => x.Id.Equals(data.Id));
 
             // Assert
             Assert.AreEqual(countOriginal + 1, dataNewList.Count());
