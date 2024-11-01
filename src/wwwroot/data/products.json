@@ -13,6 +13,7 @@
     "TimeZone": "GMT+2",
     "Attractions": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
     "Cost": 2550,
+    "TravelTime": 10.5,
     "Ratings": [
       5,
       5,
@@ -34,8 +35,9 @@
     "BestSeason": 2,
     "Currency": "Euro",
     "TimeZone": "GMT+2",
-    "Attractions": ["Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain"],
+    "Attractions": [ "Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain" ],
     "Cost": 2050,
+    "TravelTime": 13,
     "Ratings": null
   },
   {
@@ -50,8 +52,9 @@
     "BestSeason": 1,
     "Currency": "Pound",
     "TimeZone": "GMT+1",
-    "Attractions": ["Big Ben & Houses of Parliament", "Tower of London", "British Museum"],
+    "Attractions": [ "Big Ben & Houses of Parliament", "Tower of London", "British Museum" ],
     "Cost": 3100,
+    "TravelTime": 9.5,
     "Ratings": null
   },
   {
@@ -66,8 +69,9 @@
     "BestSeason": 0,
     "Currency": "Yen",
     "TimeZone": "GMT+9",
-    "Attractions": ["Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree"],
+    "Attractions": [ "Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree" ],
     "Cost": 2900,
+    "TravelTime": 10,
     "Ratings": null
   },
   {
@@ -82,8 +86,9 @@
     "BestSeason": 2,
     "Currency": "Canadian Dollar",
     "TimeZone": "GMT-7",
-    "Attractions": ["Stanley Park", "Granville Island", "Capilano Suspension Bridge"],
+    "Attractions": [ "Stanley Park", "Granville Island", "Capilano Suspension Bridge" ],
     "Cost": 2450,
+    "TravelTime": 1,
     "Ratings": null
   },
   {
@@ -98,8 +103,9 @@
     "BestSeason": 1,
     "Currency": "Euro",
     "TimeZone": "GMT+2",
-    "Attractions": ["Rijksmuseum", "Anne Frank House", "Van Gogh Museum"],
+    "Attractions": [ "Rijksmuseum", "Anne Frank House", "Van Gogh Museum" ],
     "Cost": 2450,
+    "TravelTime": 10,
     "Ratings": null
   },
   {
@@ -114,8 +120,9 @@
     "BestSeason": 2,
     "Currency": "US Dollar",
     "TimeZone": "GMT-10",
-    "Attractions": ["Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial"],
+    "Attractions": [ "Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial" ],
     "Cost": 3300,
+    "TravelTime": 6,
     "Ratings": null
   },
   {
@@ -131,8 +138,12 @@
     "Currency": "Euro",
     "TimeZone": "GMT+2",
     "Attractions": [
-      "Sagrada Familia", "Park Güell", "La Rambla" ],
+      "Sagrada Familia",
+      "Park Güell",
+      "La Rambla"
+    ],
     "Cost": 2350,
+    "TravelTime": 12.5,
     "Ratings": [
       4
     ]
@@ -149,8 +160,9 @@
     "BestSeason": 0,
     "Currency": "Australian Dollar",
     "TimeZone": "GMT+11",
-    "Attractions": ["Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach"],
+    "Attractions": [ "Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach" ],
     "Cost": 3100,
+    "TravelTime": 15,
     "Ratings": null
   },
   {
@@ -165,8 +177,9 @@
     "BestSeason": 0,
     "Currency": "South African Rand",
     "TimeZone": "GMT+2",
-    "Attractions": ["Table Mountain", "V&A Waterfront", "Cape of Good Hope"],
+    "Attractions": [ "Table Mountain", "V&A Waterfront", "Cape of Good Hope" ],
     "Cost": 1800,
+    "TravelTime": 21,
     "Ratings": null
   },
   {
@@ -181,8 +194,9 @@
     "BestSeason": 2,
     "Currency": "Lira",
     "TimeZone": "GMT+3",
-    "Attractions": ["Hagia Sophia", "Blue Mosque", "Grand Bazaar"],
+    "Attractions": [ "Hagia Sophia", "Blue Mosque", "Grand Bazaar" ],
     "Cost": 1450,
+    "TravelTime": 13,
     "Ratings": null
   },
   {
@@ -197,8 +211,9 @@
     "BestSeason": 0,
     "Currency": "Singapore Dollar",
     "TimeZone": "GMT+8",
-    "Attractions": ["Marina Bay Sands", "Gardens by the Bay", "Sentosa Island"],
+    "Attractions": [ "Marina Bay Sands", "Gardens by the Bay", "Sentosa Island" ],
     "Cost": 2650,
+    "TravelTime": 16,
     "Ratings": null
   },
   {
@@ -213,8 +228,9 @@
     "BestSeason": 2,
     "Currency": "Yen",
     "TimeZone": "GMT+9",
-    "Attractions": ["Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove"],
+    "Attractions": [ "Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove" ],
     "Cost": 2050,
+    "TravelTime": 10,
     "Ratings": null
   },
   {
@@ -229,8 +245,9 @@
     "BestSeason": 2,
     "Currency": "Hong Kong Dollar",
     "TimeZone": "GMT+8",
-    "Attractions": ["Victoria Peak", "Star Ferry", "Temple Street Night Market"],
+    "Attractions": [ "Victoria Peak", "Star Ferry", "Temple Street Night Market" ],
     "Cost": 3100,
+    "TravelTime": 13,
     "Ratings": null
   },
   {
@@ -245,8 +262,9 @@
     "BestSeason": 2,
     "Currency": "US Dollar",
     "TimeZone": "GMT-4",
-    "Attractions": ["Statue of Liberty", "Central Park", "Times Square"],
+    "Attractions": [ "Statue of Liberty", "Central Park", "Times Square" ],
     "Cost": 3300,
+    "TravelTime": 5,
     "Ratings": null
   },
   {
@@ -261,8 +279,9 @@
     "BestSeason": 2,
     "Currency": "Euro",
     "TimeZone": "GMT+3",
-    "Attractions": ["Acropolis", "Temple of Olympian Zeus", "Plaka"],
+    "Attractions": [ "Acropolis", "Temple of Olympian Zeus", "Plaka" ],
     "Cost": 1800,
+    "TravelTime": 14,
     "Ratings": null
   },
   {
@@ -278,8 +297,12 @@
     "Currency": "Canadian Dollar",
     "TimeZone": "GMT-4",
     "Attractions": [
-      "Old Montreal (Vieux-Montréal)", "Mount Royal Park", "Notre-Dame Basilica" ],
+      "Old Montreal (Vieux-Montréal)",
+      "Mount Royal Park",
+      "Notre-Dame Basilica"
+    ],
     "Cost": 2200,
+    "TravelTime": 5.5,
     "Ratings": null
   },
   {
@@ -294,8 +317,9 @@
     "BestSeason": 3,
     "Currency": "Dirham",
     "TimeZone": "GMT+4",
-    "Attractions": ["Burj Khalifa", "The Dubai Mall", "Palm Jumeirah"],
+    "Attractions": [ "Burj Khalifa", "The Dubai Mall", "Palm Jumeirah" ],
     "Cost": 3100,
+    "TravelTime": 15,
     "Ratings": null
   },
   {
@@ -310,8 +334,9 @@
     "BestSeason": 3,
     "Currency": "Baht",
     "TimeZone": "GMT+7",
-    "Attractions": ["Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market"],
+    "Attractions": [ "Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market" ],
     "Cost": 1350,
+    "TravelTime": 16,
     "Ratings": null
   },
   {
@@ -326,8 +351,9 @@
     "BestSeason": 0,
     "Currency": "Czech Koruna",
     "TimeZone": "GMT+2",
-    "Attractions": ["Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock"],
+    "Attractions": [ "Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock" ],
     "Cost": 1800,
+    "TravelTime": 12.5,
     "Ratings": null
   }
 ]
