@@ -25,7 +25,7 @@
 
         @for (int i = 0; i < Model.Product.Images.Length; i++)
         {
-            <label asp-for="Product.Images[@i]" class="control-label"></label>
+            <label asp-for="Product.Images[@i]" class="control-label">Image @(i + 1)</label>
             <input asp-for="Product.Images[@i]" class="form-control mb-2" />
             <span asp-validation-for="Product.Images[@i]" class="text-danger"></span>
         }
@@ -50,7 +50,7 @@
 
         @for (int i = 0; i < Model.Product.Attractions.Length; i++)
         {
-            <label asp-for="Product.Attractions[@i]" class="control-label"></label>
+            <label asp-for="Product.Attractions[@i]" class="control-label">Attraction @(i + 1)</label>
             <input asp-for="Product.Attractions[@i]" class="form-control mb-2" />
             <span asp-validation-for="Product.Attractions[@i]" class="text-danger"></span>
         }
