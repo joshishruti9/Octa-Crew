@@ -50,6 +50,9 @@ namespace ContosoCrafts.WebSite.Models
         // The amount a typical 1-week visit would cost in this city
         public int Cost { get; set; }
         
+        // The time it takes to travel to the city from Seattle in hours
+        public int TravelTime { get; set; }
+
         /// <summary>
         /// Represents the ProductModel as a json string
         /// </summary>
