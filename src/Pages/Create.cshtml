@@ -13,57 +13,57 @@
 
         <div class="form-group">
             <label asp-for="Product.Title" class="control-label"></label>
-            <input asp-for="Product.Title" class="form-control" placeholder="Enter City Name" />
+            <input asp-for="Product.Title" class="form-control" />
             <span asp-validation-for="Product.Title" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.Description" class="control-label"></label>
-            <input asp-for="Product.Description" class="form-control" placeholder="Enter Description" />
+            <input asp-for="Product.Description" class="form-control" />
             <span asp-validation-for="Product.Description" class="text-danger"></span>
         </div>
 
         @for (int i = 0; i < Model.Product.Images.Length; i++)
         {
             <label asp-for="Product.Images[@i]" class="control-label"></label>
-            <input asp-for="Product.Images[@i]" class="form-control mb-2" placeholder="Enter URL" />
+            <input asp-for="Product.Images[@i]" class="form-control mb-2" />
             <span asp-validation-for="Product.Images[@i]" class="text-danger"></span>
         }
 
         <div class="form-group">
             <label asp-for="Product.BestSeason" class="control-label"></label>
-            <input asp-for="Product.BestSeason" class="form-control" placeholder="Enter Best Season"/>
+            <input asp-for="Product.BestSeason" class="form-control" placeholder="Enter Best Season to Visit"/>
             <span asp-validation-for="Product.BestSeason" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.Currency" class="control-label"></label>
-            <input asp-for="Product.Currency" class="form-control" placeholder="Enter Currency" />
+            <input asp-for="Product.Currency" class="form-control" />
             <span asp-validation-for="Product.Currency" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.TimeZone" class="control-label"></label>
-            <input asp-for="Product.TimeZone" class="form-control" placeholder="Enter Time Zone" />
+            <input asp-for="Product.TimeZone" class="form-control" />
             <span asp-validation-for="Product.TimeZone" class="text-danger"></span>
         </div>
 
         @for (int i = 0; i < Model.Product.Attractions.Length; i++)
         {
             <label asp-for="Product.Attractions[@i]" class="control-label"></label>
-            <input asp-for="Product.Attractions[@i]" class="form-control mb-2" placeholder="Enter an Attraction" />
+            <input asp-for="Product.Attractions[@i]" class="form-control mb-2" />
             <span asp-validation-for="Product.Attractions[@i]" class="text-danger"></span>
         }
 
         <div class="form-group">
             <label asp-for="Product.Cost" class="control-label"></label>
-            <input asp-for="Product.Cost" class="form-control" placeholder="Enter Average Cost" />
+            <input asp-for="Product.Cost" class="form-control" />
             <span asp-validation-for="Product.TimeZone" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.TravelTime" class="control-label"></label>
-            <input asp-for="Product.TravelTime" class="form-control" placeholder="Enter Travel Time" />
+            <input asp-for="Product.TravelTime" class="form-control" />
             <span asp-validation-for="Product.TravelTime" class="text-danger"></span>
         </div>
 
