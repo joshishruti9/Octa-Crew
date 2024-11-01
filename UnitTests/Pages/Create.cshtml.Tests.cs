@@ -9,6 +9,9 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace UnitTests.Pages
 {
@@ -22,6 +25,9 @@ namespace UnitTests.Pages
         // page model for the CRUDi Create page
         static CreateModel pageModel;
 
+        // the ProductModel with default values filled in
+        static ProductModel defaultModel;
+
         /// <summary>
         /// Called before each test is called.
         /// Sets up necessary test context or variables
@@ -30,17 +36,44 @@ namespace UnitTests.Pages
         public void Setup()
         {
             pageModel = new CreateModel(TestHelper.ProductService);
+            defaultModel = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[3]
+                {
+                    "Enter URL",
+                    "Enter URL",
+                    "Enter URL"
+                },
+                Title = "Enter City Name",
+                Description = "Enter City Description",
+                BestSeason = null,
+                Currency = "Enter Currency",
+                TimeZone = "Enter Time Zone",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
         }
 
         #endregion
 
         #region OnGet
 
+        /// <summary>
+        /// Test that OnGet correctly sets the page's Product values to the defaults
+        /// </summary>
         [Test]
         public void OnGet_Valid_Default_Should_Set_Default_Values()
         {
             // Arrange
-            var data = TestHelper.ProductService.CreateData();
+            var data = defaultModel;
 
             // Act
             pageModel.OnGet();
