@@ -47,6 +47,9 @@ namespace ContosoCrafts.WebSite.Models
         // Ratings added by users for how nice the city is to visit
         public int[] Ratings { get; set; }
 
+        // The amount a typical 1-week visit would cost in this city
+        public int Cost { get; set; }
+        
         /// <summary>
         /// Represents the ProductModel as a json string
         /// </summary>
