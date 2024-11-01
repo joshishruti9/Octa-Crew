@@ -143,6 +143,9 @@ namespace UnitTests.Services
 
         #region CreateData
 
+        /// <summary>
+        /// Test that CreateData returns a ProductModel object with the expected default values
+        /// </summary>
         [Test]
         public void CreateData_Valid_Default_Should_Return_Default_Fields()
         {
