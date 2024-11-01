@@ -74,13 +74,23 @@ namespace ContosoCrafts.WebSite.Services
             var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
-                Images = new string[3],
-                Title = null,
-                Description = null,
+                Images = new string[3]
+                {
+                    "Enter URL",
+                    "Enter URL",
+                    "Enter URL"
+                },
+                Title = "Enter City Name",
+                Description = "Enter City Description",
                 BestSeason = null,
-                Currency = null,
-                TimeZone = null,
-                Attractions = new string[3],
+                Currency = "Enter Currency",
+                TimeZone = "Enter Time Zone",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
                 Cost = 0,
                 TravelTime = 0.0,
                 Ratings = null
