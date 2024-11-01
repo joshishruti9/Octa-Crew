@@ -183,17 +183,7 @@ namespace ContosoCrafts.WebSite.Services
             ratings.Add(rating);
             products.First(x => x.Id == productId).Ratings = ratings.ToArray();
           
-            using(var outputStream = File.OpenWrite(JsonFileName))
-            {
-                JsonSerializer.Serialize<IEnumerable<ProductModel>>(
-                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
-                    {
-                        SkipValidation = true,
-                        Indented = true
-                    }), 
-                    products
-                );
-            }
+            SaveData( products );
 
             return true;
         }
