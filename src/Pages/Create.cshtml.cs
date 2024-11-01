@@ -41,6 +41,11 @@ namespace ContosoCrafts.WebSite.Pages
         /// <returns>The result of the Post request</returns>
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             var dataSet = ProductService.GetAllData();
             dataSet = dataSet.Append(Product);
 
