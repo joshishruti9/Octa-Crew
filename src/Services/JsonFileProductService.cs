@@ -63,6 +63,32 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         }
+
+        /// <summary>
+        /// Creates a ProductModel object to be used for creation of a new city in the database
+        /// </summary>
+        /// <returns>ProductModel object with default values filled in</returns>
+        public ProductModel CreateData()
+        {
+            // Create a new city with default attributes
+            var data = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[3],
+                Title = "Enter Title",
+                Description = "Enter Description",
+                BestSeason = null,
+                Currency = "Enter Currency",
+                TimeZone = "Enter Time Zone",
+                Attractions = new string[3],
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
+
+            return data;
+        }
+
         /// <summary>
         /// Update all the fields of a city in the database
         /// </summary>
