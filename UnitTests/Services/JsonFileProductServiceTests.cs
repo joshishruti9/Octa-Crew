@@ -141,6 +141,45 @@ namespace UnitTests.Services
 
         #endregion AddRating[Test]
 
+        #region CreateData
+
+        [Test]
+        public void CreateData_Valid_Default_Should_Return_Default_Fields()
+        {
+            // Arrange
+            var data = new ProductModel
+            {
+                Id = null,
+                Images = new string[3],
+                Title = null,
+                Description = null,
+                BestSeason = null,
+                Currency = null,
+                TimeZone = null,
+                Attractions = new string[3],
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
+
+            // Act
+            var result = TestHelper.ProductService.CreateData();
+
+            // Assert
+            Assert.AreEqual(true, data.Images.SequenceEqual(result.Images));
+            Assert.AreEqual(data.Title, result.Title);
+            Assert.AreEqual(data.Description, result.Description);
+            Assert.AreEqual(result.BestSeason, result.BestSeason);
+            Assert.AreEqual(data.Currency, result.Currency);
+            Assert.AreEqual(data.TimeZone, result.TimeZone);
+            Assert.AreEqual(true, data.Attractions.SequenceEqual(result.Attractions));
+            Assert.AreEqual(data.Cost, result.Cost);
+            Assert.AreEqual(data.TravelTime, result.TravelTime);
+            Assert.AreEqual(data.Ratings, result.Ratings);
+        }
+
+        #endregion CreateData
+
         /// <summary>
         /// Test UpdateData method when product exists in the data source
         /// </summary>
