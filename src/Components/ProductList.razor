@@ -5,7 +5,7 @@
 @inject NavigationManager Navigation
 
 <div class="card-columns">
-@foreach (var product in ProductService.GetProducts())
+@foreach (var product in ProductService.GetAllData())
 {
     <div class="card">
         <div class="card-img" style="background-image: url('@product.Images[0]');">
@@ -84,7 +84,7 @@
     void SelectProduct(string productId)
     {
         selectedProductId = productId;
-        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        selectedProduct = ProductService.GetAllData().First(x => x.Id == productId);
         GetCurrentRating();
     }
 

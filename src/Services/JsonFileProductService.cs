@@ -37,7 +37,7 @@ namespace ContosoCrafts.WebSite.Services
         /// Gets a list of cities with their data from the database
         /// </summary>
         /// <returns>List of ProductModels containing city data</returns>
-        public IEnumerable<ProductModel> GetProducts()
+        public IEnumerable<ProductModel> GetAllData()
         {
             using(var jsonFileReader = File.OpenText(JsonFileName))
             {
@@ -48,21 +48,6 @@ namespace ContosoCrafts.WebSite.Services
                     });
             }
         } 
-        /// <summary>
-        /// Gets a list of cities with their data from the database
-        /// </summary>
-        /// <returns>List of ProductModels containing city data</returns>
-        public IEnumerable<ProductModel> GetAllData()
-        {
-            using (var jsonFileReader = File.OpenText(JsonFileName))
-            {
-                return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-            }
-        }
 
         /// <summary>
         /// Creates a ProductModel object to be used for creation of a new city in the database
@@ -166,7 +151,7 @@ namespace ContosoCrafts.WebSite.Services
             }
 
             // List of all cities
-            var products = GetProducts();
+            var products = GetAllData();
 
             // Look up the city, if it does not exist, return
             var data = products.FirstOrDefault(x => x.Id.Equals(productId));
