@@ -70,7 +70,7 @@ namespace UnitTests.Services
             // Arrange
 
             // Get the first data item
-            var data = TestHelper.ProductService.GetProducts().First();
+            var data = TestHelper.ProductService.GetAllData().First();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, -1);
@@ -88,7 +88,7 @@ namespace UnitTests.Services
             // Arrange
 
             // Get the first data item
-            var data = TestHelper.ProductService.GetProducts().First();
+            var data = TestHelper.ProductService.GetAllData().First();
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 6);
@@ -106,11 +106,11 @@ namespace UnitTests.Services
             // Arrange
 
             // Attempt to get the first null data item
-            var data = TestHelper.ProductService.GetProducts().First(e => e.Ratings == null);
+            var data = TestHelper.ProductService.GetAllData().First(e => e.Ratings == null);
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
-            var dataNewList = TestHelper.ProductService.GetProducts().First(e => e.Id == data.Id);
+            var dataNewList = TestHelper.ProductService.GetAllData().First(e => e.Id == data.Id);
 
             // Assert
             Assert.AreEqual(true, result);
@@ -126,12 +126,12 @@ namespace UnitTests.Services
             // Arrange
 
             // Get the First data item
-            var data = TestHelper.ProductService.GetProducts().First();
+            var data = TestHelper.ProductService.GetAllData().First();
             var countOriginal = data.Ratings.Length;
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
-            var dataNewList = TestHelper.ProductService.GetProducts().First();
+            var dataNewList = TestHelper.ProductService.GetAllData().First();
 
             // Assert
             Assert.AreEqual(result, true);
