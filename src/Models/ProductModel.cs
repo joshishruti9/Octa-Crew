@@ -51,7 +51,7 @@ namespace ContosoCrafts.WebSite.Models
         public int Cost { get; set; }
         
         // The time it takes to travel to the city from Seattle in hours
-        public int TravelTime { get; set; }
+        public double TravelTime { get; set; }
 
         /// <summary>
         /// Represents the ProductModel as a json string
