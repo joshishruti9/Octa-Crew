@@ -12,6 +12,7 @@
     "Currency": "Euro",
     "TimeZone": "GMT+2",
     "Attractions": ["Eiffel Tower", "Louvre Museum", "Notre-Dame Cathedral"],
+    "Cost": 2550,
     "Ratings": [
       5,
       5,
@@ -34,6 +35,7 @@
     "Currency": "Euro",
     "TimeZone": "GMT+2",
     "Attractions": ["Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain"],
+    "Cost": 2050,
     "Ratings": null
   },
   {
@@ -49,6 +51,7 @@
     "Currency": "Pound",
     "TimeZone": "GMT+1",
     "Attractions": ["Big Ben & Houses of Parliament", "Tower of London", "British Museum"],
+    "Cost": 3100,
     "Ratings": null
   },
   {
@@ -64,6 +67,7 @@
     "Currency": "Yen",
     "TimeZone": "GMT+9",
     "Attractions": ["Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree"],
+    "Cost": 2900,
     "Ratings": null
   },
   {
@@ -79,6 +83,7 @@
     "Currency": "Canadian Dollar",
     "TimeZone": "GMT-7",
     "Attractions": ["Stanley Park", "Granville Island", "Capilano Suspension Bridge"],
+    "Cost": 2450,
     "Ratings": null
   },
   {
@@ -94,6 +99,7 @@
     "Currency": "Euro",
     "TimeZone": "GMT+2",
     "Attractions": ["Rijksmuseum", "Anne Frank House", "Van Gogh Museum"],
+    "Cost": 2450,
     "Ratings": null
   },
   {
@@ -109,6 +115,7 @@
     "Currency": "US Dollar",
     "TimeZone": "GMT-10",
     "Attractions": ["Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial"],
+    "Cost": 3300,
     "Ratings": null
   },
   {
@@ -125,6 +132,7 @@
     "TimeZone": "GMT+2",
     "Attractions": [
       "Sagrada Familia", "Park Güell", "La Rambla" ],
+    "Cost": 2350,
     "Ratings": [
       4
     ]
@@ -142,6 +150,7 @@
     "Currency": "Australian Dollar",
     "TimeZone": "GMT+11",
     "Attractions": ["Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach"],
+    "Cost": 3100,
     "Ratings": null
   },
   {
@@ -157,6 +166,7 @@
     "Currency": "South African Rand",
     "TimeZone": "GMT+2",
     "Attractions": ["Table Mountain", "V&A Waterfront", "Cape of Good Hope"],
+    "Cost": 1800,
     "Ratings": null
   },
   {
@@ -172,6 +182,7 @@
     "Currency": "Lira",
     "TimeZone": "GMT+3",
     "Attractions": ["Hagia Sophia", "Blue Mosque", "Grand Bazaar"],
+    "Cost": 1450,
     "Ratings": null
   },
   {
@@ -187,6 +198,7 @@
     "Currency": "Singapore Dollar",
     "TimeZone": "GMT+8",
     "Attractions": ["Marina Bay Sands", "Gardens by the Bay", "Sentosa Island"],
+    "Cost": 2650,
     "Ratings": null
   },
   {
@@ -202,6 +214,7 @@
     "Currency": "Yen",
     "TimeZone": "GMT+9",
     "Attractions": ["Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove"],
+    "Cost": 2050,
     "Ratings": null
   },
   {
@@ -217,6 +230,7 @@
     "Currency": "Hong Kong Dollar",
     "TimeZone": "GMT+8",
     "Attractions": ["Victoria Peak", "Star Ferry", "Temple Street Night Market"],
+    "Cost": 3100,
     "Ratings": null
   },
   {
@@ -232,6 +246,7 @@
     "Currency": "US Dollar",
     "TimeZone": "GMT-4",
     "Attractions": ["Statue of Liberty", "Central Park", "Times Square"],
+    "Cost": 3300,
     "Ratings": null
   },
   {
@@ -247,6 +262,7 @@
     "Currency": "Euro",
     "TimeZone": "GMT+3",
     "Attractions": ["Acropolis", "Temple of Olympian Zeus", "Plaka"],
+    "Cost": 1800,
     "Ratings": null
   },
   {
@@ -263,6 +279,7 @@
     "TimeZone": "GMT-4",
     "Attractions": [
       "Old Montreal (Vieux-Montréal)", "Mount Royal Park", "Notre-Dame Basilica" ],
+    "Cost": 2200,
     "Ratings": null
   },
   {
@@ -278,6 +295,7 @@
     "Currency": "Dirham",
     "TimeZone": "GMT+4",
     "Attractions": ["Burj Khalifa", "The Dubai Mall", "Palm Jumeirah"],
+    "Cost": 3100,
     "Ratings": null
   },
   {
@@ -293,6 +311,7 @@
     "Currency": "Baht",
     "TimeZone": "GMT+7",
     "Attractions": ["Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market"],
+    "Cost": 1350,
     "Ratings": null
   },
   {
@@ -308,6 +327,7 @@
     "Currency": "Czech Koruna",
     "TimeZone": "GMT+2",
     "Attractions": ["Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock"],
+    "Cost": 1800,
     "Ratings": null
   }
 ]
