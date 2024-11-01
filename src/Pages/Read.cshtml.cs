@@ -43,7 +43,7 @@ namespace ContosoCrafts.WebSite.Pages
         /// <returns>ProductModel object for the given city, or null if not found</returns>
         public ProductModel ReadData(string id)
         {
-            return ProductService.GetProducts().FirstOrDefault(x => x.Id.Equals(id));
+            return ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
     }
 }
