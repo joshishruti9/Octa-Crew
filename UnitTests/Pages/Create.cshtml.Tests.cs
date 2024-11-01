@@ -92,5 +92,93 @@ namespace UnitTests.Pages
         }
 
         #endregion OnGet
+
+        #region OnPost
+
+        /// <summary>
+        /// Test that a city is not added to the database if the ModelState is invalid
+        /// </summary>
+        [Test]
+        public void OnPost_InValid_Invalid_ModelState_Should_Not_Add_City()
+        {
+            // Arrange
+            pageModel.ModelState.AddModelError("Title", "Invalid title");
+            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+
+            // Act
+            var result = pageModel.OnPost();
+
+            // Assert
+            Assert.AreEqual(true, result.GetType().Equals(typeof(PageResult)));
+            Assert.AreEqual(countOriginal, TestHelper.ProductService.GetProducts().Count());
+        }
+
+        /// <summary>
+        /// Test that OnPost successfully adds a city to the database when the 
+        /// default values are passed in.
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_Default_Should_Add_City()
+        {
+            // Arrange
+            pageModel.Product = defaultModel;
+            var data = pageModel.Product;
+            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+
+            // Act
+            var result = pageModel.OnPost();
+            var dataNewList = TestHelper.ProductService.GetProducts();
+            var newProduct = TestHelper.ProductService.GetProducts().First(x => x.Id.Equals(data.Id));
+
+            // Assert
+            Assert.AreEqual(countOriginal + 1, dataNewList.Count());
+            Assert.AreEqual(true, data.ToString().Equals(newProduct.ToString()));
+            Assert.AreEqual(true, TestHelper.ModelState.IsValid);
+            Assert.AreEqual("./Index", (result as RedirectToPageResult).PageName);
+        }
+
+        /// <summary>
+        /// Test that OnPost successfully adds a city to the database when custom 
+        /// values are passed in.
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_Custom_Should_Add_City()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Title = "Custom City",
+                Description = "Custom Description",
+                BestSeason = Season.Spring,
+                Currency = "Dollar",
+                TimeZone = "PDT",
+                Attractions = new string[3]
+                {
+                    "Attraction 1",
+                    "Attraction 2",
+                    "Attraction 3"
+                },
+                Cost = 2000,
+                TravelTime = 9.5,
+                Ratings = null
+            };
+            // ProductModel for the page
+            var data = pageModel.Product;
+            var countOriginal = TestHelper.ProductService.GetProducts().Count();
+
+            // Act
+            var result = pageModel.OnPost();
+            var dataNewList = TestHelper.ProductService.GetProducts();
+            var newProduct = TestHelper.ProductService.GetProducts().First(x => x.Id.Equals(data.Id));
+
+            // Assert
+            Assert.AreEqual(countOriginal + 1, dataNewList.Count());
+            Assert.AreEqual(true, data.ToString().Equals(newProduct.ToString()));
+            Assert.AreEqual(true, TestHelper.ModelState.IsValid);
+            Assert.AreEqual("./Index", (result as RedirectToPageResult).PageName);
+        }
+
+        #endregion OnPost
     }
 }
