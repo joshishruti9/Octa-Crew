@@ -103,6 +103,8 @@ namespace UnitTests.Pages
         {
             // Arrange
             pageModel.ModelState.AddModelError("Title", "Invalid title");
+
+            // number of cities in the database before calling OnPost
             var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
@@ -122,12 +124,20 @@ namespace UnitTests.Pages
         {
             // Arrange
             pageModel.Product = defaultModel;
+
+            // the ProductModel for the page
             var data = pageModel.Product;
+
+            // number of cities in the database before calling OnPost
             var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
             var result = pageModel.OnPost();
+
+            // the cities in the database after calling OnPost
             var dataNewList = TestHelper.ProductService.GetAllData();
+
+            // the new city added by OnPost
             var newProduct = TestHelper.ProductService.GetAllData().First(x => x.Id.Equals(data.Id));
 
             // Assert
@@ -165,11 +175,17 @@ namespace UnitTests.Pages
             };
             // ProductModel for the page
             var data = pageModel.Product;
+
+            // number of cities in the database before calling OnPost
             var countOriginal = TestHelper.ProductService.GetAllData().Count();
 
             // Act
             var result = pageModel.OnPost();
+
+            // the cities in the database after calling OnPost
             var dataNewList = TestHelper.ProductService.GetAllData();
+
+            // the new city added by OnPost
             var newProduct = TestHelper.ProductService.GetAllData().First(x => x.Id.Equals(data.Id));
 
             // Assert
