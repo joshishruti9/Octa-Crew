@@ -6,12 +6,17 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+    /// <summary>
+    /// Model for the Update page allows user to update values in the database
+    /// </summary>
     public class UpdateModel : PageModel
     {
         // Data #middletier
         public JsonFileProductService ProductService { get; }
 
-        /// <summary> Default Constructor </summary>
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public UpdateModel(JsonFileProductService productService)
         {
             ProductService = productService;
@@ -21,13 +26,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
         [BindProperty]
         public ProductModel Product { get; set; }
 
-        /// <summary> REST Get request Loads the Data </summary>
+        /// <summary>
+        /// REST Get request Loads the Data
+        /// </summary>
         public void OnGet(string id)
         {
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
-        /// <summary> Post the model back to the page. The model is in the class variable. </summary>
+        /// <summary>
+        /// Post the model back to the page. The model is in the class variable.
+        /// </summary>
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
