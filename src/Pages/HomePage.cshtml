@@ -1,4 +1,114 @@
 ﻿@page
-@model ContosoCrafts.WebSite.Pages.Index1Model
+@model ContosoCrafts.WebSite.Pages.Pages_HomePage;
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Vacation Destination</title>
+    <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background-color: #f3f4f6;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+          position: relative;
+          width: 80%;
+          max-width: 1000px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Slide Images */
+        .mySlides {
+          display: none;
+          width: 100%;
+          height: 500px;
+          object-fit: cover;
+        }
+
+        /* Fade Animation */
+        .fade {
+          animation: fade 1.5s;
+        }
+
+        
+
+        /* Links Container */
+        .link-container {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+
+        /* Link Styling */
+        .link {
+          text-decoration: none;
+          color: #333;
+          font-size: 18px;
+          padding: 10px 20px;
+          border-radius: 4px;
+          background-color: #e2e8f0;
+          transition: background-color 0.3s;
+        }
+
+        .link:hover {
+          background-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <img class="mySlides fade" src="image1.jpg" alt="Beautiful Scenery 1">
+        <img class="mySlides fade" src="image2.jpg" alt="Beautiful Scenery 2">
+        <img class="mySlides fade" src="image3.jpg" alt="Beautiful Scenery 3">
+        <img class="mySlides fade" src="image4.jpg" alt="Beautiful Scenery 4">
+    </div>
+
+    <!-- Links Container -->
+    <div class="link-container">
+        <a href="index.html" class="link">Home</a>
+        <a href="cities.html" class="link">Cities</a>
+        <a href="tips.html" class="link">Travel Tips</a>
+    </div>
+
+    <!-- JavaScript for Automatic Slideshow -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          const slides = document.getElementsByClassName("mySlides");
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+</body>
+</html>
