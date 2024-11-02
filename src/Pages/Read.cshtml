@@ -27,7 +27,7 @@
 
     <p class="description">@Model.Product.Description</p>
     
-            <dl>
+        <dl>
                 <dt>Information:</dt>
 
                 <dd>Best season to visit: @Model.Product.BestSeason.ToString()</dd>
@@ -47,6 +47,7 @@
                 <dd class="card-text">@attraction</dd>
             }
             </dt>
+
         </dl>
 
     <p>Rating: 
@@ -79,11 +80,13 @@
             }
 
         }
+
         <div>
 
             <a asp-page="Update/" asp-route-id="@Model.Product.Id" class="btn btn-update">Update</a>
 
         </div>
+
     </p>
 
 </div>
