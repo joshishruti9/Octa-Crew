@@ -17,6 +17,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// Default Constructor
         /// </summary>
+        /// <param name="productService">Set to ProductService</param>
         public UpdateModel(JsonFileProductService productService)
         {
             ProductService = productService;
@@ -29,6 +30,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// REST Get request Loads the Data
         /// </summary>
+        /// <param name="id">The city id taken from the update page</param>
         public void OnGet(string id)
         {
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
