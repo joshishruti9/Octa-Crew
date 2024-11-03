@@ -10,9 +10,11 @@
     <div class="card">
         <div class="card-img" style="background-image: url('@product.Images[0]');">
         </div>
+
         <div class="card-body">
             <h5 class="card-title">@product.Title</h5>
         </div>
+
         <div class="card-footer">
             <small class="text-muted"><button @onclick="(e => SelectProduct(product.Id))" 
               data-toggle="modal" data-target="#productModal" class="btn btn-primary">Explore More...</button>
@@ -33,6 +35,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+
         <div class="modal-body">
           <div class="card">
             <div class="card-img" style="background-image: url('@selectedProduct.Images[0]');">
@@ -43,11 +46,13 @@
           </div>
         </div>
         <div class="modal-footer">
+
         <button type="button"
                 class="btn btn-primary mr-auto"
                 @onclick="(e => NavigateToReadPage(selectedProduct.Id))">
             Read More
         </button>
+
           @if(voteCount == 0)
           {
             <span>Be the first to vote!</span>
