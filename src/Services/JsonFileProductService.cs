@@ -133,6 +133,25 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Delete all the fields of a city from the database 
+        /// </summary>
+        /// <param name="id">The id of the city that needs to be deleted</param>
+        /// <returns>Updated products data</returns>
+        public ProductModel DeleteData(string id)
+        {
+            // Get the current set, and append the new record to it
+            var dataSet = GetAllData();
+            var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
+
+            var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
+
+            SaveData(newDataSet);
+
+            return data;
+        }
+
+
 
         /// <summary>
         /// Adds a rating to the given city by its ID.
