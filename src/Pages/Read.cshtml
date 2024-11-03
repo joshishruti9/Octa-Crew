@@ -53,7 +53,7 @@
 
     <p>Rating: 
         @{
-            int currentRating = GetCityRating(Model.Product);
+            int currentRating = Model.Product.GetCityRating();
 
             for (int i = 1; i < 6; i++)
             {
@@ -91,13 +91,3 @@
     </p>
 
 </div>
-
-@{
-    int GetCityRating(ProductModel model)
-    {
-        if (model.Ratings == null)
-            return 0;
-
-        return model.Ratings.Sum() / model.Ratings.Count();
-    }
-}
