@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -59,6 +60,18 @@ namespace ContosoCrafts.WebSite.Models
         /// <returns>A JSON string representation of ProductModel</returns>
         public override string ToString() => JsonSerializer.Serialize<ProductModel>(this);
 
- 
+        /// <summary>
+        /// Gets the average rating of the city
+        /// </summary>
+        /// <returns>The average of all the ratings added to the city</returns>
+        public int GetCityRating()
+        {
+            if (Ratings == null)
+            {
+                return 0;
+            }
+
+            return Ratings.Sum() / Ratings.Count();
+        }
     }
 }
