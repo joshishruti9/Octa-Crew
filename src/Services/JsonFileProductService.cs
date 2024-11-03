@@ -91,8 +91,12 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public ProductModel UpdateData(ProductModel data)
         {
+            // the cities in the database
             var products = GetAllData();
+
+            // the city in the database matching the data parameter's Id
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
+
             if (productData == null)
             {
                 return null;
