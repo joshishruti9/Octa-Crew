@@ -1,6 +1,8 @@
+using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages
 {
@@ -18,11 +20,18 @@ namespace ContosoCrafts.WebSite.Pages
 			ProductService = productService;
 		}
 
-		/// <summary>
-		/// Called when the page is accessed
-		/// </summary>
-		public void OnGet()
+        // The data to show, bind to it for the post
+        [BindProperty]
+        public ProductModel Product { get; set; }
+
+
+        /// <summary>
+        /// Called when the page is accessed
+        /// </summary>
+        public void OnGet(string id)
         {
+            Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
+
     }
 }
