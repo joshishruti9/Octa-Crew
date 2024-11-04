@@ -37,7 +37,7 @@ namespace UnitTests.Pages
 			// Arrange
 
 			// Act
-			pageModel.OnGet();
+			pageModel.OnGet("paris");
 
 			// Reset
 
