@@ -30,7 +30,7 @@ namespace UnitTests.Models
 			// Reset
 
 			// Assert
-			Assert.AreEqual(result, 0);
+			Assert.AreEqual(0, result);
 		}
 
 		/// <summary>
