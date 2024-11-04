@@ -34,6 +34,29 @@ namespace UnitTests.Models
 		}
 
 		/// <summary>
+		/// Test that a call of GetCityRating() on a city with only one rating should return its
+		/// average rating
+		/// </summary>
+		[Test]
+		public void GetCityRating_Valid_Test_Single_Rating_Should_Return_Rating_True()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				// Fill city with valid Rating
+				Ratings = new[] { 1 }
+			};
+
+			// Act
+			var result = data.GetCityRating();
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(1, result);
+		}
+
+		/// <summary>
 		/// Test that a call of GetCityRating() on a city with ratings should return its average rating
 		/// </summary>
 		[Test]
