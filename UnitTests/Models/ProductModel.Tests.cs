@@ -1,10 +1,5 @@
 ﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTests.Models
 {
@@ -78,6 +73,6 @@ namespace UnitTests.Models
 			Assert.AreEqual(3, result);
 		}
 
-		#endregion
+		#endregion GetCityRating
 	}
 }
