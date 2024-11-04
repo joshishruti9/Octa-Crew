@@ -33,6 +33,28 @@ namespace UnitTests.Models
 			Assert.AreEqual(result, 0);
 		}
 
+		/// <summary>
+		/// Test that a call of GetCityRating() on a city with ratings should return its average rating
+		/// </summary>
+		[Test]
+		public void GetCityRating_Valid_Test_Multiple_Ratings_Should_Return_Average_Rating_True()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				// Fill city with valid Ratings
+				Ratings = new[] { 2, 1, 4, 2, 5, 4, 2, 5, 3 }
+			};
+
+			// Act
+			var result = data.GetCityRating();
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(3, result);
+		}
+
 		#endregion
 	}
 }
