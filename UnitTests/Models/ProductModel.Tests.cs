@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace UnitTests.Models
 {
-    public class ProductModelTests
+	/// <summary>
+	/// Unit testing class for ProductModel
+	/// </summary>
+	public class ProductModelTests
     {
     }
 }
