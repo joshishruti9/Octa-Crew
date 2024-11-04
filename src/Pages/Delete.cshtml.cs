@@ -24,7 +24,6 @@ namespace ContosoCrafts.WebSite.Pages
         [BindProperty]
         public ProductModel Product { get; set; }
 
-
         /// <summary>
         /// Called when the page is accessed
         /// </summary>
@@ -33,5 +32,17 @@ namespace ContosoCrafts.WebSite.Pages
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
+
+        /// <summary> Post the model back to the page. The model is in the class variable. </summary>
+        public IActionResult OnPost(string id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            ProductService.DeleteData(id);
+            return RedirectToPage("./Index");
+        }
     }
 }
