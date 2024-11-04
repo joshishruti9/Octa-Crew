@@ -11,5 +11,10 @@ namespace UnitTests.Models
 	/// </summary>
 	public class ProductModelTests
     {
-    }
+		#region GetCityRating
+
+		
+
+		#endregion
+	}
 }
