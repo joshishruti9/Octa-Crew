@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitTests.Models
 {
-    internal class ProductModel
+    public class ProductModelTests
     {
     }
 }
