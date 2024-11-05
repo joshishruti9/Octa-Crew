@@ -84,6 +84,28 @@ namespace UnitTests.Services
 			Assert.AreEqual(null, result);
 		}
 
+		/// <summary>
+		/// Test UpdateData method when description has extra spaces
+		/// </summary>
+		[Test]
+		public void UpdateData_Should_Trim_Description()
+		{
+			// Arrange
+			var data = new TravelTipsModel
+			{
+				Id = TestHelper.TravelTipService.GetAllData().First().Id,
+				Title = "Updated Title",
+				Description = "  Updated Description with extra spaces  "
+			};
+
+			// Act
+			var result = TestHelper.TravelTipService.UpdateData(data);
+
+			// Assert
+			Assert.That(result, Is.Not.Null);
+			Assert.AreEqual("Updated Description with extra spaces", result.Description);
+		}
+
 		#endregion UpdateData
 	}
 }
