@@ -11,9 +11,6 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class ConfirmationPageModel : PageModel
     {
-        // Service for getting data from database
-        public JsonFileProductService ProductService { get; }
-
         /// <summary>
         /// Initializer constructor
         /// </summary>
@@ -23,5 +20,20 @@ namespace ContosoCrafts.WebSite.Pages
             ProductService = productService;
         }
 
+        // Service for getting data from database
+        public JsonFileProductService ProductService { get; }
+
+   
+        // The data to show
+        public ProductModel Product { get; set; }
+
+        /// <summary>
+        /// REST get request
+        /// </summary>
+        /// <param name="id">ID of the city to be displayed</param>!
+        public void OnGet(string id)
+        {
+            Product = ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
+        }
     }
 }
