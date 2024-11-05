@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace ContosoCrafts.WebSite.Services
@@ -61,6 +62,34 @@ namespace ContosoCrafts.WebSite.Services
 			};
 
 			return data;
+		}
+
+		/// <summary>
+		/// Update all the fields of a tip in the database
+		/// </summary>
+		/// <param name="data">The new data values</param>
+		/// <returns></returns>
+
+		public TravelTipsModel UpdateData(TravelTipsModel data)
+		{
+			// the cities in the database
+			var travelTips = GetAllData();
+
+			// the tip in the database matching the data parameter's Id
+			var travelTipData = travelTips.FirstOrDefault(x => x.Id.Equals(data.Id));
+
+			if (travelTipData == null)
+			{
+				return null;
+			}
+
+			// Update the data to the new passed in values
+			travelTipData.Title = data.Title;
+			travelTipData.Description = data.Description.Trim();
+
+			SaveData(travelTips);
+
+			return travelTipData;
 		}
 
 		/// <summary>
