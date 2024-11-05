@@ -5,5 +5,7 @@
 	/// </summary>
 	public class TravelTipsModel
 	{
+		// Title of tip
+		public string Title { get; set; }
 	}
 }
