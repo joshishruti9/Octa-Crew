@@ -1,5 +1,26 @@
-﻿@page
+﻿@page ""
+@using ContosoCrafts.WebSite.Pages.Product
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
 @model DeleteModel
 @{
 	ViewData["Title"] = "Delete page";
+}
+
+<h1>Delete</h1>
+
+
+<div class="form-container">
+  <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x => x.Product.Id)
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 }
