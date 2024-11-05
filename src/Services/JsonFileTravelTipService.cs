@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace ContosoCrafts.WebSite.Services
 {
@@ -19,5 +20,12 @@ namespace ContosoCrafts.WebSite.Services
 
 		// Web hosting environment used
 		public IWebHostEnvironment WebHostEnvironment { get; }
+
+		// Full path to JSON file database
+		private string JsonFileName
+		{
+			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "TravelTips.json"); }
+		}
+
 	}
 }
