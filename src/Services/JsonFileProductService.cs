@@ -89,6 +89,7 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         /// <param name="data">The new data values</param>
         /// <returns></returns>
+        
         public ProductModel UpdateData(ProductModel data)
         {
             // the cities in the database
@@ -168,6 +169,7 @@ namespace ContosoCrafts.WebSite.Services
         public bool AddRating(string productId, int rating)
         {
             // If the ID of the city is invalid, return
+
             if (string.IsNullOrEmpty(productId))
             {
                 return false;
@@ -200,8 +202,10 @@ namespace ContosoCrafts.WebSite.Services
             {
                 products.First(x => x.Id == productId).Ratings = new int[] { };
             }
+
             // The city does have a ratings array, so add the new rating to the array
             // Get the ratings array for the city
+
             var ratings = products.First(x => x.Id == productId).Ratings.ToList();
             ratings.Add(rating);
             products.First(x => x.Id == productId).Ratings = ratings.ToArray();
