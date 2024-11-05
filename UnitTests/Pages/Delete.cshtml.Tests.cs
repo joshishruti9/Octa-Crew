@@ -74,8 +74,31 @@ namespace UnitTests.Pages
             Assert.AreEqual("Paris", pageModel.Product.Title);
         }
 
-
-
         #endregion OnGet
+
+        #region OnPost
+
+        /// <summary>
+        /// Test OnPost method to ensure it redirects to Index when ModelState is valid.
+        /// </summary>
+        [Test]
+        public void OnPost_Valid_Model_State_Should_RedirectToIndex()
+        {
+            // Arrange
+            pageModel.Product = new ProductModel { Id = "Paris", Title = "Paris(Test)" };
+
+            // Act
+            var result = pageModel.OnPost("Paris");
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<RedirectToPageResult>(result);
+
+            var redirectResult = result as RedirectToPageResult;
+            Assert.AreEqual("./IndexPage", redirectResult.PageName);
+        }
+
+        #endregion OnPost
+
     }
 }
