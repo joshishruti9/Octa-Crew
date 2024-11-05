@@ -40,103 +40,18 @@
         </h1>
 
         <dl>
-            <dt style="margin-top: 15px; color: orangered;">
-                1. Don't have too ambitious of a plan
-            </dt>
+            @for (int i = 0; i < Model.TravelTips.Count(); i++)
+            {
+                var tip = Model.TravelTips.ElementAt(i);
 
-            <dd style="margin-bottom: 15px;">
-                It's natural to want to fit in as many attractions and activities as you can, but don't get caught up in your schedule and
-                forget to enjoy your trip. Instead of planning out every minute of every day, only schedule the essential activities and let
-                the rest of your journey be open to free exploration!
-            </dd>
+                <dt style="margin-top: 15px; color: orangered;">
+                    @(i + 1). @tip.Title
+                </dt>
 
-            <dt style="margin-top: 15px; color: orangered;">
-                2. Pack Smart
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                You don't want to be bogged down by a heavy suitcase on your vacation, so pack light with plenty of layers for every occasion.
-                Don't forget to pack adapters for your electronics and a compact toiletry bag. Keep in mind that rolling your clothes can
-                sometimes save space compared to folding them, and can help with wrinkles.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                3. Learn Key Phrases
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                While you don't necessarily need to be fluent in the language of your destination, knowing some key phrases like "Hello",
-                "Thank you", and "Where is the bathroom?" can take you a long way while in a foreign country. Not only will these phrases
-                allow you to easily navigate throughout your destination, but they will also help show the locals that you're willing to go
-                above and beyond to fit in with their culture!
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                4. Research Modes of Transportation
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Different countries and cities have various ways of getting around, and many major cities have plenty of public transportation
-                to help you get where you need to be fast and cheap. Take some time to research before your vacation to discover the best way
-                to get around, and look for any apps or websites used by locals to help you buy tickets.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                5. Try Local Food
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Don't be afraid to go out of your comfort zone and try something new. After all, that's what a vacation is all about! Talk to
-                locals about traditional foods that are a must-have in the area, and make sure to try some to get the full vacation
-                experience.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                6. Be Respectful of Local Customs
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Cultures vary widely throughout the world, so make sure you are aware of the practices locals follow in your vacation
-                destination. Look out for dress codes and ways of showing respect, especially if visiting a religious area.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                7. Keep a Digital Copy of Your Passport
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                While your physical passport is a must-have on your travels, a digital copy can help you in a situation where your passport
-                gets misplaced or stolen. It's always good to have a backup.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                8. Budget More Than You Think You'll Need
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Vacationing can get costly fast, so it's good to have a little room in your budget for souvenirs, tips, and other expenses.
-                You never know what will come up, and sometimes activities or food can be more expensive than you expect, so having a large
-                budget will help prevent any surprises.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                9. Be Aware of Your Surroundings
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Pickpocketing is common in any place that sees a lot of tourists, so consider purchasing a money belt or crossbody bag to keep
-                your valuables close to you. Never keep your smartphone in your back pocket, and always be vigilant in unfamiliar
-                neighborhoods.
-            </dd>
-
-            <dt style="margin-top: 15px; color: orangered;">
-                10. Stay Hydrated and Healthy
-            </dt>
-
-            <dd style="margin-bottom: 15px;">
-                Keep a water bottle and some snacks on you throughout your day, especially if you're doing a lot of walking around. Try to eat
-                regularly and bring sunscreen and a hat to protect from the sun.
-            </dd>
+                <dd style="margin-bottom: 15px;">
+                    @tip.Description
+                </dd>
+            }
         </dl>
     </div>
 
