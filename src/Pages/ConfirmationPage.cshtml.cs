@@ -35,5 +35,17 @@ namespace ContosoCrafts.WebSite.Pages
         {
             Product = ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
+
+        /// <summary> Delete the data for given id</summary>
+        public IActionResult OnPost(string id)
+        {
+            if (ModelState.IsValid)
+            {
+                ProductService.DeleteData(id);
+                return RedirectToPage("./index");
+            }
+            return Page();
+
+        }
     }
 }
