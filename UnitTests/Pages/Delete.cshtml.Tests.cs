@@ -60,6 +60,21 @@ namespace UnitTests.Pages
             Assert.IsNull(pageModel.Product);
         }
 
+        /// <summary>
+        /// Test that correct product is assigned when valid id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Id_Default_Should_Assign_Product()
+        {
+            // Act
+            pageModel.OnGet("paris");
+
+            // Assert
+            Assert.IsNotNull(pageModel.Product);
+            Assert.AreEqual("Paris", pageModel.Product.Title);
+        }
+
+
 
         #endregion OnGet
     }
