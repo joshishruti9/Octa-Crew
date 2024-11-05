@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages;
+using System.Linq;
 
 namespace UnitTests.Pages
 {
@@ -36,7 +37,8 @@ namespace UnitTests.Pages
 			// Reset
 
 			// Assert
-			Assert.That(pageModel.ModelState.IsValid, Is.EqualTo(true));
+			Assert.AreEqual(true, pageModel.ModelState.IsValid);
+			Assert.AreEqual(true, pageModel.TravelTips.ToList().Any());
 		}
 
 		#endregion OnGet
