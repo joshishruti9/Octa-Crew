@@ -4,21 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace ContosoCrafts.WebSite.Pages.Product
 {
     /// <summary>
     /// Model for Delete CRUDi page
     /// </summary>
     public class DeleteModel : PageModel
     {
-		// Data #middletier
-		public JsonFileProductService ProductService { get; }
+        // Data #middletier
+        public JsonFileProductService ProductService { get; }
 
-		/// <summary> Default Constructor </summary>
-		public DeleteModel(JsonFileProductService productService)
-		{
-			ProductService = productService;
-		}
+        /// <summary> Default Constructor </summary>
+        public DeleteModel(JsonFileProductService productService)
+        {
+            ProductService = productService;
+        }
 
         // The data to show, bind to it for the post
         [BindProperty]

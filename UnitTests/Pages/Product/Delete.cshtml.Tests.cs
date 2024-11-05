@@ -1,17 +1,17 @@
 ﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
-using ContosoCrafts.WebSite.Pages;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ContosoCrafts.WebSite.Pages.Product;
 
-namespace UnitTests.Pages
+namespace UnitTests.Pages.Product
 {
-	/// <summary>
-	/// Unit testing class for Delete page model
-	/// </summary>
-	public class DeleteTests
-	{
+    /// <summary>
+    /// Unit testing class for Delete page model
+    /// </summary>
+    public class DeleteTests
+    {
 
         #region TestSetup
 
