@@ -1,0 +1,158 @@
+﻿@page
+@model TravelTipsPageModel
+@{
+    ViewData["Title"] = "Travel Tips page";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Contoso Crafts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="container1">
+
+        <div class="card1">
+            <img src="@Url.Content("~/Content/pexels-pixabay-531602.jpg")" alt="Travel Tips" width="100%" height="600">
+
+            <div class="centered">
+                <h1>Travel Tips</h1>
+                <h5>Ready to make your next adventure unforgettable? Discover essential travel tips to help you explore smarter, safer, and with more fun!</h5>
+                <button class="styled-button" onclick="window.location.href='#card-body'"> <h6 class="buttontext">Explore Now!</h6></button>
+
+                <div id="card-body">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h1 class="display4"
+            style="font-weight: 500; color: orangered; margin-bottom: 20px;">
+            Travel Tips
+        </h1>
+
+        <dl>
+            @for (int i = 0; i < Model.TravelTips.Count(); i++)
+            {
+                var tip = Model.TravelTips.ElementAt(i);
+
+                <dt style="margin-top: 15px; color: orangered;">
+                    @(i + 1). @tip.Title
+                </dt>
+
+                <dd style="margin-bottom: 15px;">
+                    @tip.Description
+                </dd>
+            }
+        </dl>
+    </div>
+
+    <div class="container">
+        <h1 class="display4"
+            style="font-weight: 500; color: orangered; margin-bottom: 20px;">
+            Helpful Sites
+        </h1>
+
+        <dl>
+            <dt style="margin-top: 15px;">
+                <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer">
+                    Airbnb
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Want to get a truly local experience? Book your stay with Airbnb to find a residence that feels more like home.
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://www.booking.com/" target="_blank" rel="noopener noreferrer">
+                    Booking.com
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Use this site to book hotels, flights, car rentals, and more!
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://wwwnc.cdc.gov/travel" target="_blank" rel="noopener noreferrer">
+                    CDC Travelers' Health
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Check out the CDC's site for health advisories and vaccine requirements specific to your destination.
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer">
+                    Duolingo
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Practice the local language before your trip with a fun and interactive language learning app.
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+                    Google Maps
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Get around with all modes of transportation: walking, driving, public transportation, and cycling!
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://translate.google.com/" target="_blank" rel="noopener noreferrer">
+                    Google Translate
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                If you encounter a language barrier while on your trip, pull out your phone and communicate through Google Translate.
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://travel.state.gov/content/travel.html" target="_blank" rel="noopener noreferrer">
+                    Travel.State.Gov
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                If you're coming from the United States, check out travel advisories and important safety information here.
+            </dd>
+
+            <dt style="margin-top: 15px;">
+                <a href="https://www.tripadvisor.com/" target="_blank" rel="noopener noreferrer">
+                    TripAdvisor
+                </a>
+            </dt>
+
+            <dd style="margin-bottom: 15px;">
+                Compare ratings for hotels, attractions, and restaurants to find the best places to visit while on vacation!
+            </dd>
+        </dl>
+    </div>
+
+    <footer class="border-top footer text-muted bg-footer">
+        <div class="container">
+            &copy; 2024 - VacationDestination.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
+</body>
