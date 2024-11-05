@@ -44,5 +44,23 @@ namespace UnitTests.Models
 		}
 
 		#endregion Id
+
+		#region Title
+
+		[Test]
+		public void Get_Valid_Title_Should_Return_Title()
+		{
+			// Arrange
+
+			// Act
+			var result = travelTipsModel.Title;
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual("Default title", result);
+		}
+
+		#endregion Title
 	}
 }
