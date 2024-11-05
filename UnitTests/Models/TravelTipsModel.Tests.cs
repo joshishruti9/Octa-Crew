@@ -62,5 +62,23 @@ namespace UnitTests.Models
 		}
 
 		#endregion Title
+
+		#region Description
+
+		[Test]
+		public void Get_Valid_Description_Should_Return_Description()
+		{
+			// Arrange
+
+			// Act
+			var result = travelTipsModel.Description;
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual("Default description", result);
+		}
+
+		#endregion Description
 	}
 }
