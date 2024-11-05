@@ -8,6 +8,15 @@ namespace ContosoCrafts.WebSite.Pages
 	/// </summary>
 	public class TravelTipsPageModel : PageModel
 	{
+		/// <summary>
+		/// Initializer constructor
+		/// </summary>
+		/// <param name="travelTipService">Set to TravelTipService</param>
+		public TravelTipsPageModel(JsonFileTravelTipService travelTipService)
+		{
+			TravelTipService = travelTipService;
+		}
+
 		// Service for getting data from database
 		public JsonFileTravelTipService TravelTipService { get; }
 

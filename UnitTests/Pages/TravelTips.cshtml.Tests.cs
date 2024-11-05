@@ -19,7 +19,7 @@ namespace UnitTests.Pages
 		[SetUp]
 		public void Setup()
 		{
-			pageModel = new TravelTipsPageModel();
+			pageModel = new TravelTipsPageModel(TestHelper.TravelTipService);
 		}
 
 		#endregion TestSetup
