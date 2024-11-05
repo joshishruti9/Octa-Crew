@@ -26,5 +26,23 @@ namespace UnitTests.Models
 		}
 
 		#endregion TestSetup
+
+		#region Id
+
+		[Test]
+		public void Get_Valid_Id_Should_Return_Id()
+		{
+			// Arrange
+
+			// Act
+			var result = travelTipsModel.Id;
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(1, result);
+		}
+
+		#endregion Id
 	}
 }
