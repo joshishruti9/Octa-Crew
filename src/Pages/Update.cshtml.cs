@@ -41,7 +41,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// </summary>
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid==false)
             {
                 return Page();
             }

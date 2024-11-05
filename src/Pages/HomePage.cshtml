@@ -1,117 +1,65 @@
 ﻿@page
 @model ContosoCrafts.WebSite.Pages.Pages_HomePage;
 @{
+    ViewData["Title"] = "Home Page";
 }
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Vacation Destination</title>
-    <style>
-        /* General Reset */
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        /* Body Styling */
-        body {
-          font-family: Arial, sans-serif;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 100vh;
-          background-color: #f3f4f6;
-        }
-
-        /* Slideshow Container */
-        .slideshow-container {
-          position: relative;
-          width: 80%;
-          max-width: 1000px;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Slide Images */
-        .mySlides {
-          display: none;
-          width: 100%;
-          height: 500px;
-          object-fit: cover;
-        }
-
-        /* Fade Animation */
-        .fade {
-          animation: fade 1.5s;
-        }
-
-        
-
-        /* Links Container */
-        .link-container {
-          margin-top: 20px;
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-        }
-
-        /* Link Styling */
-        .link {
-          text-decoration: none;
-          color: #333;
-          font-size: 18px;
-          padding: 10px 20px;
-          border-radius: 4px;
-          background-color: #e2e8f0;
-          transition: background-color 0.3s;
-        }
-
-        .link:hover {
-          background-color: #cbd5e1;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Contoso Crafts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Slideshow Container -->
     <div class="slideshow-container">
-        <img class="mySlides fade" src="beach.jpg" alt="Beautiful Scenery 1">
-        <img class="mySlides fade" src="christ_the_redeemer.jpg" alt="Beautiful Scenery 2">
-        <img class="mySlides fade" src="chichen_itza.jpg" alt="Beautiful Scenery 3">
-        <img class="mySlides fade" src="pyongyang_north_korea.jpg" alt="Beautiful Scenery 4">
-        <img class="mySlides fade" src="Great_Wall.jpg" alt="Beautiful Scenery 4">
-        <img class="mySlides fade" src="Taj_Mahal.jpg" alt="Beautiful Scenery 4">
+        <div class="myslides fade"><img src="@Url.Content("~/Content/beach.jpg")" alt="Beautiful Scenery 1" width="100%" height="650"></div>
+        <div class="myslides fade"><img src="@Url.Content("~/Content/landscape.jpg")" alt="Beautiful Scenery 2" width="100%" height="650"></div>
+        <div class="myslides fade" ><img src="@Url.Content("~/Content/chichen_itza.jpg")" alt="Beautiful Scenery 3" width="100%" height="650"></div>
+        <div class="myslides fade" ><img src="@Url.Content("~/Content/pyongyang_north_korea.jpg")" alt="Beautiful Scenery 4" width="100%" height="650"></div>
+        <div class="myslides fade" ><img src="@Url.Content("~/Content/Great_Wall.jpg")" alt="Beautiful Scenery 4" width="100%" height="650"></div>
+        <div class="myslides fade" ><img src="@Url.Content("~/Content/Taj_Mahal.jpg")" alt="Beautiful Scenery 4" width="100%" height="650 "></div>
+        <div class="centered">
+            <h1 class="textcolor" text-align="center">Vacation Destinations</h1>
+            <h5 class="paracolor">Are You Ready for an Adventure of a lifetime?Uncover hidden gems, taste new flavors, and make unforgettable memories—every city holds a unique adventure waiting just for you!</h5>
+            <button class="styled-button" style="margin-right: 50px;" onclick="window.location.href = 'IndexPage'"> <h6 class="buttontext">Index</h6></button>
 
-    </div>
+            <button class="styled-button" style="margin-right: 50px;" onclick="window.location.href = 'index'"> <h6 class="buttontext">Cities</h6></button>
 
-    <!-- Links Container -->
-    <div class="link-container">
-        <a href="index.html" class="link">Home</a>
-        <a href="cities.html" class="link">Cities</a>
-        <a href="tips.html" class="link">Travel Tips</a>
+            <button class="styled-button" onclick="window.location.href = 'TravelTips'"> <h6 class="buttontext">Travel Tips</h6></button>
+
+            <div id="card-body">
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript for Automatic Slideshow -->
     <script>
         let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-          const slides = document.getElementsByClassName("mySlides");
-          for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {
-            slideIndex = 1;
-          }
-          slides[slideIndex - 1].style.display = "block";
-          setTimeout(showSlides, 5000); // Change image every 5 seconds
+        showSlides(slideIndex);
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
         }
+
+        // Display slides
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("myslides");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (let slide of slides) {
+                slide.style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        // Automatic slideshow
+        setInterval(() => {
+            changeSlide(1); 
+        }, 8000);
     </script>
 </body>
-</html>
+
