@@ -181,10 +181,18 @@ a {
     background-color: var(--cyan);
 }
 
+.btn-delete {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
