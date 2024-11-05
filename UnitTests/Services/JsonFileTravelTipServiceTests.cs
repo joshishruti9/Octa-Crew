@@ -1,6 +1,8 @@
 ﻿
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UnitTests.Services
 {
@@ -34,5 +36,33 @@ namespace UnitTests.Services
 		}
 
 		#endregion CreateData
+
+		#region UpdateData
+
+		/// <summary>
+		/// Test UpdateData method when tip exists in the data source
+		/// </summary>
+		[Test]
+		public void UpdateData_Should_Update_Existing_TravelTip()
+		{
+			// Arrange
+			var existingTravelTip = TestHelper.TravelTipService.GetAllData().First();
+			var updatedTravelTip = new TravelTipsModel
+			{
+				Id = existingTravelTip.Id,
+				Title = "Updated Title",
+				Description = "Updated Description",
+			};
+
+			// Act
+			var result = TestHelper.TravelTipService.UpdateData(updatedTravelTip);
+
+			// Assert
+			Assert.That(result, Is.Not.Null);
+			Assert.AreEqual("Updated Title", result.Title);
+			Assert.AreEqual("Updated Description", result.Description);
+		}
+
+		#endregion UpdateData
 	}
 }
