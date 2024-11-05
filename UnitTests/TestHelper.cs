@@ -39,6 +39,7 @@ namespace UnitTests
         public static TempDataDictionary TempData;
         public static PageContext PageContext;
         public static JsonFileProductService ProductService;
+        public static JsonFileTravelTipService TravelTipService;
 
         /// <summary>
         /// Default Constructor
@@ -75,6 +76,12 @@ namespace UnitTests
             JsonFileProductService productService;
 
             productService = new JsonFileProductService(TestHelper.MockWebHostEnvironment.Object);
+
+            TravelTipService = new JsonFileTravelTipService(MockWebHostEnvironment.Object);
+
+            JsonFileTravelTipService travelTipService;
+
+            travelTipService = new JsonFileTravelTipService(TestHelper.MockWebHostEnvironment.Object);
         }
     }
 }
