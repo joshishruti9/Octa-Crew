@@ -36,13 +36,13 @@ namespace ContosoCrafts.WebSite.Pages
         /// <summary> Post the model back to the page. The model is in the class variable. </summary>
         public IActionResult OnPost(string id)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return Page();
+                return RedirectToPage("/ConfirmationPage", new {id = id});
             }
+            return Page();
 
-            ProductService.DeleteData(id);
-            return RedirectToPage("./Index");
+
         }
     }
 }
