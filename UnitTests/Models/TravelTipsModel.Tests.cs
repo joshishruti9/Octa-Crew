@@ -19,7 +19,7 @@ namespace UnitTests.Models
 		{
 			travelTipsModel = new TravelTipsModel()
 			{
-				Id = 1,
+				Id = "11",
 				Title = "Default title",
 				Description = "Default description"
 			};
@@ -40,7 +40,7 @@ namespace UnitTests.Models
 			// Reset
 
 			// Assert
-			Assert.AreEqual(1, result);
+			Assert.AreEqual("11", result);
 		}
 
 		#endregion Id
