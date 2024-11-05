@@ -63,6 +63,27 @@ namespace UnitTests.Services
 			Assert.AreEqual("Updated Description", result.Description);
 		}
 
+		/// <summary>
+		/// Test UpdateData method when tip does not exist in the data source
+		/// </summary>
+		[Test]
+		public void UpdateData_Should_Return_Null_If_TravelTip_Not_Found()
+		{
+			// Arrange
+			var data = new TravelTipsModel
+			{
+				Id = System.Guid.NewGuid().ToString(),
+				Title = "Non-existent Travel Tip",
+				Description = "Non-existent Description"
+			};
+
+			// Act
+			var result = TestHelper.TravelTipService.UpdateData(data);
+
+			// Assert
+			Assert.AreEqual(null, result);
+		}
+
 		#endregion UpdateData
 	}
 }
