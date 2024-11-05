@@ -19,6 +19,7 @@ namespace UnitTests.Models
 		{
 			travelTipsModel = new TravelTipsModel()
 			{
+				Id = 1,
 				Title = "Default title",
 				Description = "Default description"
 			};
