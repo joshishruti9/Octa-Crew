@@ -47,6 +47,23 @@ namespace ContosoCrafts.WebSite.Services
 		}
 
 		/// <summary>
+		/// Creates a TravelTipsModel object to be used for creation of a new tip in the database
+		/// </summary>
+		/// <returns>TravelTipsModel object with default values filled in</returns>
+		public TravelTipsModel CreateData()
+		{
+			// Create a new tip with default attributes
+			var data = new TravelTipsModel()
+			{
+				Id = System.Guid.NewGuid().ToString(),
+				Title = "Enter Tip Name",
+				Description = "Enter Tip Description",
+			};
+
+			return data;
+		}
+
+		/// <summary>
 		/// Stores the list of travel tips in the database
 		/// </summary>
 		public void SaveData(IEnumerable<TravelTipsModel> travelTips)
