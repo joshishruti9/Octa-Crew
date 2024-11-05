@@ -189,6 +189,10 @@ a {
     margin-right: 10px;
 }
 
+.btn-delete:hover {
+    background-color: var(--cyan);
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
