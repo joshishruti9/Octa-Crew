@@ -10,7 +10,7 @@ namespace UnitTests.Pages
 	{
 		#region TestSetup
 
-		public static TravelTipsModel pageModel;
+		public static TravelTipsPageModel pageModel;
 
 		/// <summary>
 		/// Called before each test is called.
@@ -19,7 +19,7 @@ namespace UnitTests.Pages
 		[SetUp]
 		public void Setup()
 		{
-			pageModel = new TravelTipsModel();
+			pageModel = new TravelTipsPageModel();
 		}
 
 		#endregion TestSetup

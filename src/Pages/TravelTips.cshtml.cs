@@ -6,7 +6,7 @@ namespace ContosoCrafts.WebSite.Pages
 	/// <summary>
 	/// Model for TravelTips page
 	/// </summary>
-	public class TravelTipsModel : PageModel
+	public class TravelTipsPageModel : PageModel
 	{
 		// Service for getting data from database
 		public JsonFileTravelTipService TravelTipService { get; }
