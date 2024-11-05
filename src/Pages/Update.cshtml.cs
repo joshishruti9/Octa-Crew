@@ -23,12 +23,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
             ProductService = productService;
         }
 
-        // The data to show, bind to it for the post
+        /// <summary>
+        /// The data which is to show, is to be binded for the post method
+        /// </summary>
+        /// 
         [BindProperty]
         public ProductModel Product { get; set; }
 
         /// <summary>
-        /// REST Get request Loads the Data
+        /// Handles HTTP GET requests to retrieve a product by its ID.
+        /// Finds the first product in the data source that matches the given ID
+        /// and assigns it to the Product property. If no match is found, Product will be null.
         /// </summary>
         /// <param name="id">The city id taken from the update page</param>
         public void OnGet(string id)
