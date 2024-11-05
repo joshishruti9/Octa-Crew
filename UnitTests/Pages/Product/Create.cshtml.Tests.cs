@@ -5,15 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using NUnit.Framework;
-
-using ContosoCrafts.WebSite.Pages;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using ContosoCrafts.WebSite.Pages.Product;
 
-namespace UnitTests.Pages
+namespace UnitTests.Pages.Product
 {
     /// <summary>
     /// Unit test class for the Create page model
@@ -38,7 +37,7 @@ namespace UnitTests.Pages
             pageModel = new CreateModel(TestHelper.ProductService);
             defaultModel = new ProductModel()
             {
-                Id = System.Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
                 Images = new string[3]
                 {
                     "Enter URL",
@@ -157,7 +156,7 @@ namespace UnitTests.Pages
             // Arrange
             pageModel.Product = new ProductModel()
             {
-                Id = System.Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
                 Title = "Custom City",
                 Description = "Custom Description",
                 BestSeason = Season.Spring,
