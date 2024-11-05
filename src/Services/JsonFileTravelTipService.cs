@@ -7,6 +7,16 @@ namespace ContosoCrafts.WebSite.Services
 	/// </summary>
 	public class JsonFileTravelTipService
 	{
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="webHostEnvironment">Hosting environment used</param>
+		public JsonFileTravelTipService(IWebHostEnvironment webHostEnvironment)
+		{
+			WebHostEnvironment = webHostEnvironment;
+		}
+
+
 		// Web hosting environment used
 		public IWebHostEnvironment WebHostEnvironment { get; }
 	}
