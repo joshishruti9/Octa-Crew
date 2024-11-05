@@ -1,5 +1,7 @@
-﻿using ContosoCrafts.WebSite.Services;
+﻿using ContosoCrafts.WebSite.Models;
+using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
 
 namespace ContosoCrafts.WebSite.Pages
 {
@@ -19,6 +21,9 @@ namespace ContosoCrafts.WebSite.Pages
 
 		// Service for getting data from database
 		public JsonFileTravelTipService TravelTipService { get; }
+
+		// List of tips
+		public IEnumerable<TravelTipsModel> TravelTips { get; private set; }
 
 		/// <summary>
 		/// Called when the page is accessed
