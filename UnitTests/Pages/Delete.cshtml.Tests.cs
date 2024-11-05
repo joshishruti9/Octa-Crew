@@ -98,6 +98,24 @@ namespace UnitTests.Pages
             Assert.AreEqual("./IndexPage", redirectResult.PageName);
         }
 
+        /// <summary>
+        /// Test OnPost method when ModelState is invalid
+        /// </summary>
+
+        public void OnPost_Invalid_Model_State_Should_Return_PageResult()
+        {
+            // Arrange
+            pageModel.ModelState.AddModelError("error", "Model state is invalid");
+
+            // Act
+            var result = pageModel.OnPost("1234") as PageResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOf<PageResult>(result);
+        }
+
+
         #endregion OnPost
 
     }
