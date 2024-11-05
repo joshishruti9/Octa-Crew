@@ -6,3 +6,19 @@
 @{
     ViewData["Title"] = "Confirmation page";
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="form-container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(x => x.Product.Id)
+
+        <div class="text-center">
+            <h1 class="display4">
+                Are You sure You Want to Delete?
+            </h1>
+        </div>
+
+    </form>
+</div>
