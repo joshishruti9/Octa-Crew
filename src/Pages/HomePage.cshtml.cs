@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    public class Index1Model : PageModel
+    public class HomePage : PageModel
     {
         public void OnGet()
         {
