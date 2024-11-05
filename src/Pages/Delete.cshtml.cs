@@ -32,17 +32,17 @@ namespace ContosoCrafts.WebSite.Pages
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
 
-
-        /// <summary> Post the model back to the page. The model is in the class variable. </summary>
+        /// <summary> Delete the data for given id</summary>
         public IActionResult OnPost(string id)
         {
             if (ModelState.IsValid)
             {
-                return RedirectToPage("/ConfirmationPage", new {id = id});
+                ProductService.DeleteData(id);
+                return RedirectToPage("./index");
             }
             return Page();
 
-
         }
+
     }
 }
