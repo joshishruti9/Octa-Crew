@@ -26,11 +26,12 @@ namespace ContosoCrafts.WebSite.Pages
 		public IEnumerable<TravelTipsModel> TravelTips { get; private set; }
 
 		/// <summary>
-		/// Called when the page is accessed
+		/// Called when the page is accessed.
+		/// Fills TravelTips with data.
 		/// </summary>
 		public void OnGet()
 		{
-
+			TravelTips = TravelTipService.GetAllData();
 		}
 	}
 }
