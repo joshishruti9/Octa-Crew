@@ -38,7 +38,7 @@ namespace ContosoCrafts.WebSite.Pages
             if (ModelState.IsValid)
             {
                 ProductService.DeleteData(id);
-                return RedirectToPage("./index");
+                return RedirectToPage("./IndexPage");
             }
             return Page();
 
