@@ -11,5 +11,17 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class ConfirmationPageModel : PageModel
     {
+        // Service for getting data from database
+        public JsonFileProductService ProductService { get; }
+
+        /// <summary>
+        /// Initializer constructor
+        /// </summary>
+        /// <param name="productService">Set to ProductService</param>
+        public ConfirmationPageModel(JsonFileProductService productService)
+        {
+            ProductService = productService;
+        }
+
     }
 }
