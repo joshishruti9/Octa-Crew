@@ -45,5 +45,25 @@ namespace ContosoCrafts.WebSite.Services
 					});
 			}
 		}
+
+		/// <summary>
+		/// Stores the list of travel tips in the database
+		/// </summary>
+		public void SaveData(IEnumerable<TravelTipsModel> travelTips)
+		{
+
+			using (var outputStream = File.Create(JsonFileName))
+			{
+				JsonSerializer.Serialize<IEnumerable<TravelTipsModel>>(
+					new Utf8JsonWriter(outputStream, new JsonWriterOptions
+					{
+						SkipValidation = true,
+						Indented = true
+					}),
+					travelTips
+				);
+			}
+		}
+
 	}
 }
