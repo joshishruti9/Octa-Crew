@@ -2,7 +2,8 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.Pages;
-using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages
 {
@@ -11,40 +12,41 @@ namespace UnitTests.Pages
 	/// </summary>
 	public class DeleteTests
 	{
-		#region TestSetup
 
-		public static DeleteModel pageModel;
-		public JsonFileProductService ProductService;
+        #region TestSetup
 
-		/// <summary>
-		/// Called before each test is called.
-		/// Sets up necessary test context or variables
-		/// </summary>
-		[SetUp]
-		public void Setup()
-		{
-			// Use a mock or test helper for ProductService
-			ProductService = TestHelper.ProductService;
-			pageModel = new DeleteModel(ProductService);
-		}
+        public static DeleteModel pageModel;
+        public JsonFileProductService ProductService;
 
-		#endregion TestSetup
+        /// <summary>
+        /// Called before each test is called.
+        /// Sets up necessary test context or variables
+        /// </summary>
+        [SetUp]
+        public void Setup()
+        {
+            // Use a mock or test helper for ProductService
+            ProductService = TestHelper.ProductService;
+            pageModel = new DeleteModel(ProductService);
+        }
 
-		#region OnGet
-		[Test]
-		public void OnGet_Valid_Activity_Set_Should_Have_Valid_State()
-		{
-			// Arrange
+        #endregion TestSetup
 
-			// Act
-			pageModel.OnGet("paris");
+        #region OnGet
 
-			// Reset
+        /// <summary>
+        /// Test that no product is assigned when null id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Null_Id_Default_Should_Return_Null()
+        {
+            // Act
+            pageModel.OnGet(null);
 
-			// Assert
-			Assert.That(pageModel.ModelState.IsValid, Is.EqualTo(true));
-		}
+            // Assert
+            Assert.IsNull(pageModel.Product);
+        }
 
-		#endregion OnGet
-	}
+        #endregion OnGet
+    }
 }
