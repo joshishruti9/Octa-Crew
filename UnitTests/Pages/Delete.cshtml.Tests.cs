@@ -47,6 +47,20 @@ namespace UnitTests.Pages
             Assert.IsNull(pageModel.Product);
         }
 
+        /// <summary>
+        /// Test that no product is assigned when invalid id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_Id_Default_Should_Return_Null()
+        {
+            // Act
+            pageModel.OnGet("nonexistent-id");
+
+            // Assert
+            Assert.IsNull(pageModel.Product);
+        }
+
+
         #endregion OnGet
     }
 }
