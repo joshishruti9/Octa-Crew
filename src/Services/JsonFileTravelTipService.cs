@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using ContosoCrafts.WebSite.Models;
+using Microsoft.AspNetCore.Hosting;
+using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 
 namespace ContosoCrafts.WebSite.Services
 {
@@ -27,5 +30,20 @@ namespace ContosoCrafts.WebSite.Services
 			get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "TravelTips.json"); }
 		}
 
+		/// <summary>
+		/// Gets a list of travel tips from the database
+		/// </summary>
+		/// <returns>List of TravelTipsModels containing city data</returns>
+		public IEnumerable<TravelTipsModel> GetAllData()
+		{
+			using (var jsonFileReader = File.OpenText(JsonFileName))
+			{
+				return JsonSerializer.Deserialize<TravelTipsModel[]>(jsonFileReader.ReadToEnd(),
+					new JsonSerializerOptions
+					{
+						PropertyNameCaseInsensitive = true
+					});
+			}
+		}
 	}
 }
