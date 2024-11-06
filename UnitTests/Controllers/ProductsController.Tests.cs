@@ -1,10 +1,7 @@
 ﻿using ContosoCrafts.WebSite.Controllers;
-using ContosoCrafts.WebSite.Pages.Product;
 using ContosoCrafts.WebSite.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
-using Microsoft.AspNetCore.Mvc;
 
 using static ContosoCrafts.WebSite.Controllers.ProductsController;
 using System.Linq;
@@ -53,7 +50,27 @@ namespace UnitTests.Controllers
         }
         #endregion Get
 
+        #region Patch
 
+        /// <summary>
+        /// Test that Patch send ok response after adding rating to product
+        /// </summary>
+        [Test]
+        public void Patch_Valid_Request_Should_Return_HTTP_Status_Ok()
+        {
+            //Arrange 
+            RatingRequest ratingRequest = new RatingRequest();
+            ratingRequest.ProductId = "Paris";
+            ratingRequest.Rating = 5;
+
+            // Act
+            var result = ProductsController.Patch(ratingRequest);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(typeof(OkResult), result.GetType());
+        }
+        #endregion Patch
     }
 
 }
