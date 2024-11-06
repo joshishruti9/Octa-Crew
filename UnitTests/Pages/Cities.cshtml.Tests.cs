@@ -6,13 +6,13 @@ using ContosoCrafts.WebSite.Pages;
 namespace UnitTests.Pages
 {
     /// <summary>
-    /// Unit testing class for Index page model
+    /// Unit testing class for Cities page model
     /// </summary>
     public class CitiesTests
     {
         #region TestSetup
 
-        // page model for the Index (cities) page
+        // page model for the Cites page
         public  CitiesModel pageModel;
 
         /// <summary>
