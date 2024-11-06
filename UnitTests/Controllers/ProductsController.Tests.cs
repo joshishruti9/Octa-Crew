@@ -35,6 +35,25 @@ namespace UnitTests.Controllers
 
         #endregion TestSetup
 
+        #region Get
+
+        /// <summary>
+        /// Test that Get correctly gets all Product from database
+        /// </summary>
+        [Test]
+        public void Get_Valid_Request_Should_Return_AllProducts()
+        {
+            //Arrange
+            var actualProducts = ProductService.GetAllData();
+            // Act
+            var result = ProductsController.Get();
+
+            // Assert  
+            Assert.AreEqual(result.ToList().Count, actualProducts.ToList().Count);
+        }
+        #endregion Get
+
+
     }
 
 }
