@@ -4,7 +4,7 @@ using ContosoCrafts.WebSite.Pages;
 namespace UnitTests.Pages
 {
     /// <summary>
-    /// Unit testing class for HomePage model
+    /// Unit testing class for Index model
     /// </summary>
     public class IndexTests
     {
