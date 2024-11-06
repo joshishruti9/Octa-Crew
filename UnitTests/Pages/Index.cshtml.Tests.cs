@@ -1,18 +1,15 @@
-﻿using System.Linq;
-
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages
 {
     /// <summary>
-    /// Unit testing class for Index page model
+    /// Unit testing class for HomePage model
     /// </summary>
     public class IndexTests
     {
         #region TestSetup
 
-        // page model for the Index (cities) page
         public static IndexModel pageModel;
 
         /// <summary>
@@ -22,24 +19,24 @@ namespace UnitTests.Pages
         [SetUp]
         public void Setup()
         {
-            pageModel = new IndexModel(TestHelper.ProductService);
+            pageModel = new IndexModel();
         }
 
         #endregion TestSetup
 
         #region OnGet
-
         [Test]
-        public void OnGet_Valid_Default_Should_Return_Products()
+        public void OnGet_Valid_Activity_Set_Should_Have_Valid_State()
         {
             // Arrange
 
             // Act
             pageModel.OnGet();
 
+            // Reset
+
             // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(true, pageModel.Products.ToList().Any());
+            Assert.That(pageModel.ModelState.IsValid, Is.EqualTo(true));
         }
 
         #endregion OnGet
