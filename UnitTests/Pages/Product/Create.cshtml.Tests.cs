@@ -191,7 +191,7 @@ namespace UnitTests.Pages.Product
             Assert.AreEqual(countOriginal + 1, dataNewList.Count());
             Assert.AreEqual(true, data.ToString().Equals(newProduct.ToString()));
             Assert.AreEqual(true, TestHelper.ModelState.IsValid);
-            Assert.AreEqual("./Index", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("./Read", (result as RedirectToPageResult).PageName);
         }
 
         #endregion OnPost
