@@ -12,5 +12,11 @@
 	<form method="post">
 		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 		@Html.HiddenFor(x => x.TravelTip.Id)
+
+		<div class="form-group">
+			<label asp-for="TravelTip.Title" class="control-label"></label>
+			<input asp-for="TravelTip.Title" class="form-control" />
+			<span asp-validation-for="TravelTip.Title" class="text-danger"></span>
+		</div>
 	</form>
 </div>
