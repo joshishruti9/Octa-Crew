@@ -52,7 +52,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
             }
 
             ProductService.UpdateData(Product);
-            return RedirectToPage("./Read");
+            return RedirectToPage("./Read", new { id = Product.Id});
         }
     }
 }
