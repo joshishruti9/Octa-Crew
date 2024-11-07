@@ -13,6 +13,15 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         public JsonFileTravelTipService TravelTipService { get; }
         
         /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="travelTipService">Service for working with database</param>
+        public UpdateTravelTipModel(JsonFileTravelTipService travelTipService)
+        {
+            TravelTipService = travelTipService;
+        }
+
+        /// <summary>
         /// Called when the page is accessed
         /// </summary>
         public void OnGet()
