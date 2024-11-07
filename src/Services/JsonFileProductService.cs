@@ -113,6 +113,8 @@ namespace ContosoCrafts.WebSite.Services
             productData.Currency = data.Currency;
 
             productData.Attractions = data.Attractions;
+            productData.Cost = data.Cost;
+            productData.TravelTime = data.TravelTime;
 
             SaveData(products);
 
