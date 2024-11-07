@@ -1,3 +1,4 @@
+using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -20,6 +21,10 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         {
             TravelTipService = travelTipService;
         }
+
+        // The data to show, bind to it for the post
+        [BindProperty]
+        public TravelTipsModel TravelTip { get; set; }
 
         /// <summary>
         /// Called when the page is accessed
