@@ -2,6 +2,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
@@ -27,10 +28,12 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         public TravelTipsModel TravelTip { get; set; }
 
         /// <summary>
-        /// Called when the page is accessed
+        /// Called when the page is accessed.
+        /// REST Get request loads the data
         /// </summary>
-        public void OnGet()
+        public void OnGet(string id)
         {
+            TravelTip = TravelTipService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
         }
     }
 }
