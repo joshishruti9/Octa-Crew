@@ -1,3 +1,4 @@
+using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,6 +9,9 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
     /// </summary>
     public class UpdateTravelTipModel : PageModel
     {
+        // Data middletier
+        public JsonFileTravelTipService TravelTipService { get; }
+        
         /// <summary>
         /// Called when the page is accessed
         /// </summary>
