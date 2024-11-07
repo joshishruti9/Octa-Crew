@@ -116,7 +116,7 @@ namespace UnitTests.Pages.Product
             Assert.IsInstanceOf<RedirectToPageResult>(result);
 
             var redirectResult = result as RedirectToPageResult;
-            Assert.AreEqual("./Index", redirectResult.PageName);
+            Assert.AreEqual("./Read", redirectResult.PageName);
         }
 
         /// <summary>
