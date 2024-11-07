@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Linq;
-using ContosoCrafts.WebSite.Pages.Product;
+using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 
 namespace UnitTests.Pages.Product
 {

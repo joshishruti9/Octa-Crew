@@ -3,7 +3,7 @@ using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
     /// <summary>
     /// Model for TravelTips page
