@@ -51,7 +51,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
 
             ProductService.SaveData(dataSet);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Read");
         }
     }
 }
