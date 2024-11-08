@@ -32,5 +32,60 @@ namespace UnitTests.Pages.TravelTipsProduct
         }
 
 		#endregion TestSetup
+
+		#region ReadData
+
+		/// <summary>
+		/// Test for correct output when null id is passed
+		/// </summary>
+		[Test]
+		public void ReadData_Null_Id_Default_Should_Return_Null()
+		{
+			// Arrange
+
+			// Act
+
+			// the model matching the id
+			var result = pageModel.ReadData(null);
+
+			// Assert
+			Assert.AreEqual(null, result);
+		}
+
+		/// <summary>
+		/// Test for correct output when invalid id is passed
+		/// </summary>
+		[Test]
+		public void ReadData_Invalid_Id_Default_Should_Return_Null()
+		{
+			// Arrange
+
+			// Act
+
+			// the model matching the id
+			var result = pageModel.ReadData("invalid_id");
+
+			// Assert
+			Assert.AreEqual(null, result);
+		}
+
+		/// <summary>
+		/// Test for correct output when a valid id is passed
+		/// </summary>
+		[Test]
+		public void ReadData_Valid_Id_Default_Should_Return_Tip()
+		{
+			// Arrange
+
+			// Act
+
+			// the model matching the id
+			var result = pageModel.ReadData("1");
+
+			// Assert
+			Assert.AreEqual("1", result.Id);
+		}
+
+		#endregion ReadData
 	}
 }
