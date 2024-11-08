@@ -21,7 +21,22 @@ namespace UnitTests.Models
 			// Arrange
 			var data = new ProductModel()
 			{
-				Images = null
+				Id = System.Guid.NewGuid().ToString(),
+				Images = null,
+				Title = "Enter City Name",
+				Description = "Enter City Description",
+				BestSeason = null,
+				Currency = "Enter Currency",
+				TimeZone = "Enter Time Zone",
+				Attractions = new string[3]
+				{
+					"Enter an Attraction",
+					"Enter an Attraction",
+					"Enter an Attraction"
+				},
+				Cost = 0,
+				TravelTime = 0.0,
+				Ratings = null
 			};
 			var validationResults = new List<ValidationResult>();
 
