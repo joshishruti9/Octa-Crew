@@ -122,6 +122,36 @@ namespace UnitTests.Models
 			Assert.AreEqual("No more than 3 Image URLs are allowed", validationResults[0].ErrorMessage);
 		}
 
+		/// <summary>
+		/// Setting valid array of 3 Images should be successul
+		/// </summary>
+		[Test]
+		public void Set_Images_Valid_Should_Be_Validated()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				Images = new string[]
+				{
+					"https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+					"https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+					"https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg"
+				}
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(true, result);
+			Assert.AreEqual(0, validationResults.Count);
+		}
+
 		#endregion Images
 
 		#region GetCityRating
