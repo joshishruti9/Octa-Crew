@@ -23,12 +23,15 @@
             <span asp-validation-for="Product.Description" class="text-danger"></span>
         </div>
 
-        @for (int i = 0; i < Model.Product.Images.Length; i++)
-        {
-            <label asp-for="Product.Images[@i]" class="control-label">Image @(i + 1)</label>
-            <input asp-for="Product.Images[@i]" class="form-control mb-2" />
-            <span asp-validation-for="Product.Images[@i]" class="text-danger"></span>
-        }
+        <div class="form-group">
+            @for (int i = 0; i < Model.Product.Images.Length; i++)
+            {
+                <label asp-for="Product.Images[@i]" class="control-label">Image @(i + 1)</label>
+                <input asp-for="Product.Images[@i]" class="form-control mb-2" />
+                <span asp-validation-for="Product.Images[@i]" class="text-danger"></span>
+            }
+            <span asp-validation-for="Product.Images" class="text-danger"></span>
+        </div>
 
         <div class="form-group">
             <label asp-for="Product.BestSeason" class="control-label">Best Season</label>
