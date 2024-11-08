@@ -109,7 +109,7 @@ namespace UnitTests.Pages.TravelTipsProduct
 			pageModel.OnGet(null);
 
 			// Assert
-			Assert.AreEqual(null, pageModel.TravelTips);
+			Assert.AreEqual(null, pageModel.TravelTip);
 		}
 
 		/// <summary>
@@ -124,7 +124,7 @@ namespace UnitTests.Pages.TravelTipsProduct
 			pageModel.OnGet("invalid_id");
 
 			// Assert
-			Assert.AreEqual(null, pageModel.TravelTips);
+			Assert.AreEqual(null, pageModel.TravelTip);
 		}
 
 		/// <summary>
@@ -142,9 +142,9 @@ namespace UnitTests.Pages.TravelTipsProduct
 			pageModel.OnGet("1");
 
 			// Assert
-			Assert.AreEqual(expected.Id, pageModel.TravelTips.Id);
-			Assert.AreEqual(expected.Title, pageModel.TravelTips.Title);
-			Assert.AreEqual(expected.Description, pageModel.TravelTips.Description);
+			Assert.AreEqual(expected.Id, pageModel.TravelTip.Id);
+			Assert.AreEqual(expected.Title, pageModel.TravelTip.Title);
+			Assert.AreEqual(expected.Description, pageModel.TravelTip.Description);
 		}
 
 		#endregion OnGet
@@ -158,7 +158,7 @@ namespace UnitTests.Pages.TravelTipsProduct
 		public void OnPost_Invalid_Model_State_Should_Redirect_To_Travel_Tips()
 		{
 			// Arrange
-			pageModel.TravelTips = new TravelTipsModel
+			pageModel.TravelTip = new TravelTipsModel
 			{
 				Id = "1"
 			};
@@ -183,7 +183,7 @@ namespace UnitTests.Pages.TravelTipsProduct
 			// retrieve all the records in the travel tips database
 			var data = TravelTipService.GetAllData();
 
-			pageModel.TravelTips = new TravelTipsModel
+			pageModel.TravelTip = new TravelTipsModel
 			{
 				Id = "1"
 			};
