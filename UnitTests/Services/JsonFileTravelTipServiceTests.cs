@@ -107,5 +107,66 @@ namespace UnitTests.Services
 		}
 
 		#endregion UpdateData
+
+		#region DeleteData
+
+		/// <summary>
+		/// Test that DeleteData returns null if a null id is passed
+		/// </summary>
+		[Test]
+		public void DeleteData_Null_Id_Default_Should_Return_Null()
+		{
+			// Arrange
+
+			// Act
+			var result = TestHelper.TravelTipService.DeleteData(null);
+
+			// Assert
+			Assert.AreEqual(null, result);
+		}
+
+		/// <summary>
+		/// Test that DeleteData returns null if an invalid id is passed
+		/// </summary>
+		[Test]
+		public void DeleteData_Invalid_Id_Default_Should_Return_Null()
+		{
+			// Arrange
+
+			// Act
+			var result = TestHelper.TravelTipService.DeleteData("invalid_id");
+
+			// Assert
+			Assert.AreEqual(null, result);
+		}
+
+		/// <summary>
+		/// Test that DeleteData successfully deletes the travel tip matching a valid id
+		/// and returns the TravelTipsModel object associated with that record
+		/// </summary>
+		[Test]
+		public void DeleteData_Valid_Id_Default_Should_Return_Deleted_Tip()
+		{
+			// Arrange
+
+			// the first travel tip retrieved the database
+			var data = TestHelper.TravelTipService.GetAllData().First();
+
+			// the id of the retrieved travel tip
+			var id = data.Id;
+
+			// Act
+
+			// delete the first travel tip from the database
+			var result = TestHelper.TravelTipService.DeleteData(id);
+
+			// Assert
+			Assert.AreEqual(null, TestHelper.TravelTipService.GetAllData().FirstOrDefault(x => x.Id == id));
+			Assert.AreEqual(data.Id, result.Id);
+			Assert.AreEqual(data.Title, result.Title);
+			Assert.AreEqual(data.Description, result.Description);
+		}
+
+		#endregion DeleteData
 	}
 }
