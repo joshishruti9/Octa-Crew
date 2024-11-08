@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ContosoCrafts.WebSite.Models
 {
@@ -9,6 +10,7 @@ namespace ContosoCrafts.WebSite.Models
 	{
 		// URL attribute for pointing to an image
 		// Validated by Url and RegularExpression
+		[JsonPropertyName("url")]
 		[Required(ErrorMessage = "URL is required")]
 		[Url(ErrorMessage = "Please enter a valid URL")]
 		[RegularExpression(
