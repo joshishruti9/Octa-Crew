@@ -501,6 +501,51 @@ namespace UnitTests.Models
             Assert.AreEqual("Title is required", validationResults[0].ErrorMessage);
         }
 
+        /// <summary>
+        /// Setting Title to string exceeding maximum length should cause a validation error
+        /// </summary>
+        [Test]
+        public void Set_Title_Invalid_String_Too_Long_Should_Cause_Validation_Error()
+        {
+            // Arrange
+            var data = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[]
+                {
+                    "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+                    "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+                    "https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
+                },
+                Title = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                Description = "Enter City Description",
+                BestSeason = null,
+                Currency = "Enter Currency",
+                TimeZone = "Enter Time Zone",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
+            var validationResults = new List<ValidationResult>();
+
+            // Act
+            bool result = Validator.TryValidateObject(
+                data, new ValidationContext(data), validationResults, true
+            );
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+            Assert.AreEqual("The Title should have a length of more than 1 and less than 33", validationResults[0].ErrorMessage);
+        }
+
         #endregion Title
 
         #region GetCityRating
