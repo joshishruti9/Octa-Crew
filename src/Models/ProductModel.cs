@@ -1,3 +1,4 @@
+using ContosoCrafts.WebSite.ValidationAttributes;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json;
@@ -29,6 +30,10 @@ namespace ContosoCrafts.WebSite.Models
         [Required(ErrorMessage = "Image URLs are required")]
         [MinLength(3, ErrorMessage = "3 Image URLs are required")]
         [MaxLength(3, ErrorMessage = "No more than 3 Image URLs are allowed")]
+        [CustomValidation(
+            typeof(ImageURLValidation),
+            nameof(ImageURLValidation.ImageURLValidate)
+        )]
         public string[] Images { get; set; }
         
         // Name of the city
