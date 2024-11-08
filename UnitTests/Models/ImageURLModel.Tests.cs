@@ -120,6 +120,31 @@ namespace UnitTests.Models
 			);
 		}
 
+		/// <summary>
+		/// Checks that setting the URL attribute to a valid image URL is successful
+		/// </summary>
+		[Test]
+		public void Set_URL_Valid_Image_Should_Be_Validated_Successfully()
+		{
+			// Arrange
+			var data = new ImageURLModel
+			{
+				URL = "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg"
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(true, result);
+			Assert.AreEqual(0, validationResults.Count);
+		}
+
 		#endregion URL
 	}
 }
