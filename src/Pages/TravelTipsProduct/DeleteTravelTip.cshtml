@@ -1,4 +1,9 @@
-﻿@page
-@model ContosoCrafts.WebSite.Pages.TravelTipsProduct.IndexModel
-@{
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@using ContosoCrafts.WebSite.Models
+@inject JsonFileTravelTipService TravelTipService
+@model DeleteTravelTipModel
+@if (Model.TravelTips != null)
+{
+	ViewData["Title"] = "Delete travel tip";
 }
