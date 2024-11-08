@@ -36,5 +36,26 @@ namespace UnitTests.Pages.TravelTipsProduct
 		}
 
 		#endregion TestSetup
+
+		#region OnGet
+
+		/// <summary>
+		/// Test that no travel tip is assigned when null id is passed
+		/// </summary>
+		[Test]
+		public void OnGet_Null_Id_Default_Should_Return_Null()
+		{
+			// Arrange
+			
+			// Act
+			pageModel.OnGet(null);
+
+			// Reset
+
+			// Assert
+			Assert.IsNull(pageModel.TravelTip);
+		}
+
+		#endregion OnGet
 	}
 }
