@@ -90,6 +90,36 @@ namespace UnitTests.Models
 			Assert.AreEqual("Please enter a valid URL", validationResults[0].ErrorMessage);
 		}
 
+		/// <summary>
+		/// Checks that setting the URL attribute to a URL without image extension
+		/// causes a validation error
+		/// </summary>
+		[Test]
+		public void Set_URL_Invalid_Not_Image_Should_Return_Error()
+		{
+			// Arrange
+			var data = new ImageURLModel
+			{
+				URL = "https://www.wikipedia.org/"
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual(
+				"The URL must point to an image file" +
+				" (.jpg, .jpeg, .png, .gif, .bmp, .svg, or .webp)",
+				validationResults[0].ErrorMessage
+			);
+		}
+
 		#endregion URL
 	}
 }
