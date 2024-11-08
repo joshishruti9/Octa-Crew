@@ -183,6 +183,51 @@ namespace UnitTests.Models
 		}
 
 		/// <summary>
+		/// Setting null element in Images should cause a validation error
+		/// </summary>
+		[Test]
+		public void Set_Images_Invalid_Null_Element_Should_Not_Be_Validated()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				Id = System.Guid.NewGuid().ToString(),
+				Images = new string[]
+				{
+					"https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+					"https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+					null,
+				},
+				Title = "Enter City Name",
+				Description = "Enter City Description",
+				BestSeason = null,
+				Currency = "Enter Currency",
+				TimeZone = "Enter Time Zone",
+				Attractions = new string[3]
+				{
+					"Enter an Attraction",
+					"Enter an Attraction",
+					"Enter an Attraction"
+				},
+				Cost = 0,
+				TravelTime = 0.0,
+				Ratings = null
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("Image #3 URL is null", validationResults[0].ErrorMessage);
+		}
+
+		/// <summary>
 		/// Setting valid array of 3 Images should be successul
 		/// </summary>
 		[Test]
