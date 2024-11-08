@@ -49,13 +49,13 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         /// </summary>
 		public IActionResult OnPost()
 		{
-			if (ModelState.IsValid)
-			{
-                TravelTipService.DeleteData(TravelTip.Id);
-                return RedirectToPage("./TravelTips");
-			}
+            if (!ModelState.IsValid)
+            {
+    			return Page();
+            }
 
-			return Page();
+            TravelTipService.DeleteData(TravelTip.Id);
+            return RedirectToPage("./TravelTips");
 		}
 	}
 }
