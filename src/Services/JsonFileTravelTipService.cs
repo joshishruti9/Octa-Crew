@@ -93,6 +93,27 @@ namespace ContosoCrafts.WebSite.Services
 		}
 
 		/// <summary>
+		/// Delete all the fields of a travel tip from the database 
+		/// </summary>
+		/// <param name="id">The id of the travel tip that needs to be deleted</param>
+		/// <returns>Updated travel tips data</returns>
+		public TravelTipsModel DeleteData(string id)
+		{
+			// Get the current set
+			var dataSet = GetAllData();
+
+			// Get the travel tip matching the given id
+			var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
+
+			// Retrieve all travel tips from the database where the id does not match the given id
+			var newDataSet = dataSet.Where(m => m.Id.Equals(id) == false);
+
+			SaveData(newDataSet);
+
+			return data;
+		}
+
+		/// <summary>
 		/// Stores the list of travel tips in the database
 		/// </summary>
 		public void SaveData(IEnumerable<TravelTipsModel> travelTips)
