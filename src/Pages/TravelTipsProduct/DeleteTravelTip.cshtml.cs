@@ -8,8 +8,16 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
     public class DeleteTravelTipModel : PageModel
     {
-        public void OnGet()
+        public JsonFileTravelTipService TravelTipService { get; set; }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="travelTipService">Set to TravelTipService</param>
+        public DeleteTravelTipModel(JsonFileTravelTipService travelTipService)
         {
+            TravelTipService = travelTipService; 
         }
+
     }
 }
