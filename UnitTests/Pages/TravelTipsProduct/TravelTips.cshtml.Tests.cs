@@ -2,7 +2,7 @@
 using System.Linq;
 using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 
-namespace UnitTests.Pages.Product
+namespace UnitTests.Pages.TravelTipsProduct
 {
     /// <summary>
     /// Unit testing class for TravelTips page model
