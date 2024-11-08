@@ -1,5 +1,7 @@
 ﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UnitTests.Models
 {
@@ -8,6 +10,35 @@ namespace UnitTests.Models
 	/// </summary>
 	public class ProductModelTests
     {
+		#region Images
+
+		/// <summary>
+		/// Setting Images to null should cause a validation error
+		/// </summary>
+		[Test]
+		public void Set_Images_Invalid_Null_Should_Not_Be_Validated()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				Images = null
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("Image URLs are required", validationResults[0].ErrorMessage);
+		}
+
+		#endregion Images
+
 		#region GetCityRating
 
 		/// <summary>
