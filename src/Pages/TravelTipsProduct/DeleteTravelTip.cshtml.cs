@@ -1,5 +1,6 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 
@@ -41,5 +42,20 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         {
             return TravelTipService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
-    }
+
+		/// <summary>
+        /// Delete the data for given id
+        /// </summary>
+        /// <param name="id">The id of the travel tip to delete</param>
+		public IActionResult OnPost(string id)
+		{
+			if (ModelState.IsValid)
+			{
+                TravelTipService.DeleteData(id);
+                return RedirectToPage("./TravelTips");
+			}
+
+			return Page();
+		}
+	}
 }
