@@ -2,6 +2,7 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 using NUnit.Framework;
@@ -81,5 +82,34 @@ namespace UnitTests.Pages.TravelTipsProduct
 		}
 
 		#endregion OnGet
+
+		#region OnPost
+
+		/// <summary>
+		/// Test OnPost method to ensure it redirects to Index when ModelState is valid.
+		/// (Index has not yet been created, so for now we are testing for a redirect to ./TravelTips.
+		/// When Index has been created, update this test.)
+		/// </summary>
+		[Test]
+		public void OnPost_ValidModelState_Should_RedirectToIndex()
+		{
+			// Arrange
+			pageModel.TravelTip = new TravelTipsModel
+			{ 
+				Id = System.Guid.NewGuid().ToString(),
+				Title = "Test Travel Tip" 
+			};
+
+			// Act
+			var result = pageModel.OnPost() as RedirectToPageResult;
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual("./TravelTips", result.PageName);
+		}
+
+
+		#endregion OnPost
 	}
 }
