@@ -2,7 +2,12 @@
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using NUnit.Framework;
+using System;
+using System.Data;
+using System.Linq;
 
 namespace UnitTests.Pages.TravelTipsProduct
 {
@@ -54,6 +59,25 @@ namespace UnitTests.Pages.TravelTipsProduct
 
 			// Assert
 			Assert.IsNull(pageModel.TravelTip);
+		}
+
+		/// <summary>
+		/// Test that correct travel tip is assigned when valid id is passed
+		/// </summary>
+		[Test]
+		public void OnGet_Valid_Id_Default_Should_Assign_TravelTip()
+		{
+			// Arrange
+			var data = TravelTipService.CreateData();
+			TravelTipService.SaveData(TravelTipService.GetAllData().Append(data));
+
+			// Act
+			pageModel.OnGet(data.Id);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(data.Id, pageModel.TravelTip.Id);
 		}
 
 		#endregion OnGet
