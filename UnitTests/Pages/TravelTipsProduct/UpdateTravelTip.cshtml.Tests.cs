@@ -3,6 +3,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using Microsoft.VisualStudio.TestPlatform.Utilities;
 using NUnit.Framework;
@@ -109,6 +110,24 @@ namespace UnitTests.Pages.TravelTipsProduct
 			Assert.AreEqual("./TravelTips", result.PageName);
 		}
 
+		/// <summary>
+		/// Test OnPost method when ModelState is invalid, should return PageResult
+		/// </summary>
+		[Test]
+		public void OnPost_Invalid_ModelState_Should_Return_PageResult()
+		{
+			// Arrange
+			pageModel.ModelState.AddModelError("error", "Model state is invalid");
+
+			// Act
+			var result = pageModel.OnPost() as PageResult;
+
+			// Reset
+
+			// Assert
+			Assert.IsNotNull(result);
+			Assert.AreEqual(typeof(PageResult), result.GetType());
+		}
 
 		#endregion OnPost
 	}
