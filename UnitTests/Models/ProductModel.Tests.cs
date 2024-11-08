@@ -191,12 +191,27 @@ namespace UnitTests.Models
 			// Arrange
 			var data = new ProductModel()
 			{
+				Id = System.Guid.NewGuid().ToString(),
 				Images = new string[]
 				{
 					"https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
 					"https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
-					"https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg"
-				}
+					"https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
+				},
+				Title = "Enter City Name",
+				Description = "Enter City Description",
+				BestSeason = null,
+				Currency = "Enter Currency",
+				TimeZone = "Enter Time Zone",
+				Attractions = new string[3]
+				{
+					"Enter an Attraction",
+					"Enter an Attraction",
+					"Enter an Attraction"
+				},
+				Cost = 0,
+				TravelTime = 0.0,
+				Ratings = null
 			};
 			var validationResults = new List<ValidationResult>();
 
