@@ -8,6 +8,9 @@ using NUnit.Framework;
 using System.Linq;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using ContosoCrafts.WebSite.Services;
 
 namespace UnitTests.Pages.TravelTipsProduct
 {
@@ -21,6 +24,9 @@ namespace UnitTests.Pages.TravelTipsProduct
 		// page model for the CRUDi travel tips delete page
 		public static DeleteTravelTipModel pageModel;
 
+		// mock service for the travel tips database
+		public static JsonFileTravelTipService TravelTipService;
+
 		/// <summary>
 		/// Called before each test is called.
 		/// Sets up necessary test context or variables
@@ -28,7 +34,8 @@ namespace UnitTests.Pages.TravelTipsProduct
 		[SetUp]
         public void Setup()
         {
-            pageModel = new DeleteTravelTipModel(TestHelper.TravelTipService);
+			TravelTipService = TestHelper.TravelTipService;
+            pageModel = new DeleteTravelTipModel(TravelTipService);
         }
 
 		#endregion TestSetup
@@ -128,11 +135,11 @@ namespace UnitTests.Pages.TravelTipsProduct
 		{
 			// Arrange
 
-			// Act
-			pageModel.OnGet("1");
-
 			// the expected TravelTipsModel assigned to the DeleteTravelTip page
 			var expected = TestHelper.TravelTipService.GetAllData().First(x => x.Id == "1");
+
+			// Act
+			pageModel.OnGet("1");
 
 			// Assert
 			Assert.AreEqual(expected.Id, pageModel.TravelTips.Id);
@@ -141,5 +148,54 @@ namespace UnitTests.Pages.TravelTipsProduct
 		}
 
 		#endregion OnGet
+
+		#region OnPost
+
+		[Test]
+		public void OnPost_Invalid_Model_State_Should_Redirect_To_Travel_Tips()
+		{
+			// Arrange
+			pageModel.TravelTips = new TravelTipsModel
+			{
+				Id = "1"
+			};
+			pageModel.ModelState.AddModelError("Id", "Error");
+
+			// Act
+			var result = pageModel.OnPost() as PageResult;
+
+			// Assert
+			Assert.AreEqual(typeof(PageResult), result.GetType());
+		}
+
+		[Test]
+		public void OnPost_Valid_Model_State_Should_Redirect_To_Travel_Tips()
+		{
+			// Arrange
+
+			// retrieve all the records in the travel tips database
+			var data = TravelTipService.GetAllData();
+
+			pageModel.TravelTips = new TravelTipsModel
+			{
+				Id = "1"
+			};
+
+			// Act
+			var result = pageModel.OnPost() as RedirectToPageResult;
+
+			// attempt to retrieve the deleted travel tip
+			var newData = TravelTipService.GetAllData().FirstOrDefault(x => x.Id == "1");
+
+			// Reset
+			TravelTipService.SaveData(data);
+
+			// Assert
+			Assert.AreEqual(true, result != null);
+			Assert.AreEqual("./TravelTips", result.PageName);
+			Assert.AreEqual(null, newData);
+		}
+
+		#endregion OnPost
 	}
 }
