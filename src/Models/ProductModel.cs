@@ -35,8 +35,12 @@ namespace ContosoCrafts.WebSite.Models
             nameof(ImageURLValidation.ImageURLValidate)
         )]
         public string[] Images { get; set; }
-        
+
         // Name of the city
+        [Required(ErrorMessage = "Title is required")]
+        [StringLength(
+            maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}"
+        )]
         public string Title { get; set; }
         
         // Description about the city
