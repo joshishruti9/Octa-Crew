@@ -13,7 +13,8 @@ namespace ContosoCrafts.WebSite.Models
 		[Url(ErrorMessage = "Please enter a valid URL")]
 		[RegularExpression(
 			@".*\.(jpg|jpeg|png|gif|bmp|svg|webp)$",
-			ErrorMessage = "The URL must point to an image file (.jpg, .jpeg, .png, .gif, .bmp, .svg, or .webp"
+			ErrorMessage = "The URL must point to an image file" +
+			" (.jpg, .jpeg, .png, .gif, .bmp, .svg, or .webp)"
 		)]
 		public string URL { get; set; }
 	}
