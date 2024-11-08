@@ -22,6 +22,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         }
 
         // the data to show
+        [BindProperty]
         public TravelTipsModel TravelTips { get; set; }
 
         /// <summary>
@@ -44,14 +45,13 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         }
 
 		/// <summary>
-        /// Delete the data for given id
+        /// Delete the data for this travel tip
         /// </summary>
-        /// <param name="id">The id of the travel tip to delete</param>
-		public IActionResult OnPost(string id)
+		public IActionResult OnPost()
 		{
 			if (ModelState.IsValid)
 			{
-                TravelTipService.DeleteData(id);
+                TravelTipService.DeleteData(TravelTips.Id);
                 return RedirectToPage("./TravelTips");
 			}
 
