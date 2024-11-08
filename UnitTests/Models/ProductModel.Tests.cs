@@ -273,7 +273,7 @@ namespace UnitTests.Models
 		}
 
 		/// <summary>
-		/// Setting empty string in Images should cause a validation error
+		/// Setting invalid URL in Images should cause a validation error
 		/// </summary>
 		[Test]
 		public void Set_Images_Invalid_URL_Should_Not_Be_Validated()
