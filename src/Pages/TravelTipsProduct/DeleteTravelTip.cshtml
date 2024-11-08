@@ -3,7 +3,7 @@
 @using ContosoCrafts.WebSite.Models
 @inject JsonFileTravelTipService TravelTipService
 @model DeleteTravelTipModel
-@if (Model.TravelTips != null)
+@if (Model.TravelTip != null)
 {
 	ViewData["Title"] = "Delete travel tip";
 
@@ -12,18 +12,18 @@
 	<div class="container">
 		<form method="post">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			@Html.HiddenFor(x => x.TravelTips.Id)
+			@Html.HiddenFor(x => x.TravelTip.Id)
 
 			<div class="form-group">
-				<label asp-for="TravelTips.Title" class="control-label"></label>
-				<input asp-for="TravelTips.Title" class="form-control" />
-				<span asp-validation-for="TravelTips.Title" class="text-danger"></span>
+				<label asp-for="TravelTip.Title" class="control-label"></label>
+				<input asp-for="TravelTip.Title" class="form-control" />
+				<span asp-validation-for="TravelTip.Title" class="text-danger"></span>
 			</div>
 
 			<div class="form-group">
-				<label asp-for="TravelTips.Description" class="control-label"></label>
-				<input asp-for="TravelTips.Description" class="form-control" />
-				<span asp-validation-for="TravelTips.Description" class="text-danger"></span>
+				<label asp-for="TravelTip.Description" class="control-label"></label>
+				<input asp-for="TravelTip.Description" class="form-control" />
+				<span asp-validation-for="TravelTip.Description" class="text-danger"></span>
 			</div>
 
 			<h3>Are You Sure You Want to Delete?</h3>

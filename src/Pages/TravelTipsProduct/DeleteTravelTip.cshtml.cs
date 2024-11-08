@@ -23,7 +23,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 
         // the data to show
         [BindProperty]
-        public TravelTipsModel TravelTips { get; set; }
+        public TravelTipsModel TravelTip { get; set; }
 
         /// <summary>
         /// REST GET request
@@ -31,7 +31,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         /// <param name="id">The id of the travel tip to delete</param>
         public void OnGet(string id)
         {
-            TravelTips = ReadData(id);
+            TravelTip = ReadData(id);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 		{
 			if (ModelState.IsValid)
 			{
-                TravelTipService.DeleteData(TravelTips.Id);
+                TravelTipService.DeleteData(TravelTip.Id);
                 return RedirectToPage("./TravelTips");
 			}
 
