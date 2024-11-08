@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -25,6 +26,9 @@ namespace ContosoCrafts.WebSite.Models
 
         // Array of image URLs for the city
         [JsonPropertyName("imgs")]
+        [Required(ErrorMessage = "Image URLs are required")]
+        [MinLength(3, ErrorMessage = "3 Image URLs are required")]
+        [MaxLength(3, ErrorMessage = "No more than 3 Image URLs are allowed")]
         public string[] Images { get; set; }
         
         // Name of the city
