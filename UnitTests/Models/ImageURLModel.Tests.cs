@@ -40,6 +40,31 @@ namespace UnitTests.Models
 			));
 		}
 
+		/// <summary>
+		/// Checks that setting the URL attribute to an empty string causes a validation error
+		/// </summary>
+		[Test]
+		public void Set_URL_Invalid_Empty_String_Should_Return_Error()
+		{
+			// Arrange
+			var data = new ImageURLModel
+			{
+				URL = ""
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("URL is required", validationResults[0].ErrorMessage);
+		}
+
 		#endregion URL
 	}
 }
