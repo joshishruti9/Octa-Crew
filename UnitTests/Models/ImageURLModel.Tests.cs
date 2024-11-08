@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace UnitTests.Models
 {
-	internal class ImageURLModel
+	/// <summary>
+	/// Tests for ImageURLModel class and its validation for the URL attribute
+	/// </summary>
+	public class ImageURLModelTests
 	{
 	}
 }
