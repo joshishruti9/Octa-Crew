@@ -37,6 +37,31 @@ namespace UnitTests.Models
 			Assert.AreEqual("Image URLs are required", validationResults[0].ErrorMessage);
 		}
 
+		/// <summary>
+		/// Setting Images to empty array should cause a validation error
+		/// </summary>
+		[Test]
+		public void Set_Images_Invalid_Empty_Array_Should_Not_Be_Validated()
+		{
+			// Arrange
+			var data = new ProductModel()
+			{
+				Images = new string[0]
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("3 Image URLs are required", validationResults[0].ErrorMessage);
+		}
+
 		#endregion Images
 
 		#region GetCityRating
