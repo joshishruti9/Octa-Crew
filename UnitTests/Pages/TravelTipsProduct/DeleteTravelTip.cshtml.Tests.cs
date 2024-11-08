@@ -151,6 +151,9 @@ namespace UnitTests.Pages.TravelTipsProduct
 
 		#region OnPost
 
+		/// <summary>
+		/// Test that delete refreshes the page when there is a model error
+		/// </summary>
 		[Test]
 		public void OnPost_Invalid_Model_State_Should_Redirect_To_Travel_Tips()
 		{
@@ -168,6 +171,10 @@ namespace UnitTests.Pages.TravelTipsProduct
 			Assert.AreEqual(typeof(PageResult), result.GetType());
 		}
 
+		/// <summary>
+		/// Test that travel is successfully deleted when model state is valid
+		/// and that user is redirected to travel tips page
+		/// </summary>
 		[Test]
 		public void OnPost_Valid_Model_State_Should_Redirect_To_Travel_Tips()
 		{
