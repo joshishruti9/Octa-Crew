@@ -26,22 +26,22 @@ namespace ContosoCrafts.WebSite.ValidationAttributes
 			{
 				if (URLs[i] == null)
 				{
-					return new ValidationResult("URL is null");
+					return new ValidationResult($"Image #{i + 1} URL is null");
 				}
 
 				if (URLs[i].Length == 0)
 				{
-					return new ValidationResult("URL is empty");
+					return new ValidationResult($"Image #{i + 1} URL is empty");
 				}
 
 				if (urlCheck.IsValid(URLs[i]) == false)
 				{
-					return new ValidationResult("URL is not valid");
+					return new ValidationResult($"Image #{i + 1} URL is not valid");
 				}
 
 				if (regEx.IsValid(URLs[i]) == false)
 				{
-					return new ValidationResult("URL does not end in image extension");
+					return new ValidationResult($"Image #{i + 1} URL does not end in image extension");
 				}
 			}
 
