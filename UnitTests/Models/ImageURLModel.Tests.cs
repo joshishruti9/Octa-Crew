@@ -65,6 +65,31 @@ namespace UnitTests.Models
 			Assert.AreEqual("URL is required", validationResults[0].ErrorMessage);
 		}
 
+		/// <summary>
+		/// Checks that setting the URL attribute to an invalid URL causes a validation error
+		/// </summary>
+		[Test]
+		public void Set_URL_Invalid_URL_Should_Return_Error()
+		{
+			// Arrange
+			var data = new ImageURLModel
+			{
+				URL = "invalid-url"
+			};
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			bool result = Validator.TryValidateObject(
+				data, new ValidationContext(data), validationResults, true
+			);
+
+			// Reset
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("Please enter a valid URL", validationResults[0].ErrorMessage);
+		}
+
 		#endregion URL
 	}
 }
