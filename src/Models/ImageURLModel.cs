@@ -9,8 +9,8 @@ namespace ContosoCrafts.WebSite.Models
 	{
 		// URL attribute for pointing to an image
 		// Validated by Url and RegularExpression
-		[Required]
-		[Url(ErrorMessage = "Please enter a valid URL.")]
+		[Required(ErrorMessage = "URL is required")]
+		[Url(ErrorMessage = "Please enter a valid URL")]
 		[RegularExpression(
 			@".*\.(jpg|jpeg|png|gif|bmp|svg|webp)$",
 			ErrorMessage = "The URL must point to an image file (.jpg, .jpeg, .png, .gif, .bmp, .svg, or .webp"
