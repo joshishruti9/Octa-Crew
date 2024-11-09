@@ -1067,6 +1067,55 @@ namespace UnitTests.Models
 
         #endregion Attractions
 
+        #region Ratings
+
+        /// <summary>
+        /// Setting Ratings to an array with values less than 1 should cause a validation error
+        /// </summary>
+        [Test]
+        public void Set_Ratings_Invalid_Less_Than_0_Should_Cause_Validation_Error()
+        {
+            // Arrange
+            var data = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[]
+                {
+                    "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+                    "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+                    "https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
+                },
+                Title = "Enter City Name",
+                Description = "Enter City Description",
+                BestSeason = null,
+                Currency = "CUR",
+                TimeZone = "GMT-00",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = new int[1] { 0 }
+            };
+            var validationResults = new List<ValidationResult>();
+
+            // Act
+            bool result = Validator.TryValidateObject(
+                data, new ValidationContext(data), validationResults, true
+            );
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+            Assert.AreEqual("Rating #1 must be at least 1", validationResults[0].ErrorMessage);
+        }
+
+        #endregion Ratings
+
         #region GetCityRating
 
         /// <summary>
