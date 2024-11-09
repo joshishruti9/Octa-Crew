@@ -85,7 +85,7 @@ namespace ContosoCrafts.WebSite.Services
 
 			// Update the data to the new passed in values
 			travelTipData.Title = data.Title;
-			travelTipData.Description = data.Description.Trim();
+			travelTipData.Description = data.Description?.Trim();
 
 			SaveData(travelTips);
 
