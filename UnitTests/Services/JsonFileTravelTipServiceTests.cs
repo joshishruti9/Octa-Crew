@@ -106,6 +106,29 @@ namespace UnitTests.Services
 			Assert.AreEqual("Updated Description with extra spaces", result.Description);
 		}
 
+		/// <summary>
+		/// Test that description is successfully updated when the description contains only whitespace
+		/// </summary>
+		[Test]
+		public void UpdateData_Valid_All_WhiteSpace_Description_Should_Update_Description()
+		{
+			// Arrange
+			var existingProduct = TestHelper.TravelTipService.GetAllData().First();
+			var updatedTravelTip = new TravelTipsModel
+			{
+				Id = existingProduct.Id,
+				Title = "Updated Title",
+				Description = " "
+			};
+
+			// Act
+			var result = TestHelper.TravelTipService.UpdateData(updatedTravelTip);
+
+			// Assert
+			Assert.AreEqual(true, result != null);
+			Assert.AreEqual("", result.Description);
+		}
+
 		#endregion UpdateData
 
 		#region DeleteData
