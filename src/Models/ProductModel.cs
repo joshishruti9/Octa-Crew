@@ -60,10 +60,16 @@ namespace ContosoCrafts.WebSite.Models
         )]
         [RegularExpression(@"[A-Z]+$", ErrorMessage = "Currency must be in all caps")]
         public string Currency { get; set; }
-        
+
         // Which time zone the city is in (format is GMT+/-X)
+        [StringLength(
+            maximumLength: 6,
+            MinimumLength = 5,
+            ErrorMessage = "Time zone must be in format \"GMT+/-__\""
+        )]
+        [RegularExpression(@"GMT[+-][0-9]+$", ErrorMessage = "Time zone must be in format \"GMT+/-__\"")]
         public string TimeZone { get; set; }
-        
+
         // List of the top attractions in the city
         public string[] Attractions { get; set; }
         
