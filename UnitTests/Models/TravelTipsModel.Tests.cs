@@ -164,7 +164,7 @@ namespace UnitTests.Models
 		}
 
 		/// <summary>
-		/// Test that a null title is not validated
+		/// Test that a null description is not validated
 		/// </summary>
 		[Test]
 		public void Get_Invalid_Description_Null_Should_Not_Validate()
@@ -191,7 +191,7 @@ namespace UnitTests.Models
 		}
 
 		/// <summary>
-		/// Test that an empty string title is not validated
+		/// Test that an empty string description is not validated
 		/// </summary>
 		[Test]
 		public void Get_Invalid_Description_Empty_Should_Not_Validate()
@@ -215,6 +215,32 @@ namespace UnitTests.Models
 			// Assert
 			Assert.AreEqual(false, result);
 			Assert.AreEqual(validationResults.First().ErrorMessage, "Description should not be empty");
+		}
+
+		/// <summary>
+		/// Test that a description with over the maximum number of characters is not validated
+		/// </summary>
+		[Test]
+		public void Get_Invalid_Description_Too_Long_Should_Not_Validate()
+		{
+			// Arrange
+
+			// initial description
+			var oldDescription = travelTipsModel.Title;
+
+			travelTipsModel.Description = new string('a', 5001);
+
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
+
+			// Reset
+			travelTipsModel.Description = oldDescription;
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("The Description should have a length less than 5000 characters", validationResults.First().ErrorMessage);
 		}
 
 		#endregion Description
