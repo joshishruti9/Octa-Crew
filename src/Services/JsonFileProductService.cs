@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-
+using System.Text.RegularExpressions;
 using ContosoCrafts.WebSite.Models;
 
 using Microsoft.AspNetCore.Hosting;
@@ -105,7 +105,7 @@ namespace ContosoCrafts.WebSite.Services
 
             // Update the data to the new passed in values
             productData.Title = data.Title;
-            productData.Description = data.Description.Trim();
+            productData.Description = data.Description?.Trim();
             productData.Images = data.Images;
             productData.TimeZone = data.TimeZone;
 
