@@ -48,11 +48,17 @@ namespace ContosoCrafts.WebSite.Models
             maximumLength: 5000, ErrorMessage = "The Description should have a length of less than {1}"
         )]
         public string Description { get; set; }
-        
+
         // Best season to visit city (spring, summer, fall, or winter)
         public Season? BestSeason { get; set; }
-        
+
         // Which currency is used in the city
+        [StringLength(
+            maximumLength: 3,
+            MinimumLength = 3,
+            ErrorMessage = "The Currency should have a length of 3"
+        )]
+        [RegularExpression(@"[A-Z]+$", ErrorMessage = "Currency must be in all caps")]
         public string Currency { get; set; }
         
         // Which time zone the city is in (format is GMT+/-X)
