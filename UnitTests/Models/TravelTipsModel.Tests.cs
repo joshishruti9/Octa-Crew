@@ -78,9 +78,10 @@ namespace UnitTests.Models
 
 			travelTipsModel.Title = null;
 
-			// Act
 			ValidationContext valContext = new ValidationContext(travelTipsModel);
 			var validationResults = new List<ValidationResult>();
+			
+			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults);
 
 			// Reset
@@ -104,9 +105,10 @@ namespace UnitTests.Models
 
 			travelTipsModel.Title = "";
 
-			// Act
 			ValidationContext valContext = new ValidationContext(travelTipsModel);
 			var validationResults = new List<ValidationResult>();
+			
+			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults);
 
 			// Reset
@@ -115,6 +117,32 @@ namespace UnitTests.Models
 			// Assert
 			Assert.AreEqual(false, result);
 			Assert.AreEqual(validationResults.First().ErrorMessage, "Title should not be empty");
+		}
+
+		/// <summary>
+		/// Test that a title with over the maximum number of characters is not validated
+		/// </summary>
+		[Test]
+		public void Get_Invalid_Title_Too_Long_Should_Not_Validate()
+		{
+			// Arrange
+			
+			// initial title
+			var oldTitle = travelTipsModel.Title;
+
+			travelTipsModel.Title = new string('a', 1000);
+
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
+
+			// Reset
+			travelTipsModel.Title = oldTitle;
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual("The Title should have a length less than 100 characters", validationResults.First().ErrorMessage);
 		}
 
 		#endregion Title
