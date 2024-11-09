@@ -206,10 +206,10 @@
       "https://images.pexels.com/photos/2426546/pexels-photo-2426546.jpeg",
       "https://images.pexels.com/photos/1842332/pexels-photo-1842332.jpeg"
     ],
-    "Title": "SGD",
+    "Title": "Singapore",
     "Description": "This modern city maintains a mix of green space and skyscrapers and is home to a huge number of attractions.  The city blends many cultures together, which is reflected in the Chinatown, Little India, and Kampong Gelam historical districts.  World class restaurants mix with famously delicious street food.  For such a large and modern city, there is a rich assortment of gardens, reservoirs, and nature preserves, all of which serve to add variety and enrich the experience of traveling in the city.",
     "BestSeason": 0,
-    "Currency": "Singapore Dollar",
+    "Currency": "SGD",
     "TimeZone": "GMT+8",
     "Attractions": [ "Marina Bay Sands", "Gardens by the Bay", "Sentosa Island" ],
     "Cost": 2650,
