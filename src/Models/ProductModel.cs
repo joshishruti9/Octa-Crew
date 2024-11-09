@@ -82,6 +82,7 @@ namespace ContosoCrafts.WebSite.Models
         public int[] Ratings { get; set; }
 
         // The dollar amount a typical 1-week visit would cost in this city
+        [Range(minimum: 0, maximum: 9999, ErrorMessage = "Cost should be between {1} and {2}")]
         public int Cost { get; set; }
         
         // The time it takes to travel to the city from Seattle in hours
