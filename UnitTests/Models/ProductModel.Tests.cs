@@ -10,12 +10,57 @@ namespace UnitTests.Models
 	/// </summary>
 	public class ProductModelTests
     {
-		#region Images
+        #region Images
 
-		/// <summary>
-		/// Setting Images to null should cause a validation error
-		/// </summary>
-		[Test]
+        /// <summary>
+        /// Setting Product with all valid attributes should be successul
+        /// </summary>
+        [Test]
+        public void Set_ProductModel_Valid_Should_Be_Validated()
+        {
+            // Arrange
+            var data = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[]
+                {
+                    "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+                    "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+                    "https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
+                },
+                Title = "Enter City Name",
+                Description = "Enter City Description",
+                BestSeason = null,
+                Currency = "CUR",
+                TimeZone = "Enter Time Zone",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
+            var validationResults = new List<ValidationResult>();
+
+            // Act
+            bool result = Validator.TryValidateObject(
+                data, new ValidationContext(data), validationResults, true
+            );
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(0, validationResults.Count);
+        }
+
+        /// <summary>
+        /// Setting Images to null should cause a validation error
+        /// </summary>
+        [Test]
 		public void Set_Images_Invalid_Null_Should_Not_Be_Validated()
 		{
 			// Arrange
@@ -360,51 +405,6 @@ namespace UnitTests.Models
 			// Assert
 			Assert.AreEqual(false, result);
 			Assert.AreEqual("Image #3 URL does not end in image extension", validationResults[0].ErrorMessage);
-		}
-
-		/// <summary>
-		/// Setting valid array of 3 Images should be successul
-		/// </summary>
-		[Test]
-		public void Set_Images_Valid_Should_Be_Validated()
-		{
-			// Arrange
-			var data = new ProductModel()
-			{
-				Id = System.Guid.NewGuid().ToString(),
-				Images = new string[]
-				{
-					"https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
-					"https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
-					"https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
-				},
-				Title = "Enter City Name",
-				Description = "Enter City Description",
-				BestSeason = null,
-				Currency = "CUR",
-				TimeZone = "Enter Time Zone",
-				Attractions = new string[3]
-				{
-					"Enter an Attraction",
-					"Enter an Attraction",
-					"Enter an Attraction"
-				},
-				Cost = 0,
-				TravelTime = 0.0,
-				Ratings = null
-			};
-			var validationResults = new List<ValidationResult>();
-
-			// Act
-			bool result = Validator.TryValidateObject(
-				data, new ValidationContext(data), validationResults, true
-			);
-
-			// Reset
-
-			// Assert
-			Assert.AreEqual(true, result);
-			Assert.AreEqual(0, validationResults.Count);
 		}
 
         #endregion Images
