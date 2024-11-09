@@ -1330,7 +1330,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 0,
-                TravelTime = -1,
+                TravelTime = -0.1,
                 Ratings = null
             };
             var validationResults = new List<ValidationResult>();
