@@ -13,7 +13,12 @@ namespace ContosoCrafts.WebSite.ValidationAttributes
         /// <param name="Ratings">Integer array to be validated</param>
         /// <returns>Success if Ratings are between 1 and 5, ValidationResult if any Rating is not within this range</returns>
         public static ValidationResult RatingValidate(int[] Ratings)
-        {
+        {            
+            if (Ratings == null)
+            {
+                return ValidationResult.Success;
+            }
+            
             for (int i = 0; i < Ratings.Length; i++)
             {
                 if (Ratings[i] < 1)
