@@ -324,13 +324,18 @@ img {
     100% { opacity:0; } 
     
 }
-.textcolor{
-    font-weight:bold;
-    color:red;
+.textcolor {
+    font-weight: bold;
+    color: #3d2022;
+    font-family: 'Californian FB';
+    font-size:95px;
 }
 .paracolor {
-    color:orange;
+    font-weight: bold;
+    color: #24252b;
     font-family: 'Century Gothic';
+    text-align:center;
+    font-size:25px;
 }
 .centeredHome {
     
