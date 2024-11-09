@@ -344,3 +344,14 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.new-styled-button {
+    background-color: white; /* Initial background color */
+    color: red; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Removes border */
+    border-radius: 90px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    display: inline-block;
+    margin-right: 5px;
+}
