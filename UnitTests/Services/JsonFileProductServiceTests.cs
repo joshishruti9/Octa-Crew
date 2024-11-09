@@ -250,6 +250,29 @@ namespace UnitTests.Services
             Assert.That(result, Is.Null);
         }
 
+        /// <summary>
+        /// Test that description is successfully updated when the description contains only whitespace
+        /// </summary>
+        [Test]
+        public void UpdateData_Valid_All_WhiteSpace_Description_Should_Update_Description()
+        {
+			// Arrange
+			var existingProduct = TestHelper.ProductService.GetAllData().First();
+			var updatedProduct = new ProductModel
+			{
+				Id = existingProduct.Id,
+				Title = "Updated Title",
+				Description = " "
+			};
+
+			// Act
+			var result = TestHelper.ProductService.UpdateData(updatedProduct);
+
+            // Assert
+            Assert.AreEqual(true, result != null);
+            Assert.AreEqual("", result.Description);
+		}
+
         [Test]
         public void UpdateData_Should_Trim_Description()
         {
