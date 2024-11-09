@@ -781,6 +781,55 @@ namespace UnitTests.Models
 
         #endregion Currency
 
+        #region TimeZone
+
+        /// <summary>
+        /// Setting TimeZone to string that's too short should cause a validation error
+        /// </summary>
+        [Test]
+        public void Set_TimeZone_Invalid_String_Too_Short_Should_Cause_Validation_Error()
+        {
+            // Arrange
+            var data = new ProductModel()
+            {
+                Id = System.Guid.NewGuid().ToString(),
+                Images = new string[]
+                {
+                    "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
+                    "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
+                    "https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
+                },
+                Title = "Enter City Name",
+                Description = "Enter City Description",
+                BestSeason = null,
+                Currency = "CUR",
+                TimeZone = "GMT+",
+                Attractions = new string[3]
+                {
+                    "Enter an Attraction",
+                    "Enter an Attraction",
+                    "Enter an Attraction"
+                },
+                Cost = 0,
+                TravelTime = 0.0,
+                Ratings = null
+            };
+            var validationResults = new List<ValidationResult>();
+
+            // Act
+            bool result = Validator.TryValidateObject(
+                data, new ValidationContext(data), validationResults, true
+            );
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+            Assert.AreEqual("Time zone must be in format \"GMT+/-__\"", validationResults[0].ErrorMessage);
+        }
+
+        #endregion TimeZone
+
         #region GetCityRating
 
         /// <summary>
