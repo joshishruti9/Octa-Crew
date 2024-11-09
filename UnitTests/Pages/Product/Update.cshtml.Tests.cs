@@ -55,43 +55,53 @@ namespace UnitTests.Pages.Product
         #region OnGet
 
         /// <summary>
-        /// Test that no product is assigned when null id is passed
+        /// Test that no product is assigned and RedirectToPageResult is returned
+        /// when null id is passed
         /// </summary>
         [Test]
         public void OnGet_Null_Id_Default_Should_Return_Null()
         {
             // Act
-            pageModel.OnGet(null);
+            var result = pageModel.OnGet(null);
 
             // Assert
-            Assert.IsNull(pageModel.Product);
+            Assert.AreEqual(null, pageModel.Product);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
-        /// Test that no product is assigned when invalid id is passed
+        /// Test that no product is assigned and RedirectToPageResult is returned
+        /// when invalid id is passed
         /// </summary>
         [Test]
         public void OnGet_Invalid_Id_Default_Should_Return_Null()
         {
+            // Arrange 
+
             // Act
-            pageModel.OnGet("nonexistent-id");
+            var result = pageModel.OnGet("nonexistent-id");
 
             // Assert
-            Assert.IsNull(pageModel.Product);
+            Assert.AreEqual(null, pageModel.Product);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
         /// Test that correct product is assigned when valid id is passed
+        /// and that the page is returned
         /// </summary>
         [Test]
         public void OnGet_Valid_Id_Default_Should_Assign_Product()
         {
             // Act
-            pageModel.OnGet("paris");
+            var result = pageModel.OnGet("paris");
 
             // Assert
             Assert.IsNotNull(pageModel.Product);
             Assert.AreEqual("Paris", pageModel.Product.Title);
+            Assert.AreEqual(typeof(PageResult), result.GetType());
         }
 
         #endregion OnGet
