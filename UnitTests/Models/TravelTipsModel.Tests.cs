@@ -130,7 +130,7 @@ namespace UnitTests.Models
 			// initial title
 			var oldTitle = travelTipsModel.Title;
 
-			travelTipsModel.Title = new string('a', 1000);
+			travelTipsModel.Title = new string('a', 101);
 
 			var validationResults = new List<ValidationResult>();
 
