@@ -73,8 +73,12 @@ namespace ContosoCrafts.WebSite.Models
         // List of the top attractions in the city
         [MaxLength(10, ErrorMessage = "No more than 10 Attractions are allowed")]
         public string[] Attractions { get; set; }
-        
+
         // Ratings added by users for how nice the city is to visit
+        [CustomValidation(
+            typeof(RatingValidation),
+            nameof(RatingValidation.RatingValidate)
+        )]
         public int[] Ratings { get; set; }
 
         // The dollar amount a typical 1-week visit would cost in this city
