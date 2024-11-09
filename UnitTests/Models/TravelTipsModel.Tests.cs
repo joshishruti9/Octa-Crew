@@ -163,6 +163,60 @@ namespace UnitTests.Models
 			Assert.AreEqual("Default description", result);
 		}
 
+		/// <summary>
+		/// Test that a null title is not validated
+		/// </summary>
+		[Test]
+		public void Get_Invalid_Description_Null_Should_Not_Validate()
+		{
+			// Arrange
+
+			// the initial description
+			var oldDescription = travelTipsModel.Description;
+
+			travelTipsModel.Description = null;
+
+			ValidationContext valContext = new ValidationContext(travelTipsModel);
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
+
+			// Reset
+			travelTipsModel.Description = oldDescription;
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual(validationResults.First().ErrorMessage, "Description should not be empty");
+		}
+
+		/// <summary>
+		/// Test that an empty string title is not validated
+		/// </summary>
+		[Test]
+		public void Get_Invalid_Description_Empty_Should_Not_Validate()
+		{
+			// Arrange
+
+			// the initial description
+			var oldDescription = travelTipsModel.Description;
+
+			travelTipsModel.Description = "";
+
+			ValidationContext valContext = new ValidationContext(travelTipsModel);
+			var validationResults = new List<ValidationResult>();
+
+			// Act
+			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
+
+			// Reset
+			travelTipsModel.Description = oldDescription;
+
+			// Assert
+			Assert.AreEqual(false, result);
+			Assert.AreEqual(validationResults.First().ErrorMessage, "Description should not be empty");
+		}
+
 		#endregion Description
 	}
 }
