@@ -27,9 +27,16 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// Called when the page is accessed
         /// </summary>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+
+            if (Product == null)
+            {
+                return RedirectToPage("./IndexPage");
+            }
+
+            return Page();
         }
 
         /// <summary> Delete the data for given id</summary>
