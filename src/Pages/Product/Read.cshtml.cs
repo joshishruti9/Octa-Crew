@@ -31,9 +31,17 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// REST get request
         /// </summary>
         /// <param name="id">ID of the city to be displayed</param>
-        public void OnGet(string id)
+        /// <returns>Redirect to the index page if city is not found or a PageResult otherwise</returns>
+        public IActionResult OnGet(string id)
         {
             Product = ReadData(id);
+
+            if (Product == null)
+            {
+                return RedirectToPage("./IndexPage");
+            }
+
+            return Page();
         }
 
         /// <summary>
