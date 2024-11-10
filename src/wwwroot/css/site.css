@@ -367,3 +367,7 @@ img {
 .marginbottom {
     margin-bottom: 15px;
 }
+.margintopcolored {
+    margin-top: 15px;
+    color: orangered;
+}
