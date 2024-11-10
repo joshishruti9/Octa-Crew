@@ -78,8 +78,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Title = null;
 
-			ValidationContext valContext = new ValidationContext(travelTipsModel);
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 			
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults);
@@ -105,8 +105,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Title = "";
 
-			ValidationContext valContext = new ValidationContext(travelTipsModel);
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 			
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults);
@@ -132,7 +132,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Title = new string('a', 101);
 
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
@@ -176,8 +177,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Description = null;
 
-			ValidationContext valContext = new ValidationContext(travelTipsModel);
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
@@ -203,8 +204,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Description = "";
 
-			ValidationContext valContext = new ValidationContext(travelTipsModel);
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
@@ -230,7 +231,8 @@ namespace UnitTests.Models
 
 			travelTipsModel.Description = new string('a', 5001);
 
-			var validationResults = new List<ValidationResult>();
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			var result = Validator.TryValidateObject(travelTipsModel, new ValidationContext(travelTipsModel), validationResults, true);
