@@ -63,7 +63,7 @@ namespace UnitTests.Pages.TravelTipsProduct
             // Assert
             Assert.AreEqual(null, pageModel.TravelTip);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("./TravelTips", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
