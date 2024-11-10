@@ -3,6 +3,7 @@ using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
@@ -29,9 +30,17 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         /// REST GET request
         /// </summary>
         /// <param name="id">The id of the travel tip to delete</param>
-        public void OnGet(string id)
+        /// <returns>Redirect to the travel tips page if city is not found or a PageResult otherwise</returns>
+        public IActionResult OnGet(string id)
         {
             TravelTip = ReadData(id);
+
+            if (TravelTip == null)
+            {
+                return RedirectToPage("./TravelTips");
+            }
+
+            return Page();
         }
 
         /// <summary>
