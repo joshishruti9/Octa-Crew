@@ -38,6 +38,8 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
+
+            // stores the results after running input validation on the fields
 			var validationResults = new List<ValidationResult>();
 
 			// Act
@@ -78,7 +80,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -122,7 +126,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+            
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -168,7 +174,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -213,7 +221,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -258,7 +268,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -303,7 +315,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -348,7 +362,9 @@ namespace UnitTests.Models
 				TravelTime = 0.0,
 				Ratings = null
 			};
-			var validationResults = new List<ValidationResult>();
+
+            // stores the results after running input validation on the fields
+            var validationResults = new List<ValidationResult>();
 
 			// Act
 			bool result = Validator.TryValidateObject(
@@ -397,6 +413,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -442,6 +460,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -487,6 +507,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -536,6 +558,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -585,6 +609,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -630,6 +656,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -675,6 +703,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -720,6 +750,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -769,6 +801,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -814,6 +848,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -859,6 +895,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -904,6 +942,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -949,6 +989,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1006,6 +1048,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1055,6 +1099,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = new int[1] { 0 }
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1100,6 +1146,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = new int[3] { 1, 5, 6 }
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1145,6 +1193,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1190,6 +1240,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = new int[10] { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 }
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1239,6 +1291,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1284,6 +1338,8 @@ namespace UnitTests.Models
                 TravelTime = 0.0,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1333,6 +1389,8 @@ namespace UnitTests.Models
                 TravelTime = -0.1,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1378,6 +1436,8 @@ namespace UnitTests.Models
                 TravelTime = 48.1,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
@@ -1423,6 +1483,8 @@ namespace UnitTests.Models
                 TravelTime = 0.01,
                 Ratings = null
             };
+
+            // stores the results after running input validation on the fields
             var validationResults = new List<ValidationResult>();
 
             // Act
