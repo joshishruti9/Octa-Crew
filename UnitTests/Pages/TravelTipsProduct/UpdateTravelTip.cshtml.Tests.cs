@@ -67,6 +67,26 @@ namespace UnitTests.Pages.TravelTipsProduct
         }
 
         /// <summary>
+        /// Test that no travel tip is assigned and RedirectToPageResult is returned
+        /// when invalid id is passed
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_Id_Default_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = pageModel.OnGet("invalid_id");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, pageModel.TravelTip);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./TravelTips", (result as RedirectToPageResult).PageName);
+        }
+
+        /// <summary>
         /// Test that correct travel tip is assigned when valid id is passed
         /// and that the page is returned
         /// </summary>
