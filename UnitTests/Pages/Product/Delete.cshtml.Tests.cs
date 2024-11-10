@@ -15,7 +15,10 @@ namespace UnitTests.Pages.Product
 
         #region TestSetup
 
+        // the model for the Delete page
         public static DeleteModel pageModel;
+
+        // the product service manages data in the city database
         public JsonFileProductService ProductService;
 
         /// <summary>
@@ -102,7 +105,9 @@ namespace UnitTests.Pages.Product
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<RedirectToPageResult>(result);
 
+            // attempt to cast the value returned by OnPost to a RedirectToPageResult
             var redirectResult = result as RedirectToPageResult;
+
             Assert.AreEqual("./IndexPage", redirectResult.PageName);
         }
 
