@@ -355,3 +355,8 @@ img {
     display: inline-block;
     margin-right: 5px;
 }
+.display4 {
+    font-weight: 500; 
+    color: orangered; 
+    margin-bottom: 20px;
+}
