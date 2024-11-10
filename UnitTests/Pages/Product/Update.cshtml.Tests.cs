@@ -15,7 +15,10 @@ namespace UnitTests.Pages.Product
     {
         #region TestSetup
 
+        // page model for the Update page 
         public static UpdateModel pageModel;
+
+        // service for managing interactions with the cities database
         public JsonFileProductService ProductService;
 
         /// <summary>
@@ -125,7 +128,9 @@ namespace UnitTests.Pages.Product
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<RedirectToPageResult>(result);
 
+            // attempt to cast the value returned by OnPost to a RedirectToPageResult
             var redirectResult = result as RedirectToPageResult;
+
             Assert.AreEqual("./Read", redirectResult.PageName);
         }
 
