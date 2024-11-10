@@ -36,6 +36,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// and assigns it to the Product property. If no match is found, Product will be null.
         /// </summary>
         /// <param name="id">The city id taken from the update page</param>
+        /// <returns>Redirect to the index page if city is not found or a PageResult otherwise</returns>
         public IActionResult OnGet(string id)
         {
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
