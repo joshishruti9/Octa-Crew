@@ -39,6 +39,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns>List of ProductModels containing city data</returns>
         public IEnumerable<ProductModel> GetAllData()
         {
+            // create a StreamReader object to read the cities into an array
             using(var jsonFileReader = File.OpenText(JsonFileName))
             {
                 return JsonSerializer.Deserialize<ProductModel[]>(jsonFileReader.ReadToEnd(),
@@ -116,7 +117,7 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         public void SaveData(IEnumerable<ProductModel> products)
         {
-
+            // use a FileStream object to write the products to the database
             using (var outputStream = File.Create(JsonFileName))
             {
                 JsonSerializer.Serialize<IEnumerable<ProductModel>>(
@@ -139,8 +140,11 @@ namespace ContosoCrafts.WebSite.Services
         {
             // Get the current set, and append the new record to it
             var dataSet = GetAllData();
+
+            // the city with id matching the id parameter
             var data = dataSet.FirstOrDefault(m => m.Id.Equals(id));
 
+            // the set of cities not matching the id parameter
             var newDataSet = GetAllData().Where(m => m.Id.Equals(id) == false);
 
             SaveData(newDataSet);
@@ -198,7 +202,9 @@ namespace ContosoCrafts.WebSite.Services
             // The city does have a ratings array, so add the new rating to the array
             // Get the ratings array for the city
 
+            // the current list of ratings for the city with id matching productId
             var ratings = products.First(x => x.Id == productId).Ratings.ToList();
+
             ratings.Add(rating);
             products.First(x => x.Id == productId).Ratings = ratings.ToArray();
           
