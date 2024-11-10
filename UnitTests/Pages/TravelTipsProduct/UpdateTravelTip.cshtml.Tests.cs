@@ -42,31 +42,35 @@ namespace UnitTests.Pages.TravelTipsProduct
 			};
 		}
 
-		#endregion TestSetup
+        #endregion TestSetup
 
-		#region OnGet
+        #region OnGet
 
-		/// <summary>
-		/// Test that no travel tip is assigned when null id is passed
-		/// </summary>
-		[Test]
+        /// <summary>
+        /// Test that no travel tip is assigned and RedirectToPageResult is returned
+        /// when null id is passed
+        /// </summary>
+        [Test]
 		public void OnGet_Null_Id_Default_Should_Return_Null()
 		{
 			// Arrange
 			
 			// Act
-			pageModel.OnGet(null);
+			var result = pageModel.OnGet(null);
 
-			// Reset
+            // Reset
 
-			// Assert
-			Assert.IsNull(pageModel.TravelTip);
-		}
+            // Assert
+            Assert.AreEqual(null, pageModel.TravelTip);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+        }
 
-		/// <summary>
-		/// Test that correct travel tip is assigned when valid id is passed
-		/// </summary>
-		[Test]
+        /// <summary>
+        /// Test that correct travel tip is assigned when valid id is passed
+        /// and that the page is returned
+        /// </summary>
+        [Test]
 		public void OnGet_Valid_Id_Default_Should_Assign_TravelTip()
 		{
 			// Arrange
@@ -74,13 +78,14 @@ namespace UnitTests.Pages.TravelTipsProduct
 			TravelTipService.SaveData(TravelTipService.GetAllData().Append(data));
 
 			// Act
-			pageModel.OnGet(data.Id);
+			var result = pageModel.OnGet(data.Id);
 
 			// Reset
 
 			// Assert
 			Assert.AreEqual(data.Id, pageModel.TravelTip.Id);
-		}
+            Assert.AreEqual(typeof(PageResult), result.GetType());
+        }
 
 		#endregion OnGet
 
