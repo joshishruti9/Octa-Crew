@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Product;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages.Product
 {
@@ -77,7 +79,8 @@ namespace UnitTests.Pages.Product
         #region OnGet
 
         /// <summary>
-        /// Test that no product is assigned when null id is passed
+        /// Test that no product is assigned and RedirectToPageResult is returned
+        /// when null id is passed
         /// </summary>
         [Test]
         public void OnGet_Null_Id_Default_Should_Return_Null()
@@ -85,14 +88,17 @@ namespace UnitTests.Pages.Product
             // Arrange
 
             // Act
-            pageModel.OnGet(null);
+            var result = pageModel.OnGet(null);
 
             // Assert
             Assert.AreEqual(null, pageModel.Product);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
-        /// Test that no product is assigned when invalid id is passed
+        /// Test that no product is assigned and RedirectToPageResult is returned
+        /// when invalid id is passed
         /// </summary>
         [Test]
         public void OnGet_Invalid_Id_Default_Should_Return_Null()
@@ -100,14 +106,17 @@ namespace UnitTests.Pages.Product
             // Arrange
 
             // Act
-            pageModel.OnGet("unitedstates");
+            var result = pageModel.OnGet("unitedstates");
 
             // Assert
             Assert.AreEqual(null, pageModel.Product);
+            Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
+            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
         /// Test that correct product is assigned when valid id is passed
+        /// and that the page is returned
         /// </summary>
         [Test]
         public void OnGet_Valid_Id_Default_Should_Return_Null()
@@ -115,10 +124,12 @@ namespace UnitTests.Pages.Product
             // Arrange
 
             // Act
-            pageModel.OnGet("paris");
+            var result = pageModel.OnGet("paris");
 
             // Assert
+            Assert.IsNotNull(pageModel.Product);
             Assert.AreEqual("Paris", pageModel.Product.Title);
+            Assert.AreEqual(typeof(PageResult), result.GetType());
         }
 
         #endregion Onget
