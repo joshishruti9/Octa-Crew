@@ -46,7 +46,9 @@ namespace ContosoCrafts.WebSite.Pages.Product
                 return Page();
             }
 
+            // the set of cities in the database
             var dataSet = ProductService.GetAllData();
+
             dataSet = dataSet.Append(Product);
 
             ProductService.SaveData(dataSet);
