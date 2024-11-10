@@ -37,7 +37,8 @@ namespace ContosoCrafts.WebSite.Services
 		/// <returns>List of TravelTipsModels containing city data</returns>
 		public IEnumerable<TravelTipsModel> GetAllData()
 		{
-			using (var jsonFileReader = File.OpenText(JsonFileName))
+            // create a StreamReader object to read the cities into an array
+            using (var jsonFileReader = File.OpenText(JsonFileName))
 			{
 				return JsonSerializer.Deserialize<TravelTipsModel[]>(jsonFileReader.ReadToEnd(),
 					new JsonSerializerOptions
@@ -118,8 +119,8 @@ namespace ContosoCrafts.WebSite.Services
 		/// </summary>
 		public void SaveData(IEnumerable<TravelTipsModel> travelTips)
 		{
-
-			using (var outputStream = File.Create(JsonFileName))
+            // use a FileStream object to write the products to the database
+            using (var outputStream = File.Create(JsonFileName))
 			{
 				JsonSerializer.Serialize<IEnumerable<TravelTipsModel>>(
 					new Utf8JsonWriter(outputStream, new JsonWriterOptions
