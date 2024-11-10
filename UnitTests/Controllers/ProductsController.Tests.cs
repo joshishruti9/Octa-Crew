@@ -15,7 +15,10 @@ namespace UnitTests.Controllers
     {
         #region TestSetup
 
+        // the service handling city data
         public JsonFileProductService ProductService;
+
+        // the controller managing API calls on cities database
         public ProductsController ProductsController;
 
         /// <summary>
