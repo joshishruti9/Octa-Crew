@@ -27,6 +27,8 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// <summary>
         /// Called when the page is accessed
         /// </summary>
+        /// <param name="id">id of the city</param>
+        /// <returns>Redirect to the index page if city is not found or a PageResult otherwise</returns>
         public IActionResult OnGet(string id)
         {
             Product = ProductService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
