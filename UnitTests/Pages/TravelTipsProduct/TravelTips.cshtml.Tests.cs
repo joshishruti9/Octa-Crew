@@ -11,6 +11,7 @@ namespace UnitTests.Pages.TravelTipsProduct
     {
         #region TestSetup
 
+        // page model for the travel tips page
         public static TravelTipsPageModel pageModel;
 
         /// <summary>
