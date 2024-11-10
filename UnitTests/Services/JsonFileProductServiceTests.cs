@@ -150,26 +150,16 @@ namespace UnitTests.Services
         public void CreateData_Valid_Default_Should_Return_Default_Fields()
         {
             // Arrange
-            var data = new ProductModel
+            var data = new ProductModel()
             {
                 Id = System.Guid.NewGuid().ToString(),
-                Images = new string[3]
-                {
-                    "Enter URL",
-                    "Enter URL",
-                    "Enter URL"
-                },
-                Title = "Enter City Name",
-                Description = "Enter City Description",
+                Images = new string[3],
+                Title = null,
+                Description = null,
                 BestSeason = null,
-                Currency = "Enter Currency",
-                TimeZone = "Enter Time Zone",
-                Attractions = new string[3]
-                {
-                    "Enter an Attraction",
-                    "Enter an Attraction",
-                    "Enter an Attraction"
-                },
+                Currency = null,
+                TimeZone = null,
+                Attractions = new string[3],
                 Cost = 0,
                 TravelTime = 0.0,
                 Ratings = null
