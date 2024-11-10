@@ -31,9 +31,18 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         /// Called when the page is accessed.
         /// REST Get request loads the data
         /// </summary>
-        public void OnGet(string id)
+        /// <param name="id">The id of the associated travel tip</param>
+        /// <returns>Redirect to the travel tips page if city is not found or a PageResult otherwise</returns>
+        public IActionResult OnGet(string id)
         {
             TravelTip = TravelTipService.GetAllData().FirstOrDefault(m => m.Id.Equals(id));
+
+            if (TravelTip == null)
+            {
+                return RedirectToPage("./TravelTips");
+            }
+
+            return Page();
         }
 
         /// <summary>
