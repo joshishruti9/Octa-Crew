@@ -8,17 +8,6 @@ using System.Text.Json.Serialization;
 namespace ContosoCrafts.WebSite.Models
 {
     /// <summary>
-    /// enum to restrict values in BestSeason
-    /// </summary>
-    public enum Season
-    {
-        Spring = 0,
-        Summer = 1,
-        Fall = 2,
-        Winter = 3
-    }
-
-    /// <summary>
     /// Model representing a city
     /// </summary>
     public class ProductModel
