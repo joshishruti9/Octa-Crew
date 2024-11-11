@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
 using UnitTests.Pages;
@@ -210,7 +211,7 @@ namespace UnitTests.Services
                 Description = "Updated Description",
                 Images = new List<string> { "updated-image.jpg" }.ToArray(),
                 TimeZone = "PST",
-                BestSeason = Season.Winter,
+                BestSeason = SeasonEnum.Winter,
                 Currency = "USD",
                 Attractions = new List<string> { "Attraction1", "Attraction2" }.ToArray()
             };
@@ -226,7 +227,7 @@ namespace UnitTests.Services
                 Assert.That(result.Description, Is.EqualTo("Updated Description"));
                 Assert.That(result.Images, Is.EqualTo(new List<string> { "updated-image.jpg" }));
                 Assert.That(result.TimeZone, Is.EqualTo("PST"));
-                Assert.That(result.BestSeason, Is.EqualTo(Season.Winter));
+                Assert.That(result.BestSeason, Is.EqualTo(SeasonEnum.Winter));
                 Assert.That(result.Currency, Is.EqualTo("USD"));
                 Assert.That(result.Attractions, Is.EqualTo(new List<string> { "Attraction1", "Attraction2" }));
             });

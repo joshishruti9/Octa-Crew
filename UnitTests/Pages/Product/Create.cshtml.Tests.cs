@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using ContosoCrafts.WebSite.Pages.Product;
+using ContosoCrafts.WebSite.Enums;
 
 namespace UnitTests.Pages.Product
 {
@@ -149,7 +150,7 @@ namespace UnitTests.Pages.Product
                 Id = Guid.NewGuid().ToString(),
                 Title = "Custom City",
                 Description = "Custom Description",
-                BestSeason = Season.Spring,
+                BestSeason = SeasonEnum.Spring,
                 Currency = "Dollar",
                 TimeZone = "PDT",
                 Attractions = new string[3]

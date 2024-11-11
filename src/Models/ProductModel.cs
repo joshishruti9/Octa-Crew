@@ -1,3 +1,4 @@
+using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.ValidationAttributes;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -50,7 +51,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Description { get; set; }
 
         // Best season to visit city (spring, summer, fall, or winter)
-        public Season? BestSeason { get; set; }
+        public SeasonEnum? BestSeason { get; set; }
 
         // Which currency is used in the city
         [StringLength(
