@@ -371,3 +371,7 @@ img {
     margin-top: 15px;
     color: orangered;
 }
+.background_image {
+    width:100% ;
+    height:650px;
+}
