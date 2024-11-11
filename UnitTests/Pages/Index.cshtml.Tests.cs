@@ -10,6 +10,7 @@ namespace UnitTests.Pages
     {
         #region TestSetup
 
+        // page model for the Index page
         public static IndexModel pageModel;
 
         /// <summary>
