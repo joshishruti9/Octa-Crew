@@ -13,11 +13,15 @@ namespace UnitTests.Pages.Error
     public class ErrorTests
     {
         #region TestSetup
+
+        // page model for the Error page
         public static ErrorModel pageModel;
 
         [SetUp]
         public void TestInitialize()
         {
+
+            // mock of the ErrorModel logger
             var MockLoggerDirect = Mock.Of<ILogger<ErrorModel>>();
 
             pageModel = new ErrorModel(MockLoggerDirect)
@@ -35,7 +39,9 @@ namespace UnitTests.Pages.Error
         {
             // Arrange
 
+            // stores the current operation being performed
             Activity activity = new Activity("activity");
+
             activity.Start();
 
             // Act
