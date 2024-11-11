@@ -110,6 +110,8 @@ namespace UnitTests.Services
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
+
+            // Get the city on which AddRating was just applied
             var dataNewList = TestHelper.ProductService.GetAllData().First(e => e.Id == data.Id);
 
             // Assert
@@ -127,10 +129,14 @@ namespace UnitTests.Services
 
             // Get the First data item
             var data = TestHelper.ProductService.GetAllData().First();
+
+            // The number of ratings before adding a new rating
             var countOriginal = data.Ratings.Length;
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
+
+            // Get the city on which AddRating was just applied
             var dataNewList = TestHelper.ProductService.GetAllData().First();
 
             // Assert
@@ -192,7 +198,11 @@ namespace UnitTests.Services
         public void UpdateData_Should_Update_Existing_Product()
         {
             // Arrange
+
+            // The initial city
             var existingProduct = TestHelper.ProductService.GetAllData().First();
+
+            // ProductModel used to update the database
             var updatedProduct = new ProductModel
             {
                 Id = existingProduct.Id,
@@ -226,6 +236,8 @@ namespace UnitTests.Services
         public void UpdateData_Should_Return_Null_If_Product_Not_Found()
         {
             // Arrange
+
+            // Product whose ID doesn't exist in the database
             var nonExistentProduct = new ProductModel
             {
                 Id = "999",  // Assuming this ID does not exist
@@ -246,9 +258,12 @@ namespace UnitTests.Services
         [Test]
         public void UpdateData_Valid_All_WhiteSpace_Description_Should_Update_Description()
         {
-			// Arrange
-			var existingProduct = TestHelper.ProductService.GetAllData().First();
-			var updatedProduct = new ProductModel
+            // Arrange
+            // The initial city
+            var existingProduct = TestHelper.ProductService.GetAllData().First();
+
+            // ProductModel used to update the database
+            var updatedProduct = new ProductModel
 			{
 				Id = existingProduct.Id,
 				Title = "Updated Title",
@@ -267,7 +282,11 @@ namespace UnitTests.Services
         public void UpdateData_Should_Trim_Description()
         {
             // Arrange
+            
+            // The initial city
             var existingProduct = TestHelper.ProductService.GetAllData().First();
+
+            // ProductModel used to update the database
             var updatedProduct = new ProductModel
             {
                 Id = existingProduct.Id,
