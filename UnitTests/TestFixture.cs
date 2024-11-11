@@ -25,9 +25,13 @@ namespace UnitTests
             // C:\repos\5110\ClassBaseline\src\bin\Debug\net5.0\wwwroot\data
 
 
-
+            // Path to the databases
             var DataWebPath = "../../../../src/wwwroot/data";
+
+            // Path where the unit test project is stored
             var DataUTDirectory = "wwwroot";
+
+            // Subdirectory where the databases are located
             var DataUTPath = DataUTDirectory + "/data";
 
             // Delete the Detination folder
@@ -41,9 +45,13 @@ namespace UnitTests
 
             // Copy over all data files
             var filePaths = Directory.GetFiles(DataWebPath);
+
             foreach (var filename in filePaths)
             {
+                // The source file path
                 string OriginalFilePathName = filename.ToString();
+
+                // The destination file path
                 var newFilePathName = OriginalFilePathName.Replace(DataWebPath, DataUTPath);
 
                 File.Copy(OriginalFilePathName, newFilePathName);
