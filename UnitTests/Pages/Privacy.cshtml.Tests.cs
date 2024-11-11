@@ -11,11 +11,14 @@ namespace UnitTests.Pages
     public class PrivacyTests
     {
         #region TestSetup
+
+        // page model for the Privacy page
         public static PrivacyModel pageModel;
 
         [SetUp]
         public void TestInitialize()
         {
+            // mock of the logger for pageModel
             var MockLoggerDirect = Mock.Of<ILogger<PrivacyModel>>();
 
             pageModel = new PrivacyModel(MockLoggerDirect)
