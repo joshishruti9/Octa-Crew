@@ -28,17 +28,40 @@ namespace UnitTests
     /// </summary>
     public static class TestHelper
     {
+        // Mock web host environment to be used for testing
         public static Mock<IWebHostEnvironment> MockWebHostEnvironment;
+
+        // Interface for creating IUrlHelper instances
         public static IUrlHelperFactory UrlHelperFactory;
+
+        // Context with all HTTP-specific information about and HTTP request
         public static DefaultHttpContext HttpContextDefault;
+
+        // Holds information about the web host environment
         public static IWebHostEnvironment WebHostEnvironment;
+
+        // Stores model state information
         public static ModelStateDictionary ModelState;
+
+        // Context for action being performed
         public static ActionContext ActionContext;
+
+        // Used for creation of a new ViewDataDictionary
         public static EmptyModelMetadataProvider ModelMetadataProvider;
+        
+        // Used to pass data between controller and view
         public static ViewDataDictionary ViewData;
+
+        // Stores temporary data that persists only from one request to the next
         public static TempDataDictionary TempData;
+
+        // Context associated with a Razor page request
         public static PageContext PageContext;
+
+        // Service to manage interactions with the cities database
         public static JsonFileProductService ProductService;
+
+        // Service to manage interactions with the travel tips database
         public static JsonFileTravelTipService TravelTipService;
 
         /// <summary>
@@ -73,12 +96,14 @@ namespace UnitTests
 
             ProductService = new JsonFileProductService(MockWebHostEnvironment.Object);
 
+            // Service to manage interactions with the cities database
             JsonFileProductService productService;
 
             productService = new JsonFileProductService(TestHelper.MockWebHostEnvironment.Object);
 
             TravelTipService = new JsonFileTravelTipService(MockWebHostEnvironment.Object);
 
+            // Service to manage interactions with the travel tips database
             JsonFileTravelTipService travelTipService;
 
             travelTipService = new JsonFileTravelTipService(TestHelper.MockWebHostEnvironment.Object);
