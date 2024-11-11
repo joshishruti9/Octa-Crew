@@ -46,7 +46,11 @@ namespace UnitTests.Services
 		public void UpdateData_Should_Update_Existing_TravelTip()
 		{
 			// Arrange
+
+			// the initial travel tip
 			var existingTravelTip = TestHelper.TravelTipService.GetAllData().First();
+
+			// TravelTipModel used to update the travel tip in the database
 			var updatedTravelTip = new TravelTipsModel
 			{
 				Id = existingTravelTip.Id,
@@ -113,7 +117,11 @@ namespace UnitTests.Services
 		public void UpdateData_Valid_All_WhiteSpace_Description_Should_Update_Description()
 		{
 			// Arrange
+			
+			// the initial travel tip
 			var existingProduct = TestHelper.TravelTipService.GetAllData().First();
+
+			// TravelTipModel used to update the travel tip in the database
 			var updatedTravelTip = new TravelTipsModel
 			{
 				Id = existingProduct.Id,
