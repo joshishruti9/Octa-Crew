@@ -45,6 +45,7 @@ namespace UnitTests.Controllers
         {
             //Arrange
             var actualProducts = ProductService.GetAllData();
+            
             // Act
             var result = ProductsController.Get();
 
