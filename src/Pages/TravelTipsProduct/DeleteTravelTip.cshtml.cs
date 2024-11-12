@@ -8,6 +8,9 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
+    /// <summary>
+    /// Model for the Delete Travel Tip page allows user to delete a travel tip from the database
+    /// </summary>
     public class DeleteTravelTipModel : PageModel
     {
         // accesses travel tips data from the database
