@@ -17,6 +17,10 @@ namespace UnitTests.Pages.Error
         // page model for the Error page
         public static ErrorModel pageModel;
 
+        /// <summary>
+        /// Called before each test is called.
+        /// Sets up necessary test context or variables
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -34,6 +38,10 @@ namespace UnitTests.Pages.Error
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test that OnGet with valid data generates a valid page model and stores the correct RequestId
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
@@ -55,6 +63,9 @@ namespace UnitTests.Pages.Error
             Assert.That(pageModel.RequestId, Is.EqualTo(activity.Id));
         }
 
+        /// <summary>
+        /// Test that OnGet with invalid data generates the correct identifier for the trace logs
+        /// </summary>
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
