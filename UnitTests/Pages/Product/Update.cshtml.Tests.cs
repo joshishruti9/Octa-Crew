@@ -118,14 +118,9 @@ namespace UnitTests.Pages.Product
         }
 
         /// <summary>
-        /// Test OnPost method when ModelState is invalid, should return PageResult
-        /// </summary>
-        [Test]
-
-        /// <summary>
         /// Test OnPost method when ModelState is invalid
         /// </summary>
-
+        [Test]
         public void OnPost_Invalid_ModelState_Should_Return_PageResult()
         {
             // Arrange
