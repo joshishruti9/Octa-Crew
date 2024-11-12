@@ -10,6 +10,9 @@ using ContosoCrafts.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
 {
+    /// <summary>
+    /// Unit testing class for Error page model
+    /// </summary>
     public class ErrorTests
     {
         #region TestSetup
