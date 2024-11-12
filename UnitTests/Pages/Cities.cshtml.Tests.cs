@@ -29,6 +29,9 @@ namespace UnitTests.Pages
 
         #region OnGet
 
+        /// <summary>
+        /// Test that OnGet populates the list of cities when the database contains valid data
+        /// </summary>
         [Test]
         public void OnGet_Valid_Default_Should_Return_Products()
         {
