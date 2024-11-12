@@ -190,11 +190,11 @@ namespace UnitTests.Services
 
         #endregion CreateData
 
+        #region UpdateData
+
         /// <summary>
         /// Test UpdateData method when product exists in the data source
         /// </summary>
-        #region UpdateData
-
         [Test]
         public void UpdateData_Should_Update_Existing_Product()
         {
@@ -233,6 +233,9 @@ namespace UnitTests.Services
             });
         }
 
+        /// <summary>
+        /// Test that UpdateData returns null if the city is not in the database
+        /// </summary>
         [Test]
         public void UpdateData_Should_Return_Null_If_Product_Not_Found()
         {
@@ -279,6 +282,9 @@ namespace UnitTests.Services
             Assert.AreEqual("", result.Description);
         }
 
+        /// <summary>
+        /// Test that UpdateData will update the description without leading or trailing white space
+        /// </summary>
         [Test]
         public void UpdateData_Should_Trim_Description()
         {
