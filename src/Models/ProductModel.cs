@@ -1,5 +1,6 @@
 using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.ValidationAttributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json;
@@ -98,7 +99,7 @@ namespace ContosoCrafts.WebSite.Models
                 return 0;
             }
 
-            return Ratings.Sum() / Ratings.Count();
+            return (int)Math.Round((double)Ratings.Sum() / Ratings.Count());
         }
     }
 }
