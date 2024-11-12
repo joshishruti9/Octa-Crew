@@ -311,7 +311,7 @@ img {
 
 
 /* Fade animation */
-.fade {
+.fade1 {
     animation-name: fade;
     animation-duration: 8s;
 }
