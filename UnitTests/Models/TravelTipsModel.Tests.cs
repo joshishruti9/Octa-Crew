@@ -18,7 +18,11 @@ namespace UnitTests.Models
 		// Travel tips model for testing
 		static TravelTipsModel travelTipsModel;
 
-		[SetUp]
+        /// <summary>
+        /// Called before each test is called.
+        /// Sets up necessary test context or variables
+        /// </summary>
+        [SetUp]
 		public void SetUp()
 		{
 			travelTipsModel = new TravelTipsModel()
@@ -33,6 +37,9 @@ namespace UnitTests.Models
 
 		#region Id
 
+		/// <summary>
+		/// Test that the correct ID is returned when present in the database
+		/// </summary>
 		[Test]
 		public void Get_Valid_Id_Should_Return_Id()
 		{
@@ -47,11 +54,14 @@ namespace UnitTests.Models
 			Assert.AreEqual("11", result);
 		}
 
-		#endregion Id
+        #endregion Id
 
-		#region Title
+        #region Title
 
-		[Test]
+        /// <summary>
+        /// Test that the correct Title is returned when present in the database
+        /// </summary>
+        [Test]
 		public void Get_Valid_Title_Should_Return_Title()
 		{
 			// Arrange
@@ -146,11 +156,14 @@ namespace UnitTests.Models
 			Assert.AreEqual("The Title should have a length less than 100 characters", validationResults.First().ErrorMessage);
 		}
 
-		#endregion Title
+        #endregion Title
 
-		#region Description
+        #region Description
 
-		[Test]
+        /// <summary>
+        /// Test that the correct Description is returned when present in the database
+        /// </summary>
+        [Test]
 		public void Get_Valid_Description_Should_Return_Description()
 		{
 			// Arrange
