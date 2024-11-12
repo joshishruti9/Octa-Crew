@@ -38,23 +38,6 @@ namespace UnitTests.Pages.Product
 
         #endregion TestSetup
 
-        #region ReadData
-
-        /// <summary>
-        /// Test for correct output when null id is passed
-        /// </summary>
-
-
-        /// <summary>
-        /// Test for correct output when invalid id is passed
-        /// </summary>
-
-        /// <summary>
-        /// Test for correct output when a valid id is passed
-        /// </summary>
-
-        #endregion ReadData
-
         #region OnGet
 
         /// <summary>
