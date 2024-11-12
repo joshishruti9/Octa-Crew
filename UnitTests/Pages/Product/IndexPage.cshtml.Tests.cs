@@ -7,6 +7,9 @@ using ContosoCrafts.WebSite.Pages.Product;
 namespace UnitTests.Pages.Product
 {
 
+    /// <summary>
+    /// Unit testing class for CRUDi index page model
+    /// </summary>
     public class IndexPageTests
     {
         // Database MiddleTier
