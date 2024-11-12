@@ -137,14 +137,41 @@ namespace UnitTests.Services
 			Assert.AreEqual("", result.Description);
 		}
 
-		#endregion UpdateData
+        /// <summary>
+        /// Test that the description is updated without errors when a null description is used
+        /// </summary>
+        [Test]
+        public void UpdateData_Valid_Null_Description_Should_Keep_Description_Null()
+        {
+            // Arrange
 
-		#region DeleteData
+            // the initial travel tip
+            var existingProduct = TestHelper.TravelTipService.GetAllData().First();
 
-		/// <summary>
-		/// Test that DeleteData returns null if a null id is passed
-		/// </summary>
-		[Test]
+            // TravelTipModel used to update the travel tip in the database
+            var updatedTravelTip = new TravelTipsModel
+            {
+                Id = existingProduct.Id,
+                Title = "Updated Title",
+                Description = null
+            };
+
+            // Act
+            var result = TestHelper.TravelTipService.UpdateData(updatedTravelTip);
+
+            // Assert
+            Assert.AreEqual(true, result != null);
+            Assert.AreEqual(null, result.Description);
+        }
+
+        #endregion UpdateData
+
+        #region DeleteData
+
+        /// <summary>
+        /// Test that DeleteData returns null if a null id is passed
+        /// </summary>
+        [Test]
 		public void DeleteData_Null_Id_Default_Should_Return_Null()
 		{
 			// Arrange
