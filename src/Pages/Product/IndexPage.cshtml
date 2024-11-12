@@ -2,21 +2,21 @@
 @using ContosoCrafts.WebSite.Components
 @model IndexPageModel
 @{
-    ViewData["Title"] = "Index page";
+    ViewData["Title"] = "Index Page";
 }
 
-<div class="text-center" >
-    <h1 class="display4" >List of cities</h1>
+<div class="text-center">
+    <h1 class="display4">List of Cities</h1>
 </div>
 
 <div class="container">
-    <a asp-page="Create/" class="tabledata">+ Create</a>
+    <a asp-page="Create" class="tabledata">+ Create</a>
 
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Title</th>
-                <th><center>Action</center></></th>
+                <th><center>Action</center></th>
             </tr>
         </thead>
 
@@ -25,12 +25,9 @@
             {
                 <tr>
                     <td>@product.Title</td>
-                    <td><a asp-page="Read/" asp-route-id="@product.Id">Read</a></td>
+                    <td><a asp-page="Read" asp-route-id="@product.Id">Read</a></td>
                 </tr>
             }
         </tbody>
-
     </table>
-
 </div>
-
