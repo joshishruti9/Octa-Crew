@@ -24,7 +24,7 @@
             <div class="centered">
                 <h1>Travel Tips</h1>
                 <h5>Ready to make your next adventure unforgettable? Discover essential travel tips to help you explore smarter, safer, and with more fun!</h5>
-                <button class="styled-button" onclick="window.location.href='#card-body'"> <h6 class="buttontext">Explore Now!</h6></button>
+                <button class="styled-button" onclick="scrollToBottom()"> <h6 class="buttontext">Explore Now!</h6></button>
 
                 <div id="card-body">
                 </div>
@@ -150,6 +150,14 @@
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight / 2.9,
+            });
+        }
+    </script>
 
     
 </body>
