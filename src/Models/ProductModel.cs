@@ -34,6 +34,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Title { get; set; }
 
         // Description about the city
+        [Required(ErrorMessage = "Description is required")]
         [StringLength(
             maximumLength: 5000, ErrorMessage = "The Description should have a length of less than {1}"
         )]
