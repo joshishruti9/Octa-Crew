@@ -77,7 +77,7 @@ namespace ContosoCrafts.WebSite.Models
         public int Cost { get; set; }
 
         // The time it takes to travel to the city from Seattle in hours
-        [Range(minimum: 0.0, maximum: 48.0, ErrorMessage = "Travel time should be between {1} and {2}")]
+        [Range(minimum: 0.1, maximum: 48.0, ErrorMessage = "Travel time should be between {1} and {2}")]
         [RegularExpression(@"([0-9]+)?(\.[0-9]{0,1})?$", ErrorMessage = "Travel time cannot have more than 1 decimal place")]
         public double TravelTime { get; set; }
 

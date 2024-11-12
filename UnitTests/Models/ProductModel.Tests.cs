@@ -35,7 +35,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -77,7 +77,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -123,7 +123,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
             
@@ -171,7 +171,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -218,7 +218,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -265,7 +265,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -312,7 +312,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -359,7 +359,7 @@ namespace UnitTests.Models
 					"Enter an Attraction"
 				},
 				Cost = 1,
-				TravelTime = 0.0,
+				TravelTime = 0.1,
 				Ratings = null
 			};
 
@@ -410,7 +410,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -457,7 +457,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -504,7 +504,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -555,7 +555,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -602,7 +602,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -649,7 +649,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -700,7 +700,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -747,7 +747,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -794,7 +794,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -841,7 +841,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -892,7 +892,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -939,7 +939,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -986,7 +986,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1033,7 +1033,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1080,7 +1080,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1139,7 +1139,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1190,7 +1190,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = new int[1] { 0 }
             };
 
@@ -1237,7 +1237,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = new int[3] { 1, 5, 6 }
             };
 
@@ -1284,7 +1284,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1331,7 +1331,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = new int[10] { 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 }
             };
 
@@ -1382,7 +1382,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = -1,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1429,7 +1429,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 10000,
-                TravelTime = 0.0,
+                TravelTime = 0.1,
                 Ratings = null
             };
 
@@ -1496,7 +1496,7 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(false, result);
-            Assert.AreEqual("Travel time should be between 0 and 48", validationResults[0].ErrorMessage);
+            Assert.AreEqual("Travel time should be between 0.1 and 48", validationResults[0].ErrorMessage);
         }
 
         /// <summary>
@@ -1543,7 +1543,7 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(false, result);
-            Assert.AreEqual("Travel time should be between 0 and 48", validationResults[0].ErrorMessage);
+            Assert.AreEqual("Travel time should be between 0.1 and 48", validationResults[0].ErrorMessage);
         }
 
         /// <summary>
@@ -1574,7 +1574,7 @@ namespace UnitTests.Models
                     "Enter an Attraction"
                 },
                 Cost = 1,
-                TravelTime = 0.01,
+                TravelTime = 0.11,
                 Ratings = null
             };
 
