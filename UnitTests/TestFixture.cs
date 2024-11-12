@@ -4,6 +4,9 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Class for generating mock files to be used for testing
+    /// </summary>
     [SetUpFixture]
     public class TestFixture
     {
@@ -58,6 +61,9 @@ namespace UnitTests
             }
         }
 
+        /// <summary>
+        /// Executes after running all tests
+        /// </summary>
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
