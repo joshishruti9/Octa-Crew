@@ -265,25 +265,25 @@ namespace UnitTests.Services
 
             // ProductModel used to update the database
             var updatedProduct = new ProductModel
-			{
-				Id = existingProduct.Id,
-				Title = "Updated Title",
-				Description = " "
-			};
+            {
+                Id = existingProduct.Id,
+                Title = "Updated Title",
+                Description = " "
+            };
 
-			// Act
-			var result = TestHelper.ProductService.UpdateData(updatedProduct);
+            // Act
+            var result = TestHelper.ProductService.UpdateData(updatedProduct);
 
             // Assert
             Assert.AreEqual(true, result != null);
             Assert.AreEqual("", result.Description);
-		}
+        }
 
         [Test]
         public void UpdateData_Should_Trim_Description()
         {
             // Arrange
-            
+
             // The initial city
             var existingProduct = TestHelper.ProductService.GetAllData().First();
 
@@ -301,6 +301,33 @@ namespace UnitTests.Services
             // Assert
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Description, Is.EqualTo("Updated Description with extra spaces"));
+        }
+
+        /// <summary>
+        /// Test that the description is updated without errors when a null description is used
+        /// </summary>
+        [Test]
+        public void UpdateData_Valid_Null_Description_Should_Keep_Description_Null()
+        {
+            // Arrange
+
+            // The initial city
+            var existingProduct = TestHelper.ProductService.GetAllData().First();
+
+            // ProductModel used to update the database
+            var updatedProduct = new ProductModel
+            {
+                Id = existingProduct.Id,
+                Title = "Updated Title",
+                Description = null
+            };
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(updatedProduct);
+
+            // Assert
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.Description, Is.EqualTo(null));
         }
 
         #endregion UpdateData
