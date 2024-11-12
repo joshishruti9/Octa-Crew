@@ -27,6 +27,10 @@ namespace UnitTests.Pages.TravelTipsProduct
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test that OnGet populates the list of Travel Tips when the database contains valid data
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Have_Valid_State()
         {
