@@ -3,7 +3,6 @@ using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
