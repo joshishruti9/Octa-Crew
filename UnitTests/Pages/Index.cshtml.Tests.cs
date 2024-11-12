@@ -26,6 +26,10 @@ namespace UnitTests.Pages
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test that OnGet generates a page model with a valid state
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Have_Valid_State()
         {
