@@ -373,10 +373,10 @@ img {
     color: orangered;
 }
 .background_image {
-    width:100% ;
+    width:100vw ;
     height:650px;
 }
 .cityimg {
-    width:100% ;
+    width:100vw ;
     height:600px;
 }
