@@ -49,6 +49,9 @@
                 <dd class="marginbottom">
                     @tip.Description
                 </dd>
+
+                <button class="btn btn-primary"><a asp-page="UpdateTravelTip" asp-route-id="@tip.Id">Update</a></button>
+                <button class="btn btn-primary"><a asp-page="DeleteTravelTip" asp-route-id="@tip.Id">Delete</a></button>
             }
         </dl>
     </div>
