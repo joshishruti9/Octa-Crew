@@ -403,3 +403,10 @@ img {
     width:100vw ;
     height:600px;
 }
+.buttoncentered {
+    position: absolute;
+    top: 70%;
+    left:50%;
+    gap:30%;
+    transform: translate(-50%, -50%);
+}
