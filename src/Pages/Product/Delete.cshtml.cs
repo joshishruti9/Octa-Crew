@@ -49,6 +49,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
                 ProductService.DeleteData(id);
                 return RedirectToPage("./IndexPage");
             }
+
             return Page();
 
         }
