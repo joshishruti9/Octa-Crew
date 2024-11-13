@@ -26,6 +26,7 @@ for details on configuring this project to bundle and minify static web assets. 
     color: orangered;
     text-align: center;
 }
+
 .container1 {
     position: relative;
     text-align: center;
@@ -41,6 +42,7 @@ for details on configuring this project to bundle and minify static web assets. 
     transform: translate(-50%, -50%);
    
 }
+
 .card-columns .card-img {
   height: 330px;
   vertical-align: bottom;
@@ -49,6 +51,7 @@ for details on configuring this project to bundle and minify static web assets. 
   background-size: cover; /* Resize the background image to cover the entire container */
   opacity: .8;
 }
+
 .table th, .table td {
     padding: 12px;
     text-align: left;
@@ -58,20 +61,21 @@ for details on configuring this project to bundle and minify static web assets. 
 th {
     background-color: #f5ad93ff;
 }
+
 tr:nth-child(even) {
     background-color: #f5b1987e;
 }
+
 tr:nth-child(odd) {
     background-color: #ffffff;
 }
-
-
 
 tr:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
     
 }
+
 .modal .card-img {
   height: 500px;
   vertical-align: bottom;
@@ -85,12 +89,14 @@ tr:hover {
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
     background-color: indianred;
 }
+
 .productTitle{
    font-family:'Century Gothic';
    text-align: center;
    color:red;
    
 }
+
 .card-footer {
     background: #fefefa;
 }
@@ -119,29 +125,31 @@ html {
     scroll-behavior: smooth;
     
 }
- .styled-button {
-    background-color: #f5f5dc; /* Initial background color */
-    color: red; /* Text color */
-    padding: 10px 20px; /* Padding around the text */
-    border: none; /* Removes border */
-    border-radius: 50px; /* Rounded corners */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    display:inline-block;
+
+.styled-button {
+   background-color: #f5f5dc; /* Initial background color */
+   color: red; /* Text color */
+   padding: 10px 20px; /* Padding around the text */
+   border: none; /* Removes border */
+   border-radius: 50px; /* Rounded corners */
+   cursor: pointer; /* Changes cursor to pointer on hover */
+   transition: background-color 0.3s ease; /* Smooth transition */
+   display:inline-block;
     
 }
+
 .buttontext {
     padding-top:5px;
     color: orangered;
     
 }
 
-    /* Change color on hover */
-    .styled-button:hover {
-        background-color: #ffd3a5; /* Color when hovered */
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
-    }
+/* Change color on hover */
+.styled-button:hover {
+    background-color: #ffd3a5; /* Color when hovered */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
 
 a.navbar-brand {
     white-space: normal;
@@ -165,9 +173,9 @@ a {
 }
 
 .btn-primary {
-    color: #fc0505;
-    background-color: #fff;
-    border-color: #fff;
+   color: #fc0505;
+   background-color: #fff;
+   border-color: #fff;
 }
 
 .btn-update {
@@ -206,6 +214,7 @@ html {
     font-size: 20px;
    
 }
+
 @media (min-width: 768px) {
     html {
        font-size: 16px;
@@ -216,6 +225,7 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #fff !important;
 }
@@ -242,19 +252,23 @@ body {
     background-color: #f7f8fa;
 
 }
+
 p {
     font-family: 'Century Gothic';
     text-align: justify;
     font-weight: 200;
 }
+
 h1 {
     font-family: 'Century Gothic', sans-serif;
     text-align:center;
     
 }
+
 ul {
     font-family: 'Century Gothic', sans-serif;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -263,6 +277,7 @@ ul {
     line-height: 60px; /* Vertically center the text there */
     font-family: 'Nunito', sans-serif;
 }
+
 /*Backgrounds*/
 .bg-navbar {
     background-color: #EEF2F3;
@@ -272,6 +287,7 @@ ul {
 .bg-footer {
     background-color: #febb8a;
 }
+
 .tabledata{
     text-emphasis:initial;
     font-family:'Century Gothic';
@@ -308,8 +324,6 @@ img {
     user-select: none;
 }
 
-
-
 /* Fade animation */
 .fade1 {
     animation-name: fade;
@@ -325,6 +339,7 @@ img {
     100% { opacity:0; } 
     
 }
+
 .textcolor {
     font-weight: bold;
     color: #3d2022;
@@ -332,6 +347,7 @@ img {
     font-size:95px;
     text-align :center;
 }
+
 .paracolor {
     font-weight: bold;
     color: #24252b;
@@ -339,6 +355,7 @@ img {
     text-align:center;
     font-size:25px;
 }
+
 .centeredHome {
     
     position: absolute;
@@ -346,6 +363,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .new-styled-button {
     background-color: white; /* Initial background color */
     color: red; /* Text color */
@@ -357,14 +375,17 @@ img {
     display: inline-block;
     margin-right: 5px;
 }
+
 .display4 {
     font-weight: 500; 
     color: orangered; 
     margin-bottom: 20px;
 }
+
 .margintop {
     margin-top: 15px;
 }
+
 .marginbottom {
     margin-bottom: 15px;
 }
@@ -372,10 +393,12 @@ img {
     margin-top: 15px;
     color: orangered;
 }
+
 .background_image {
     width:100vw ;
     height:650px;
 }
+
 .cityimg {
     width:100vw ;
     height:600px;
