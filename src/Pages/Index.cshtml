@@ -37,7 +37,7 @@
 
     <!-- JavaScript for Automatic Slideshow -->
     <script>
-        let slideIndex = 0;
+        let slideIndex = 1;
         showSlides(slideIndex);
         function changeSlide(n) {
             showSlides(slideIndex += n);
@@ -46,7 +46,7 @@
         // Display slides
         function showSlides(n) {
             let slides = document.getElementsByClassName("myslides");
-            if (n >= slides.length) { slideIndex = 0 }
+            if (n >= slides.length) { slideIndex = 1}
             if (n < 0) { slideIndex = slides.length - 1 }
             for (let slide of slides) {
                 slide.style.display = "none";
