@@ -1,4 +1,5 @@
 ﻿@page "{id}"
+@using ContosoCrafts.WebSite.Enums
 @using ContosoCrafts.WebSite.Services
 @using ContosoCrafts.WebSite.Models
 @inject JsonFileProductService ProductService
@@ -28,18 +29,37 @@
         <p class="description">@Model.Product.Description</p>
     
             <dl>
-                    <dt>Information:</dt>
+                <dt>Information:</dt>
 
-                    <dd>Best season to visit: @Model.Product.BestSeason.ToString()</dd>
+                @* Check for each value of SeasonEnum to check that it is != Unknown or != null *@
+                @if (Model.Product.BestSeason == SeasonEnum.Spring)
+                {
+                    <dd>Best season to visit: Spring</dd>
+                }
+                
+                @if (Model.Product.BestSeason == SeasonEnum.Summer)
+                {
+                    <dd>Best season to visit: Summer</dd>
+                }
+                
+                @if (Model.Product.BestSeason == SeasonEnum.Fall)
+                {
+                    <dd>Best season to visit: Fall</dd>
+                }
+                
+                @if (Model.Product.BestSeason == SeasonEnum.Winter)
+                {
+                    <dd>Best season to visit: Winter</dd>
+                }
 
-                    <dd>Currency: @Model.Product.Currency</dd>
+                <dd>Currency: @Model.Product.Currency</dd>
 
-                    <dd>Timezone: @Model.Product.TimeZone</dd>
+                <dd>Timezone: @Model.Product.TimeZone</dd>
 
-                    <dd>Cost: @Model.Product.Cost $</dd>
+                <dd>Cost: @Model.Product.Cost $</dd>
 
-                    <dd>Travel Time: @Model.Product.TravelTime hr</dd>
-
+                <dd>Travel Time: @Model.Product.TravelTime hr</dd>                
+                
 
                 <dt>Attractions:
                     @foreach (string attraction in Model.Product.Attractions)
