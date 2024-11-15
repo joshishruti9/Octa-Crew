@@ -23,8 +23,8 @@ namespace UnitTests.Services
 			var data = new TravelTipsModel
 			{
 				Id = System.Guid.NewGuid().ToString(),
-				Title = "Enter Tip Name",
-				Description = "Enter Tip Description",
+				Title = null,
+				Description = null,
 			};
 
 			// Act
