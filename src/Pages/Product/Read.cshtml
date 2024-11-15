@@ -52,9 +52,15 @@
                     <dd>Best season to visit: Winter</dd>
                 }
 
-                <dd>Currency: @Model.Product.Currency</dd>
+                @if (Model.Product.Currency != null)
+                {
+                    <dd>Currency: @Model.Product.Currency</dd>
+                }
 
-                <dd>Timezone: @Model.Product.TimeZone</dd>
+                @if (Model.Product.TimeZone != null)
+                {
+                    <dd>Timezone: @Model.Product.TimeZone</dd>
+                }
 
                 <dd>Cost: @Model.Product.Cost $</dd>
 
