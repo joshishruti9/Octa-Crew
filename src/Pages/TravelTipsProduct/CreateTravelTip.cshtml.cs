@@ -23,14 +23,14 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 
         // The data to show, bind to it for the post
         [BindProperty]
-        public TravelTipsModel TravelTipsModel { get; set; }
+        public TravelTipsModel PageModel { get; set; }
 
         /// <summary>
         /// REST Get request initializes the data
         /// </summary>
         public void OnGet()
         {
-            TravelTipsModel = TravelTipService.CreateData();
+            PageModel = TravelTipService.CreateData();
         }
     }
 }
