@@ -27,54 +27,56 @@
         </div>
 
         <p class="description">@Model.Product.Description</p>
-    
-            <dl>
-                <dt>Information:</dt>
 
-                @* Check for each value of SeasonEnum to check that it is != Unknown or != null *@
-                @if (Model.Product.BestSeason == SeasonEnum.Spring)
-                {
-                    <dd>Best season to visit: Spring</dd>
-                }
-                
-                @if (Model.Product.BestSeason == SeasonEnum.Summer)
-                {
-                    <dd>Best season to visit: Summer</dd>
-                }
-                
-                @if (Model.Product.BestSeason == SeasonEnum.Fall)
-                {
-                    <dd>Best season to visit: Fall</dd>
-                }
-                
-                @if (Model.Product.BestSeason == SeasonEnum.Winter)
-                {
-                    <dd>Best season to visit: Winter</dd>
-                }
+        <dl>
+            <dt>Information:</dt>
 
-                @if (Model.Product.Currency != null)
-                {
-                    <dd>Currency: @Model.Product.Currency</dd>
-                }
+            @* Check for each value of SeasonEnum to check that it is != Unknown or != null *@
+            @if (Model.Product.BestSeason == SeasonEnum.Spring)
+            {
+                <dd>Best season to visit: Spring</dd>
+            }
 
-                @if (Model.Product.TimeZone != null)
-                {
-                    <dd>Timezone: @Model.Product.TimeZone</dd>
-                }
+            @if (Model.Product.BestSeason == SeasonEnum.Summer)
+            {
+                <dd>Best season to visit: Summer</dd>
+            }
 
-                <dd>Cost: @Model.Product.Cost $</dd>
+            @if (Model.Product.BestSeason == SeasonEnum.Fall)
+            {
+                <dd>Best season to visit: Fall</dd>
+            }
 
-                <dd>Travel Time: @Model.Product.TravelTime hr</dd>                
-                
+            @if (Model.Product.BestSeason == SeasonEnum.Winter)
+            {
+                <dd>Best season to visit: Winter</dd>
+            }
 
-                <dt>Attractions:
+            @if (Model.Product.Currency != null)
+            {
+                <dd>Currency: @Model.Product.Currency</dd>
+            }
+
+            @if (Model.Product.TimeZone != null)
+            {
+                <dd>Timezone: @Model.Product.TimeZone</dd>
+            }
+
+            <dd>Cost: @Model.Product.Cost $</dd>
+
+            <dd>Travel Time: @Model.Product.TravelTime hr</dd>
+
+            @if (Model.Product.Attractions.Any(attraction => string.IsNullOrEmpty(attraction) == false))
+            {
+                <dt>
+                    Attractions:
                     @foreach (string attraction in Model.Product.Attractions)
                     {
                         <dd class="card-text">@attraction</dd>
                     }
                 </dt>
-
-            </dl>
+            }
+        </dl>
 
         <p>Rating: 
             @{
