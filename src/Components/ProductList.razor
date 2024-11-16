@@ -4,25 +4,26 @@
 @inject JsonFileProductService ProductService
 @inject NavigationManager Navigation
 
-<div>
-    <input type="text" class="form-control mb-3" placeholder="Search by Title..." @bind="searchText" />
-</div>
-
 <div class="card-columns">
-    @foreach (var product in FilteredProducts)
+    <!-- Loop through all products and display them as cards -->
+    @foreach (var product in ProductService.GetAllData())
     {
         <div class="card">
+            <!-- Display the first image of the product -->
             <div class="card-img" style="background-image: url('@product.Images[0]');">
             </div>
 
             <div class="card-body">
+                <!-- Display the product title -->
                 <h5 class="card-title">@product.Title</h5>
             </div>
 
             <div class="card-footer">
+                <!-- Button to explore more details about the product -->
                 <small class="text-muted">
                     <button @onclick="(e => SelectProduct(product.Id))"
-                            data-toggle="modal" data-target="#productModal"
+                            data-toggle="modal"
+                            data-target="#productModal"
                             class="btn btn-primary">
                         Explore More...
                     </button>
@@ -32,12 +33,14 @@
     }
 </div>
 
-@if(selectedProduct != null)
+<!-- Modal to display detailed product information -->
+@if (selectedProduct != null)
 {
     <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+                    <!-- Display the product title in the modal header -->
                     <h5 class="modal-title" id="productTitle">@selectedProduct.Title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -45,15 +48,20 @@
                 </div>
 
                 <div class="modal-body">
+                    <!-- Card showing the detailed product description and image -->
                     <div class="card">
                         <div class="card-img" style="background-image: url('@selectedProduct.Images[0]');">
                         </div>
                         <div class="card-body">
+                            <!-- Display the product description -->
                             <p class="card-text">@selectedProduct.Description</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
+
+                    <!-- Voting section -->
                     @if(voteCount == 0)
                     {
                         <span>Be the first to vote!</span>
@@ -64,14 +72,18 @@
                         <span>@voteCount @voteLabel</span>
                     }
 
-                    @for(int i=1; i<6; i++)
+                    <!-- Display star ratings -->
+                    @for (int i = 1; i < 6; i++)
                     {
                         var currentStar = i;
-                        if(i<=currentRating)
+
+                        // Display filled stars for current rating
+                        if (i <= currentRating)
                         {
                             <span class="fa fa-star checked" @onclick="(e => SubmitRating(currentStar))"></span>
                         }
 
+                        // Display unfilled stars for the remaining
                         if (i > currentRating)
                         {
                             <span class="fa fa-star" @onclick="(e => SubmitRating(currentStar))"></span>
@@ -83,14 +95,22 @@
     </div>
 }
 
+<!-- Include Font Awesome for star icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code
 {
+    // Holds the selected product's details
     ProductModel selectedProduct;
-    string selectedProductId;
-    string searchText = string.Empty;
 
+    // Stores the ID of the selected product
+    string selectedProductId;
+
+    /// <summary>
+    /// Sets the selected product details based on the given product ID
+    /// </summary>
+    /// <param name="productId">ID of the selected product</param>
+    
     void SelectProduct(string productId)
     {
         selectedProductId = productId;
@@ -98,12 +118,19 @@
         GetCurrentRating();
     }
 
+    // Holds the current rating of the selected product
     int currentRating = 0;
 
+    // Total number of votes for the selected product
     int voteCount = 0;
 
+    // Label to display "Vote" or "Votes" based on vote count
     string voteLabel;
 
+    /// <summary>
+    /// Retrieves and updates the current rating of the selected product
+    /// </summary>
+    
     void GetCurrentRating()
     {
         if(selectedProduct.Ratings == null)
@@ -122,6 +149,11 @@
         System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
     }
 
+    /// <summary>
+    /// Submits the given rating for the selected product
+    /// </summary>
+    /// <param name="rating">Rating to submit</param>
+
     void SubmitRating(int rating)
     {
         System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
@@ -129,13 +161,13 @@
         SelectProduct(selectedProductId);
     }
 
+    /// <summary>
+    /// Navigates to the detailed read page of the product
+    /// </summary>
+    /// <param name="productId">ID of the product</param>
+    
     void NavigateToReadPage(string productId)
     {
         Navigation.NavigateTo($"Product/Read/{productId}", forceLoad: true);
     }
-
-    IEnumerable<ProductModel> FilteredProducts => string.IsNullOrEmpty(searchText)
-        ? ProductService.GetAllData()
-        : ProductService.GetAllData()
-            .Where(product => product.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase));
 }
