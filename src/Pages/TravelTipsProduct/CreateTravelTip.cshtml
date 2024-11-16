@@ -1,4 +1,32 @@
 ﻿@page
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileTravelTipService TravelTipService
 @model ContosoCrafts.WebSite.Pages.TravelTipsProduct.CreateTravelTipModel
 @{
+    ViewData["Title"] = "Create Travel Tip Page";
 }
+
+<h1>Create Travel Tip</h1>
+
+<div class="container">
+	<form method="post">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		@Html.HiddenFor(x => x.PageModel.Id)
+
+		<div class="form-group">
+			<label asp-for="PageModel.Title" class="control-label"></label>
+			<input asp-for="PageModel.Title" class="form-control" placeholder="Enter Title" />
+			<span asp-validation-for="PageModel.Title" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<label asp-for="PageModel.Description" class="control-label"></label>
+			<input asp-for="PageModel.Description" class="form-control" placeholder="Enter Description" />
+			<span asp-validation-for="PageModel.Description" class="text-danger"></span>
+		</div>
+
+		<div class="form-group">
+			<input type="submit" value="Submit" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
