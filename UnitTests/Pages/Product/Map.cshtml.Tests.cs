@@ -26,5 +26,54 @@ namespace UnitTests.Pages.Product
         }
 
         #endregion TestSetup
+
+        #region ReadData
+
+        /// <summary>
+        /// Test for correct output when null id is passed
+        /// </summary>
+        [Test]
+        public void ReadData_Invalid_Null_Id_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = pageModel.ReadData(null);
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        /// <summary>
+        /// Test for correct output when invalid id is passed
+        /// </summary>
+        [Test]
+        public void ReadData_Invalid_Id_Default_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = pageModel.ReadData("unitedstates");
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
+
+        /// <summary>
+        /// Test for correct output when a valid id is passed
+        /// </summary>
+        [Test]
+        public void ReadData_Valid_Id_Default_Should_Return_City()
+        {
+            // Arrange
+
+            // Act
+            var result = pageModel.ReadData("paris");
+
+            // Assert
+            Assert.AreEqual("paris", result.Id);
+        }
+
+        #endregion ReadData
     }
 }
