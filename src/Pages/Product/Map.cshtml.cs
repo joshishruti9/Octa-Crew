@@ -23,9 +23,34 @@ namespace ContosoCrafts.WebSite.Pages.Product
             ProductService = productService;
         }
 
-        public void OnGet()
-        {
+        // the model from which to pull the city name
+        public ProductModel Product;
 
+        /// <summary>
+        /// REST get request
+        /// </summary>
+        /// <param name="id">ID of the city to be shown</param>
+        /// <returns>Redirect to the index page if city is not found or a PageResult otherwise</returns>
+        public IActionResult OnGet(string id)
+        {
+            Product = ReadData(id);
+
+            if (Product == null)
+            {
+                return RedirectToPage("./IndexPage");
+            }
+
+            return Page();
+        }
+
+        /// <summary>
+        /// Return the city matching a given ID
+        /// </summary>
+        /// <param name="id">The city ID</param>
+        /// <returns>ProductModel object for the given city, or null if not found</returns>
+        public ProductModel ReadData(string id)
+        {
+            return ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
     }
 }
