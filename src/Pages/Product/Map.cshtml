@@ -1,4 +1,19 @@
-﻿@page
+﻿@page "{id}"
 @model ContosoCrafts.WebSite.Pages.Product.MapModel
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+
 @{
+    ViewData["Title"] = "Map Page";
+}
+
+@if(Model.Product != null)
+{
+    <iframe 
+        width="450"
+        height="250"
+        frameborder="0" style="border:0"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=@MapModel.APIKey&q=@Model.Product.Title">
+    </iframe>
 }
