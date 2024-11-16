@@ -14,6 +14,9 @@ namespace ContosoCrafts.WebSite.Pages.Product
         // Accesses city data from database
         public JsonFileProductService ProductService { get; }
 
+        // Google API key used to embed Map to page
+        public static readonly string APIKey = "AIzaSyA0PCl4rxWU8CKfKQcPxPZELqmm0D0xh_I";
+
         /// <summary>
         /// Default Constructor
         /// </summary>
