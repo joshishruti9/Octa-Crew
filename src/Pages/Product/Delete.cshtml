@@ -1,4 +1,5 @@
 ﻿@page
+@using ContosoCrafts.WebSite.Enums
 @using ContosoCrafts.WebSite.Pages.Product
 @using ContosoCrafts.WebSite.Services
 @inject JsonFileProductService ProductService
@@ -7,10 +8,108 @@
 	ViewData["Title"] = "Delete page";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <div class="text-center">
     <h1 class="display4"> Delete</h1>
 </div>
 
+<div class="container">
+    <h4 class="title" id="productTitle">@Model.Product.Title</h4>
+
+    <div class="card-columns">
+        @foreach (string image in Model.Product.Images)
+        {
+            <img class="card-img" src='@image' alt="Image for @Model.Product.Title" />
+        }
+    </div>
+
+    <p class="description">@Model.Product.Description</p>
+
+    <dl>
+        <dt>Information:</dt>
+
+        @* Check for each value of SeasonEnum to check that it is != Unknown or != null *@
+        @if (Model.Product.BestSeason == SeasonEnum.Spring)
+        {
+            <dd>Best season to visit: Spring</dd>
+        }
+
+        @if (Model.Product.BestSeason == SeasonEnum.Summer)
+        {
+            <dd>Best season to visit: Summer</dd>
+        }
+
+        @if (Model.Product.BestSeason == SeasonEnum.Fall)
+        {
+            <dd>Best season to visit: Fall</dd>
+        }
+
+        @if (Model.Product.BestSeason == SeasonEnum.Winter)
+        {
+            <dd>Best season to visit: Winter</dd>
+        }
+
+        @if (Model.Product.Currency != null)
+        {
+            <dd>Currency: @Model.Product.Currency</dd>
+        }
+
+        @if (Model.Product.TimeZone != null)
+        {
+            <dd>Timezone: @Model.Product.TimeZone</dd>
+        }
+
+        <dd>Cost: @Model.Product.Cost $</dd>
+
+        <dd>Travel Time: @Model.Product.TravelTime hr</dd>
+
+        @if (Model.Product.Attractions.Any(attraction => string.IsNullOrEmpty(attraction) == false))
+        {
+            <dt>
+                Attractions:
+                @foreach (string attraction in Model.Product.Attractions)
+                {
+                    <dd class="card-text">@attraction</dd>
+                }
+            </dt>
+        }
+    </dl>
+
+    <p>Rating: 
+        @{
+            int currentRating = Model.Product.GetCityRating();
+
+            for (int i = 1; i < 6; i++)
+            {
+                if (i <= currentRating)
+                {
+                    <span class="fa fa-star checked no-pointer"></span>
+                }
+
+                if(i > currentRating)
+                {
+                    <span class="fa fa-star no-pointer"></span>
+                }
+            }
+
+            string voteString;
+            if (Model.Product.Ratings == null)
+            {
+                voteString = "0 Votes";
+                <span>@voteString</span>
+            }
+
+            if(Model.Product.Ratings != null)
+            {
+                int voteCount = Model.Product.Ratings.Count();
+                voteString = voteCount + (voteCount == 1 ? " Vote" : " Votes");
+                <span>@voteString</span>
+            }
+
+        }
+    </p>
+</div>
 
 <div class="form-container">
   <form method="post">
