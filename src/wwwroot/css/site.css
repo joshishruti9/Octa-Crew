@@ -436,7 +436,6 @@ img {
 /* Map */
 
 .map-frame {
-    width: 450px;
-    height: 450px;
+    height: 600px;
     border: none;
 }
