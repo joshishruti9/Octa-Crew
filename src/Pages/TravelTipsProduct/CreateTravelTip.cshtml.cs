@@ -2,6 +2,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
@@ -31,6 +32,27 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         public void OnGet()
         {
             PageModel = TravelTipService.CreateData();
+        }
+
+        /// <summary>
+        /// REST Post request saves the filled in data to the database
+        /// </summary>
+        /// <returns>The result of the Post request</returns>
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            // the set of travel tips in the database
+            var dataSet = TravelTipService.GetAllData();
+
+            dataSet.Append(PageModel);
+
+            TravelTipService.SaveData(dataSet);
+
+            return RedirectToPage("./TravelTips");
         }
     }
 }
