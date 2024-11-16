@@ -4,6 +4,10 @@
 @inject JsonFileProductService ProductService
 @inject NavigationManager Navigation
 
+<div>
+    <input type="text" class="form-control mb-3" placeholder="Search by Title..." @bind="searchText" />
+</div>
+
 <div class="card-columns">
     @foreach (var product in FilteredProducts)
     {
