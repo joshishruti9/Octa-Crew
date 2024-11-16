@@ -48,7 +48,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
             // the set of travel tips in the database
             var dataSet = TravelTipService.GetAllData();
 
-            dataSet.Append(PageModel);
+            dataSet = dataSet.Append(PageModel);
 
             TravelTipService.SaveData(dataSet);
 
