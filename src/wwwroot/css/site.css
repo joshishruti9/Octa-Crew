@@ -453,8 +453,9 @@ img {
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
-}
-/* Map */
+.custom-margin-top {
+    margin-top: 100px;
+}/* Map */
 
 .map-frame {
     height: 600px;
