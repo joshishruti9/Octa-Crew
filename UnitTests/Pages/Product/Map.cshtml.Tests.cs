@@ -2,6 +2,7 @@
 using ContosoCrafts.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Bunit.Extensions;
 
 namespace UnitTests.Pages.Product
 {
@@ -133,5 +134,24 @@ namespace UnitTests.Pages.Product
         }
 
         #endregion OnGet
+
+        #region APIKey
+
+        /// <summary>
+        /// Test that the APIKey class variable is not null or empty
+        /// </summary>
+        [Test]
+        public void APIKey_Valid_Default_Should_Not_Be_Empty()
+        {
+            // Arrange
+
+            // Act
+            var result = MapModel.APIKey;
+
+            // Assert
+            Assert.AreEqual(false, result.IsNullOrEmpty());
+        }
+
+        #endregion APIKey
     }
 }
