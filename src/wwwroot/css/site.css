@@ -42,7 +42,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .centered {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
    
@@ -139,8 +139,7 @@ html {
    border-radius: 50px; /* Rounded corners */
    cursor: pointer; /* Changes cursor to pointer on hover */
    transition: background-color 0.3s ease; /* Smooth transition */
-   display:inline-block;
-    
+   display:inline-block;  
 }
 
 .buttontext {
@@ -423,12 +422,13 @@ img {
 }
 
 .cityimg {
-    width:100vw ;
-    height:600px;
+    margin-top: 105px;
+    width: 100vw;
+    height: 600px;
 }
 .buttoncentered {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left:50%;
     gap:30%;
     transform: translate(-50%, -50%);
@@ -438,15 +438,14 @@ img {
     color: red; /* Text color */
     padding: 10px 20px; /* Padding around the text */
     border: none; /* Removes border */
-    border-radius: 50px; /* Rounded corners */
+    border-radius: 90px; /* Rounded corners */
     cursor: pointer; /* Changes cursor to pointer on hover */
     transition: background-color 0.3s ease; /* Smooth transition */
     display: inline-block;
-    margin-right: 50px;
+    margin-right: 20px;
     padding-top: 20px;
     color: orangered;
     font-family: 'Century Gothic';
-    
 }
 
 .index-styled-button:hover {
