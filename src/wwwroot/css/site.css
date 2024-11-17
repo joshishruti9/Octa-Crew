@@ -432,7 +432,28 @@ img {
     gap:30%;
     transform: translate(-50%, -50%);
 }
+.index-styled-button {
+    background-color: #f5f5dc; /* Initial background color */
+    color: red; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Removes border */
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    display: inline-block;
+    margin-right: 50px;
+    padding-top: 20px;
+    color: orangered;
+    font-family: 'Century Gothic';
+    
+}
 
+.index-styled-button:hover {
+    background-color: #ffd3a5; /* Color when hovered */
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+}
+}
 /* Map */
 
 .map-frame {
