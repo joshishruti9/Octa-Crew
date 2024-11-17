@@ -417,8 +417,9 @@ img {
 }
 
 .background_image {
-    width:100vw ;
-    height:650px;
+    margin-top:105px;
+    width: 100vw;
+    height: 650px;
 }
 
 .cityimg {
