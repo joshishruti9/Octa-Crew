@@ -5,8 +5,8 @@
 @inject NavigationManager Navigation
 
 <div class="card-columns">
-    <!-- Loop through all products and display them as cards -->
-    @foreach (var product in ProductService.GetAllData())
+    <!-- Loop through all filtered products and display them as cards -->
+    @foreach (var product in FilteredProducts)
     {
         <div class="card">
             <!-- Display the first image of the product -->
@@ -22,8 +22,7 @@
                 <!-- Button to explore more details about the product -->
                 <small class="text-muted">
                     <button @onclick="(e => SelectProduct(product.Id))"
-                            data-toggle="modal"
-                            data-target="#productModal"
+                            data-toggle="modal" data-target="#productModal"
                             class="btn btn-primary">
                         Explore More...
                     </button>
@@ -106,11 +105,14 @@
     // Stores the ID of the selected product
     string selectedProductId;
 
+    // Set searchText to empty string initially
+    string searchText = string.Empty;
+
     /// <summary>
     /// Sets the selected product details based on the given product ID
     /// </summary>
     /// <param name="productId">ID of the selected product</param>
-    
+
     void SelectProduct(string productId)
     {
         selectedProductId = productId;
@@ -130,7 +132,7 @@
     /// <summary>
     /// Retrieves and updates the current rating of the selected product
     /// </summary>
-    
+
     void GetCurrentRating()
     {
         if(selectedProduct.Ratings == null)
@@ -165,9 +167,19 @@
     /// Navigates to the detailed read page of the product
     /// </summary>
     /// <param name="productId">ID of the product</param>
-    
+
     void NavigateToReadPage(string productId)
     {
         Navigation.NavigateTo($"Product/Read/{productId}", forceLoad: true);
     }
+
+    /// <summary>
+    /// Filteres the products according to search text
+    /// </summary>
+    /// <param name="searchText">title of the product</param>
+
+    IEnumerable<ProductModel> FilteredProducts => string.IsNullOrEmpty(searchText)
+        ? ProductService.GetAllData()
+        : ProductService.GetAllData()
+            .Where(product => product.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase));
 }
