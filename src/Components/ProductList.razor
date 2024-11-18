@@ -4,6 +4,11 @@
 @inject JsonFileProductService ProductService
 @inject NavigationManager Navigation
 
+<!-- Display the search box to filter cities -->
+<div>
+    <input type="text" class="form-control mb-3" placeholder="Search by Title..." @bind="searchText" />
+</div>
+
 <div class="card-columns">
     <!-- Loop through all filtered products and display them as cards -->
     @foreach (var product in FilteredProducts)
