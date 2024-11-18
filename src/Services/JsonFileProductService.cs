@@ -108,11 +108,7 @@ namespace ContosoCrafts.WebSite.Services
         {
             var products = GetAllData().ToList();
 
-            // Check if the title already exists for a different product
-            if (products.Any(p => p.Title.Equals(data.Title, StringComparison.OrdinalIgnoreCase) && !p.Id.Equals(data.Id)))
-            {
-                return null; // Indicate failure due to duplicate title
-            }
+           
 
             // the city in the database matching the data parameter's Id
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
