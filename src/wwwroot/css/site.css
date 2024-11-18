@@ -459,3 +459,23 @@ img {
     height: 600px;
     border: none;
 }
+.privacytextcolor {
+    font-weight: bold;
+    color: #ff6347;
+    font-family: 'Californian FB';
+    font-size: 25px;
+    text-align: left;
+}
+.privacyparacolor {
+    font-weight: 500;
+    color: #3d2022;
+    font-family: 'Century Gothic';
+    text-align: justify;
+    font-size: 20px;
+}
+.privacymargintopcolored {
+    margin-top: 15px;
+    color: orangered;
+    text-align: justify;
+    font-family:'Century Gothic';
+}
