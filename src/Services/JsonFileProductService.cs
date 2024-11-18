@@ -75,15 +75,44 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
+        /// Add a new product to the database, ensuring the title is unique.
+        /// </summary>
+        /// <param name="data">The product data to add</param>
+        /// <returns>A message indicating success or failure</returns>
+        public string AddProduct(ProductModel data)
+        {
+            var products = GetAllData().ToList();
+
+            // Check for duplicate title
+            if (products.Any(p => p.Title.Equals(data.Title, StringComparison.OrdinalIgnoreCase)))
+            {
+                return "Error: A product with this title already exists.";
+            }
+
+            // Assign a new ID if not already set
+            data.Id ??= Guid.NewGuid().ToString();
+
+            products.Add(data);
+            SaveData(products);
+
+            return "Product added successfully.";
+        }
+
+        /// <summary>
         /// Update all the fields of a city in the database
         /// </summary>
         /// <param name="data">The new data values</param>
         /// <returns></returns>
-        
+
         public ProductModel UpdateData(ProductModel data)
         {
-            // the cities in the database
-            var products = GetAllData();
+            var products = GetAllData().ToList();
+
+            // Check if the title already exists for a different product
+            if (products.Any(p => p.Title.Equals(data.Title, StringComparison.OrdinalIgnoreCase) && !p.Id.Equals(data.Id)))
+            {
+                return null; // Indicate failure due to duplicate title
+            }
 
             // the city in the database matching the data parameter's Id
             var productData = products.FirstOrDefault(x => x.Id.Equals(data.Id));
