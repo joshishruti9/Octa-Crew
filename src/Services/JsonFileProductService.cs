@@ -74,29 +74,6 @@ namespace ContosoCrafts.WebSite.Services
             return data;
         }
 
-        /// <summary>
-        /// Add a new product to the database, ensuring the title is unique.
-        /// </summary>
-        /// <param name="data">The product data to add</param>
-        /// <returns>A message indicating success or failure</returns>
-        public string AddProduct(ProductModel data)
-        {
-            var products = GetAllData().ToList();
-
-            // Check for duplicate title
-            if (products.Any(p => p.Title.Equals(data.Title, StringComparison.OrdinalIgnoreCase)))
-            {
-                return "Error: A product with this title already exists.";
-            }
-
-            // Assign a new ID if not already set
-            data.Id ??= Guid.NewGuid().ToString();
-
-            products.Add(data);
-            SaveData(products);
-
-            return "Product added successfully.";
-        }
 
         /// <summary>
         /// Update all the fields of a city in the database
