@@ -2,16 +2,13 @@
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
+@using ContosoCrafts.WebSite.Enums
 @inject NavigationManager Navigation
 
-<!-- Display the search box to filter cities -->
-<div>
-    <input type="text" class="form-control mb-3" placeholder="Search by Title..." @bind="searchText" />
-</div>
 
 <div class="card-columns">
     <!-- Loop through all filtered products and display them as cards -->
-    @foreach (var product in FilteredProducts)
+    @foreach (var product in GetFilteredProducts())
     {
         <div class="card">
             <!-- Display the first image of the product -->
@@ -113,6 +110,9 @@
     // Set searchText to empty string initially
     string searchText = string.Empty;
 
+    // Set selectedSeason to empty string initially
+    string selectedSeason = string.Empty;
+
     /// <summary>
     /// Sets the selected product details based on the given product ID
     /// </summary>
@@ -179,12 +179,39 @@
     }
 
     /// <summary>
-    /// Filteres the products according to search text
+    /// Handles the change in season filter and updates the filtered product list.
     /// </summary>
-    /// <param name="searchText">title of the product</param>
+    /// <param name="season">The selected season</param>
+ 
+    void OnSeasonFilterChange(string season)
+    {
+        selectedSeason = season;
+    }
 
-    IEnumerable<ProductModel> FilteredProducts => string.IsNullOrEmpty(searchText)
-        ? ProductService.GetAllData()
-        : ProductService.GetAllData()
-            .Where(product => product.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+    /// <summary>
+    /// Applies both search text and season filters to the product list.
+    /// </summary>
+
+    IEnumerable<ProductModel> GetFilteredProducts()
+    {
+        var products = ProductService.GetAllData();
+
+        // Apply search text filter
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            products = products.Where(product =>
+                product.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+        }
+
+        // Apply season filter
+        if (!string.IsNullOrEmpty(selectedSeason))
+        {
+            if (Enum.TryParse<SeasonEnum>(selectedSeason, out var season))
+            {
+                products = products.Where(product => product.BestSeason == season);
+            }
+        }
+
+        return products;
+    }
 }
