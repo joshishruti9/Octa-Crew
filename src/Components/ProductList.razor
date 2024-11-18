@@ -6,6 +6,25 @@
 @inject NavigationManager Navigation
 
 
+<div class="filter-columns">
+    <!-- Display the search box to filter cities -->
+    <div>
+        <input type="text" placeholder="Search by Title..." @bind="searchText" />
+
+        <!-- Display the seasons to filter cities based on season-->
+        <select class="seasonDropDown" @onchange="(e => OnSeasonFilterChange(e.Value?.ToString()))">
+            <option value="">All Seasons</option>
+            <option value="1">Spring</option>
+            <option value="2">Summer</option>
+            <option value="3">Autumn</option>
+            <option value="4">Winter</option>
+        </select>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+
 <div class="card-columns">
     <!-- Loop through all filtered products and display them as cards -->
     @foreach (var product in GetFilteredProducts())
