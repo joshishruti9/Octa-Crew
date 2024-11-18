@@ -1,4 +1,5 @@
 using ContosoCrafts.WebSite.Enums;
+using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.ValidationAttributes;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -28,6 +29,7 @@ namespace ContosoCrafts.WebSite.Models
         public string[] Images { get; set; }
 
         // Name of the city
+        [UniqueTitle]
         [Required(ErrorMessage = "Title is required")]
         [StringLength(
             maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}"
@@ -101,5 +103,20 @@ namespace ContosoCrafts.WebSite.Models
 
             return (int)Math.Round((double)Ratings.Sum() / Ratings.Count());
         }
+    }
+}
+public class UniqueTitleAttribute : ValidationAttribute
+{
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+        var productService = (JsonFileProductService)validationContext.GetService(typeof(JsonFileProductService));
+        var title = value as string;
+
+        if (productService.GetAllData().Any(p => p.Title.Equals(title, StringComparison.OrdinalIgnoreCase)))
+        {
+            return new ValidationResult("A product with this title already exists.");
+        }
+
+        return ValidationResult.Success;
     }
 }
