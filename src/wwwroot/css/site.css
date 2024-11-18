@@ -226,14 +226,12 @@ html {
     width: 75%;
 }
 
-.filtercontainer button {
+.filter-columns .seasonDropDown {
     padding: 0.5rem;
-    background-color: #F5F5DC;
-    color: #FF0000;
-    border: none;
+    border: 1px solid #dee2e6;
     border-radius: 4px;
+    width: 20%;
     cursor: pointer;
-    width: 25%;
 }
 
 @media (min-width: 768px) {
