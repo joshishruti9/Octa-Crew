@@ -308,6 +308,38 @@ namespace UnitTests.Components
             Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
         }
 
+        /// <summary>
+        /// Typing a city name and pressing enter should filter cities by title
+        /// </summary>
+        [Test]
+        public void GetFilteredProducts_Search_By_Title_Should_Return_Matching_Cities()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Set the search text to "Tokyo"
+            var searchBox = page.Find("input[placeholder='Search by Title...']");
+            searchBox.Change("Tokyo");
+
+            // Get the rendered markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that Tokyo appears in the results
+            Assert.AreEqual(true, pageMarkup.Contains("card_tokyo"));
+
+            // Check that Paris does not appear because it doesn't match the title
+            Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
+        }
+
         #endregion Filter
     }
 }
