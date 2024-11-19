@@ -28,7 +28,7 @@
     <!-- Loop through all filtered products and display them as cards -->
     @foreach (var product in GetFilteredProducts())
     {
-        <div class="card">
+        <div class="card" id="card_@product.Id">
             <!-- Display the first image of the product -->
             <div class="card-img" style="background-image: url('@product.Images[0]');">
             </div>
