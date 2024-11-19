@@ -55,8 +55,11 @@ namespace UnitTests.Components
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            
+            // Button to test clicking
             var id = "ExploreMoreButton_paris";
 
+            // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
             // Find the Buttons (explore more)
@@ -104,8 +107,11 @@ namespace UnitTests.Components
 
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            
+            // Button for city to rate
             var id = "ExploreMoreButton_rome";
 
+            // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
             // Find the Buttons (Explore More)
@@ -124,6 +130,8 @@ namespace UnitTests.Components
             // Get the Vote Count, the List should have 7 elements,
             // element 2 is the string for the count
             var preVoteCountSpan = starButtonList[1];
+            
+            // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
             // Get the First star item from the list, it should not be checked
@@ -148,6 +156,8 @@ namespace UnitTests.Components
 
             // Get the Vote Count, the List should have 7 elements, element 2 is the string for the count
             var postVoteCountSpan = starButtonList[1];
+            
+            // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
             // Get the Last starred item from the list
@@ -187,8 +197,11 @@ namespace UnitTests.Components
 
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            
+            // Button for city to rate
             var id = "ExploreMoreButton_paris";
 
+            // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
             // Find the Buttons (Explore More)
@@ -207,6 +220,8 @@ namespace UnitTests.Components
             // Get the Vote Count, the List should have 7 elements,
             // element 2 is the string for the count
             var preVoteCountSpan = starButtonList[1];
+            
+            // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
             // Get the First star item from the list, it should be checked
@@ -231,6 +246,8 @@ namespace UnitTests.Components
 
             // Get the Vote Count, the List should have 7 elements, element 2 is the string for the count
             var postVoteCountSpan = starButtonList[1];
+            
+            // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
             // Get the Last starred item from the list
@@ -266,6 +283,7 @@ namespace UnitTests.Components
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
+            // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
             // Act
