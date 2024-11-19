@@ -55,7 +55,7 @@ namespace UnitTests.Components
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-            
+
             // Button to test clicking
             var id = "ExploreMoreButton_paris";
 
@@ -107,7 +107,7 @@ namespace UnitTests.Components
 
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-            
+
             // Button for city to rate
             var id = "ExploreMoreButton_rome";
 
@@ -130,7 +130,7 @@ namespace UnitTests.Components
             // Get the Vote Count, the List should have 7 elements,
             // element 2 is the string for the count
             var preVoteCountSpan = starButtonList[1];
-            
+
             // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
@@ -156,7 +156,7 @@ namespace UnitTests.Components
 
             // Get the Vote Count, the List should have 7 elements, element 2 is the string for the count
             var postVoteCountSpan = starButtonList[1];
-            
+
             // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
@@ -197,7 +197,7 @@ namespace UnitTests.Components
 
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-            
+
             // Button for city to rate
             var id = "ExploreMoreButton_paris";
 
@@ -220,7 +220,7 @@ namespace UnitTests.Components
             // Get the Vote Count, the List should have 7 elements,
             // element 2 is the string for the count
             var preVoteCountSpan = starButtonList[1];
-            
+
             // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
@@ -246,7 +246,7 @@ namespace UnitTests.Components
 
             // Get the Vote Count, the List should have 7 elements, element 2 is the string for the count
             var postVoteCountSpan = starButtonList[1];
-            
+
             // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
@@ -272,6 +272,47 @@ namespace UnitTests.Components
         #endregion SubmitRating
 
         #region Filter
+
+        /// <summary>
+        /// Selecting All Seasons in season dropdown should not filter out any cities
+        /// </summary>
+        [Test]
+        public void OnSeasonFilterChange_All_Seasons_Should_Return_All_Cities()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Find the season dropdown
+            var dropdown = page.Find("select.seasonDropDown");
+
+            // Select "All Seasons" from the dropdown
+            dropdown.Change("0");
+
+            // Get the page markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+            // Check that at least one city for each season appears
+
+            // Check that the Tokyo card appears (spring)
+            Assert.AreEqual(true, pageMarkup.Contains("card_tokyo"));
+
+            // Check that the London card appears (summer)
+            Assert.AreEqual(true, pageMarkup.Contains("card_london"));
+
+            // Check that the Paris card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_paris"));
+
+            // Check that the Dubai card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_dubai"));
+        }
 
         /// <summary>
         /// Selecting Spring in season dropdown should filter out cities whose best season is not
