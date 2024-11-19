@@ -25,6 +25,8 @@ namespace UnitTests.Components
 
         #endregion TestSetup
 
+        #region Content
+
         /// <summary>
         /// ProductList should have a working page that does not contain material from original
         /// site
@@ -76,6 +78,10 @@ namespace UnitTests.Components
                 "Full of iconic monuments, world class art, and delicious cuisine, Paris is a must see city.  As one of the fashion capitals of the world, Paris offers the chance to shop at some of the biggest designers or in countless boutiques.  The city blends history and modernity, offering endless opportunities to explore, from sidewalk cafes to picturesque neighborhoods.  You won’t run out of things to do in Paris."
             ));
         }
+
+        #endregion Content
+
+        #region SubmitRating
 
         /// <summary>
         /// Adding a rating to an unrated city should update vote count and rating
@@ -246,6 +252,10 @@ namespace UnitTests.Components
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
         }
 
+        #endregion SubmitRating
+
+        #region OnSeasonFilterChange
+
         /// <summary>
         /// Selecting Spring in season dropdown should filter out cities whose best season is not
         /// spring
@@ -279,5 +289,7 @@ namespace UnitTests.Components
             // Check that the Paris card does not appear
             Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
         }
+
+        #endregion OnSeasonFilterChange
     }
 }
