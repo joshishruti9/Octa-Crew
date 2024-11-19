@@ -162,5 +162,39 @@ namespace UnitTests.Components
             Assert.AreEqual(true, postVoteCountString.Contains("1 Vote"));
             Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
         }
+
+        /// <summary>
+        /// Selecting Spring in season dropdown should filter out cities whose best season is not
+        /// spring
+        /// </summary>
+        [Test]
+        public void OnSeasonFilterChange_Spring_Should_Filter_By_Season()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Find the season dropdown
+            var dropdown = page.Find("select.seasonDropDown");
+
+            // Select "Spring" from the dropdown
+            dropdown.Change("1");
+
+            // Get the page markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that the Tokyo card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_tokyo"));
+
+            // Check that the Paris card does not appear
+            Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
+        }
     }
 }
