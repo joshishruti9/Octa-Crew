@@ -209,11 +209,26 @@
 
     void OnSeasonFilterChange(string season)
     {
-        selectedSeason = season;
+        selectedSeason = null;
 
-        if (season == "0")
+        if (season == "1")
         {
-            selectedSeason = null;
+            selectedSeason = "1";
+        }
+
+        if (season == "2")
+        {
+            selectedSeason = "2";
+        }
+
+        if (season == "3")
+        {
+            selectedSeason = "3";
+        }
+
+        if (season == "4")
+        {
+            selectedSeason = "4";
         }
     }
 
