@@ -42,6 +42,7 @@
                 <!-- Button to explore more details about the product -->
                 <small class="text-muted">
                     <button @onclick="(e => SelectProduct(product.Id))"
+                            id="ExploreMoreButton_@product.Id"
                             data-toggle="modal" data-target="#productModal"
                             class="btn btn-primary">
                         Explore More...
