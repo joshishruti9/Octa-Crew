@@ -121,7 +121,22 @@
 @code
 {
     // Holds the selected product's details
-    ProductModel selectedProduct;
+    ProductModel selectedProduct = new ProductModel()
+        {
+
+            Id = System.Guid.NewGuid().ToString(),
+            Images = new string[3],
+            Title = null,
+            Description = null,
+            BestSeason = null,
+            Currency = null,
+            TimeZone = null,
+            Attractions = new string[3],
+            Cost = 0,
+            TravelTime = 0.0,
+            Ratings = null
+
+        };
 
     // Stores the ID of the selected product
     string selectedProductId;
