@@ -8,10 +8,16 @@ using System.Linq;
 
 namespace UnitTests.Components
 {
+    /// <summary>
+    /// Unit test class for the Products Controller
+    /// </summary>
     public class ProductListTests : BunitTestContext
     {
         #region TestSetup
 
+        /// <summary>
+        /// Setup for ProductListTests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -19,6 +25,10 @@ namespace UnitTests.Components
 
         #endregion TestSetup
 
+        /// <summary>
+        /// ProductList should have a working page that does not contain material from original
+        /// site
+        /// </summary>
         [Test]
         public void ProductList_Valid_Default_Should_Return_Content()
         {
@@ -35,6 +45,9 @@ namespace UnitTests.Components
             Assert.AreEqual(false, result.Contains("The Quantified Cactus: An Easy Plant Soil Moisture Sensor"));
         }
 
+        /// <summary>
+        /// Selecting the Explore More button for a valid city should open popup
+        /// </summary>
         [Test]
         public void SelectProduct_Valid_ID_paris_Should_Return_Content()
         {
@@ -64,6 +77,9 @@ namespace UnitTests.Components
             ));
         }
 
+        /// <summary>
+        /// Adding a rating to an unrated city should update vote count and rating
+        /// </summary>
         [Test]
         public void SubmitRating_Valid_ID_Click_Unstarred_Should_Increment_Count_And_Check_Star()
         {
