@@ -309,6 +309,41 @@ namespace UnitTests.Components
         }
 
         /// <summary>
+        /// Selecting Summer in season dropdown should filter out cities whose best season is not
+        /// summer
+        /// </summary>
+        [Test]
+        public void OnSeasonFilterChange_Summer_Should_Filter_By_Season()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Find the season dropdown
+            var dropdown = page.Find("select.seasonDropDown");
+
+            // Select "Summer" from the dropdown
+            dropdown.Change("2");
+
+            // Get the page markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that the London card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_london"));
+
+            // Check that the Paris card does not appear
+            Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
+        }
+
+        /// <summary>
         /// Typing a city name and pressing enter should filter cities by title
         /// </summary>
         [Test]
