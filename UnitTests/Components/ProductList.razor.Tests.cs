@@ -455,6 +455,46 @@ namespace UnitTests.Components
         }
 
         /// <summary>
+        /// Changing BestSeason filter to blank value should not filter out cities
+        /// </summary>
+        [Test]
+        public void OnSeasonFilterChange_Blank_Should_Not_Filter_Cities()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Set a blank value in dropdown
+            var dropdown = page.Find("select.seasonDropDown");
+            dropdown.Change("");
+
+            // Get the page markup after calling
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that at least one city for each season appears
+
+            // Check that the Tokyo card appears (spring)
+            Assert.AreEqual(true, pageMarkup.Contains("card_tokyo"));
+
+            // Check that the London card appears (summer)
+            Assert.AreEqual(true, pageMarkup.Contains("card_london"));
+
+            // Check that the Paris card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_paris"));
+
+            // Check that the Dubai card appears
+            Assert.AreEqual(true, pageMarkup.Contains("card_dubai"));
+        }
+
+        /// <summary>
         /// Typing a city name and pressing enter should filter cities by title
         /// </summary>
         [Test]
