@@ -203,16 +203,6 @@
     }
 
     /// <summary>
-    /// Navigates to the detailed read page of the product
-    /// </summary>
-    /// <param name="productId">ID of the product</param>
-
-    void NavigateToReadPage(string productId)
-    {
-        Navigation.NavigateTo($"Product/Read/{productId}", forceLoad: true);
-    }
-
-    /// <summary>
     /// Handles the change in season filter and updates the filtered product list.
     /// </summary>
     /// <param name="season">The selected season</param>
