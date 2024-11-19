@@ -164,6 +164,89 @@ namespace UnitTests.Components
         }
 
         /// <summary>
+        /// Adding a rating to an already rated city should update vote count and rating
+        /// </summary>
+        [Test]
+        public void SubmitRating_Valid_ID_Click_Starred_Should_Increment_Count()
+        {
+            /*
+             * This test tests that the SubmitRating will change the vote count for an already rated city.
+             * 
+             * The test needs to open the page,
+             * Then open the popup on the card,
+             * Then record the state of the count,
+             * Then check a star,
+             * Then check again the state of the count.
+             */
+
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var id = "ExploreMoreButton_paris";
+
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (Explore More)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            button.Click();
+
+            // Get the markup of the page post the Click action
+            var buttonMarkup = page.Markup;
+
+            // Get the Star Buttons
+            var starButtonList = page.FindAll("span");
+
+            // Get the Vote Count, the List should have 7 elements,
+            // element 2 is the string for the count
+            var preVoteCountSpan = starButtonList[1];
+            var preVoteCountString = preVoteCountSpan.OuterHtml;
+
+            // Get the First star item from the list, it should be checked
+            var starButton = starButtonList.First(m =>
+                string.IsNullOrEmpty(m.ClassName) == false
+                && m.ClassName.Contains("fa fa-star checked")
+            );
+
+            // Save the html for it to compare after the click
+            var preStarChange = starButton.OuterHtml;
+
+            // Act
+
+            // Click the star button
+            starButton.Click();
+
+            // Get the markup to use for the assert
+            buttonMarkup = page.Markup;
+
+            // Get the Star Buttons
+            starButtonList = page.FindAll("span");
+
+            // Get the Vote Count, the List should have 7 elements, element 2 is the string for the count
+            var postVoteCountSpan = starButtonList[1];
+            var postVoteCountString = postVoteCountSpan.OuterHtml;
+
+            // Get the Last starred item from the list
+            starButton = starButtonList.First(m =>
+                string.IsNullOrEmpty(m.ClassName) == false
+                && m.ClassName.Contains("fa fa-star checked")
+            );
+
+            // Save the html for it to compare after the click
+            var postStarChange = starButton.OuterHtml;
+
+            // Reset
+
+            // Assert
+
+            // Confirm that the record had 6 votes to start, and 7 votes after
+            Assert.AreEqual(true, preVoteCountString.Contains("6 Votes"));
+            Assert.AreEqual(true, postVoteCountString.Contains("7 Votes"));
+            Assert.AreEqual(false, preVoteCountString.Equals(postVoteCountString));
+        }
+
+        /// <summary>
         /// Selecting Spring in season dropdown should filter out cities whose best season is not
         /// spring
         /// </summary>
