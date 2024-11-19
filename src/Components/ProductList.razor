@@ -13,7 +13,7 @@
 
         <!-- Display the seasons to filter cities based on season-->
         <select class="seasonDropDown" @onchange="(e => OnSeasonFilterChange(e.Value?.ToString()))">
-            <option value="">All Seasons</option>
+            <option value="0">All Seasons</option>
             <option value="1">Spring</option>
             <option value="2">Summer</option>
             <option value="3">Autumn</option>
@@ -206,10 +206,15 @@
     /// Handles the change in season filter and updates the filtered product list.
     /// </summary>
     /// <param name="season">The selected season</param>
- 
+
     void OnSeasonFilterChange(string season)
     {
         selectedSeason = season;
+
+        if (season == "0")
+        {
+            selectedSeason = null;
+        }
     }
 
     /// <summary>
