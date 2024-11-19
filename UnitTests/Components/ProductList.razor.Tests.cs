@@ -254,7 +254,7 @@ namespace UnitTests.Components
 
         #endregion SubmitRating
 
-        #region OnSeasonFilterChange
+        #region Filter
 
         /// <summary>
         /// Selecting Spring in season dropdown should filter out cities whose best season is not
@@ -290,6 +290,6 @@ namespace UnitTests.Components
             Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
         }
 
-        #endregion OnSeasonFilterChange
+        #endregion Filter
     }
 }
