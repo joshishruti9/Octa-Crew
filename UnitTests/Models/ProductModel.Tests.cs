@@ -234,7 +234,7 @@ namespace UnitTests.Models
 
 			// Assert
 			Assert.AreEqual(false, result);
-			Assert.AreEqual("Image #3 URL is null", validationResults[0].ErrorMessage);
+			Assert.AreEqual("Image #3 URL is empty", validationResults[0].ErrorMessage);
 		}
 
 		/// <summary>

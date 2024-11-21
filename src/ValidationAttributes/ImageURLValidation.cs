@@ -24,12 +24,7 @@ namespace ContosoCrafts.WebSite.ValidationAttributes
 
 			for (int i = 0; i < URLs.Length; i++)
 			{
-				if (URLs[i] == null)
-				{
-					return new ValidationResult($"Image #{i + 1} URL is null");
-				}
-
-				if (URLs[i].Length == 0)
+				if (string.IsNullOrEmpty(URLs[i]))
 				{
 					return new ValidationResult($"Image #{i + 1} URL is empty");
 				}
