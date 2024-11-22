@@ -24,7 +24,10 @@
 </div>
 
 <select>
-    <option value="Default">Sort by...</option>
+    @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
+    {
+        <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
+    }
 </select>
 
 <br/>
