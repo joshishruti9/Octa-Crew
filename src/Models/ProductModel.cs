@@ -29,7 +29,7 @@ namespace ContosoCrafts.WebSite.Models
         public string[] Images { get; set; }
 
         // Name of the city
-        
+
         [Required(ErrorMessage = "Title is required")]
         [StringLength(
             maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}"
@@ -44,6 +44,7 @@ namespace ContosoCrafts.WebSite.Models
         public string Description { get; set; }
 
         // Best season to visit city (spring, summer, fall, or winter)
+        [Required(ErrorMessage = "Best Season is required (if best season is unknown, enter \"Unknown\")")]
         public SeasonEnum? BestSeason { get; set; } = SeasonEnum.Unknown;
 
         // Which currency is used in the city
