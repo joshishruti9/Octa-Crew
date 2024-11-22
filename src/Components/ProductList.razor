@@ -75,6 +75,39 @@
                         <div class="card-body">
                             <!-- Display the product description -->
                             <p class="card-text">@selectedProduct.Description</p>
+                            <dl>
+                                <dt>Information:</dt>
+
+                                @* Check BestSeason has been set *@
+                                @if (selectedProduct.BestSeason != SeasonEnum.Unknown)
+                                {
+                                    <dd>Best season to visit: @selectedProduct.BestSeason</dd>
+                                }
+
+                                @if (selectedProduct.Currency != null)
+                                {
+                                    <dd>Currency: @selectedProduct.Currency</dd>
+                                }
+
+                                @if (selectedProduct.TimeZone != null)
+                                {
+                                    <dd>Timezone: @selectedProduct.TimeZone</dd>
+                                }
+
+                                <dd>Cost: @selectedProduct.Cost $</dd>
+
+                                <dd>Travel Time: @selectedProduct.TravelTime hr</dd>
+
+                                @if (selectedProduct.Attractions.Any(attraction => string.IsNullOrEmpty(attraction) == false))
+                                {
+                                    <dt>Attractions:</dt>
+
+                                    @foreach (string attraction in selectedProduct.Attractions)
+                                    {
+                                        <dd>@attraction</dd>
+                                    }
+                                }
+                            </dl>
                         </div>
                     </div>
                 </div>
