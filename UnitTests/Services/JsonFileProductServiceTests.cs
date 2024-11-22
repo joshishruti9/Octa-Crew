@@ -163,7 +163,7 @@ namespace UnitTests.Services
                 Images = new string[3],
                 Title = null,
                 Description = null,
-                BestSeason = null,
+                BestSeason = SeasonEnum.Unknown,
                 Currency = null,
                 TimeZone = null,
                 Attractions = new string[3],
