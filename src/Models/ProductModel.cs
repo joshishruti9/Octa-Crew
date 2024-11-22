@@ -45,7 +45,7 @@ namespace ContosoCrafts.WebSite.Models
 
         // Best season to visit city (spring, summer, fall, or winter)
         [Required(ErrorMessage = "Best Season is required (if best season is unknown, enter \"Unknown\")")]
-        public SeasonEnum? BestSeason { get; set; } = SeasonEnum.Unknown;
+        public SeasonEnum BestSeason { get; set; } = SeasonEnum.Unknown;
 
         // Which currency is used in the city
         [StringLength(
