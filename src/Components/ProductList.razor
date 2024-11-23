@@ -19,8 +19,17 @@
             <option value="3">Autumn</option>
             <option value="4">Winter</option>
         </select>
+
     </div>
 </div>
+
+<select>
+    @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
+    {
+        <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
+    }
+</select>
+
 <br/>
 <br/>
 
@@ -90,7 +99,13 @@
                         <div class="card-body">
                             <!-- Display the product description -->
                             <p class="card-text">@selectedProduct.Description</p>
+
+
                             <dl>
+                                <dd>
+                                    <a href="../Product/Map/@selectedProduct.Id" class="btn btn-map">Map</a>
+                                </dd>
+
                                 <dt>Information:</dt>
 
                                 @* Check BestSeason has been set *@
