@@ -325,8 +325,13 @@
         return products;
     }
 
+    /// <summary>
+    /// Sort the cities according to the sorting type
+    /// </summary>
+    /// <returns>The filtered cities arranged in sorted order</returns>
     IEnumerable<ProductModel> GetSortedProducts()
     {
+        // The filtered cities
         var products = GetFilteredProducts();
 
         switch (sortMethod)
