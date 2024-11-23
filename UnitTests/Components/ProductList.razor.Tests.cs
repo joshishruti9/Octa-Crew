@@ -7,6 +7,7 @@ using Bunit;
 using System.Linq;
 using ContosoCrafts.WebSite.Models;
 using Bunit.Extensions;
+using ContosoCrafts.WebSite.Enums;
 
 namespace UnitTests.Components
 {
@@ -630,7 +631,7 @@ namespace UnitTests.Components
             // Act
 
             // Select Rating from the dropdown
-            select.Change("Rating");
+            select.Change(SortingEnum.Rating.DisplayName());
 
             // The list of cards representing each city
             var products = page.FindAll(".card-columns div.card");
