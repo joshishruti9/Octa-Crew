@@ -210,6 +210,9 @@
     // Set selectedSeason to empty string initially
     string selectedSeason = string.Empty;
 
+    // Sorting type for the cities
+    SortingEnum sortMethod;
+
     /// <summary>
     /// Sets the selected product details based on the given product ID
     /// </summary>
@@ -317,6 +320,23 @@
             {
                 products = products.Where(product => product.BestSeason == season);
             }
+        }
+
+        return products;
+    }
+
+    IEnumerable<ProductModel> GetSortedProducts()
+    {
+        var products = GetFilteredProducts();
+
+        switch (sortMethod)
+        {
+            case SortingEnum.Rating:
+                products = products.OrderByDescending(x => x.GetCityRating());
+                break;
+
+            default:
+                break;
         }
 
         return products;
