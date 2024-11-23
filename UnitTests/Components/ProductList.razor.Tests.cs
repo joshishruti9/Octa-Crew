@@ -612,6 +612,9 @@ namespace UnitTests.Components
 
         #region GetSortedProducts
 
+        /// <summary>
+        /// Test that cities appear in expected order after sorting by rating
+        /// </summary>
         [Test]
         public void GetSortedProducts_Valid_Rating_Selected_Should_Return_Cities_Sorted_By_Rating()
         {
