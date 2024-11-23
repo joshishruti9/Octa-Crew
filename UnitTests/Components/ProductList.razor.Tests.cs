@@ -5,6 +5,8 @@ using ContosoCrafts.WebSite.Components;
 using ContosoCrafts.WebSite.Services;
 using Bunit;
 using System.Linq;
+using ContosoCrafts.WebSite.Models;
+using Bunit.Extensions;
 
 namespace UnitTests.Components
 {
@@ -274,7 +276,7 @@ namespace UnitTests.Components
         #region Filter
 
         /// <summary>
-        /// Selecting All Seasons in season dropdown should not filter out any cities
+        /// Selecting All Seasons in season dropdown should not filter out any productModels
         /// </summary>
         [Test]
         public void OnSeasonFilterChange_All_Seasons_Should_Return_All_Cities()
@@ -315,7 +317,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Selecting Spring in season dropdown should filter out cities whose best season is not
+        /// Selecting Spring in season dropdown should filter out productModels whose best season is not
         /// spring
         /// </summary>
         [Test]
@@ -350,7 +352,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Selecting Summer in season dropdown should filter out cities whose best season is not
+        /// Selecting Summer in season dropdown should filter out productModels whose best season is not
         /// summer
         /// </summary>
         [Test]
@@ -385,7 +387,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Selecting Fall in season dropdown should filter out cities whose best season is not
+        /// Selecting Fall in season dropdown should filter out productModels whose best season is not
         /// fall
         /// </summary>
         [Test]
@@ -420,7 +422,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Selecting Winter in season dropdown should filter out cities whose best season is not
+        /// Selecting Winter in season dropdown should filter out productModels whose best season is not
         /// winter
         /// </summary>
         [Test]
@@ -455,7 +457,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Changing BestSeason filter to null value should not filter out cities
+        /// Changing BestSeason filter to null value should not filter out productModels
         /// </summary>
         [Test]
         public void OnSeasonFilterChange_Null_Should_Not_Filter_Cities()
@@ -495,7 +497,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Changing BestSeason filter to blank value should not filter out cities
+        /// Changing BestSeason filter to blank value should not filter out productModels
         /// </summary>
         [Test]
         public void OnSeasonFilterChange_Blank_Should_Not_Filter_Cities()
@@ -535,7 +537,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Changing BestSeason filter to invalid value should not filter out cities
+        /// Changing BestSeason filter to invalid value should not filter out productModels
         /// </summary>
         [Test]
         public void OnSeasonFilterChange_Invalid_Value_Should_Not_Filter_Cities()
@@ -575,7 +577,7 @@ namespace UnitTests.Components
         }
 
         /// <summary>
-        /// Typing a city name and pressing enter should filter cities by title
+        /// Typing a city name and pressing enter should filter productModels by title
         /// </summary>
         [Test]
         public void GetFilteredProducts_Search_By_Title_Should_Return_Matching_Cities()
@@ -607,5 +609,58 @@ namespace UnitTests.Components
         }
 
         #endregion Filter
+
+        #region GetSortedProducts
+
+        [Test]
+        public void GetSortedProducts_Valid_Rating_Selected_Should_Return_Cities_Sorted_By_Rating()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Find the select element for the sorting option dropdown
+            var select = page.Find("#sorting-dropdown");
+
+            // Act
+
+            // Select Rating from the dropdown
+            select.Change("Rating");
+
+            // The list of cards representing each city
+            var products = page.FindAll(".card-columns div.card");
+
+            // The list of all ProductModel objects represented in the database
+            var productModels = TestHelper.ProductService.GetAllData();
+
+            // The list of products sorted in descending order by average rating
+            var sortedProductModels = productModels.OrderByDescending(x => x.GetCityRating());
+
+            // The highest average rating in the database
+            int highestRating = sortedProductModels.First().GetCityRating();
+
+            // The lowest average rating in the database
+            int lowestRating = sortedProductModels.Last().GetCityRating();
+            
+            // Find the productModels with the highest rating
+            var highestRated = productModels.Where(x => x.GetCityRating() == highestRating);
+
+            // Find the productModels with the lowest rating
+            var lowestRated = productModels.Where(x => x.GetCityRating() == lowestRating);
+
+            // Find the city among the highest rated productModels matching the first card rendered on the page
+            var highestId = highestRated.Where(x => products.First().Id.Contains(x.Id));
+
+            // Find the city among the lowest rated productModels matching the last card rendered on the page
+            var lowestId = lowestRated.Where(x => products.Last().Id.Contains(x.Id));
+
+            // Assert
+            Assert.AreEqual(false, highestId.IsNullOrEmpty());
+            Assert.AreEqual(false, lowestId.IsNullOrEmpty());
+        }
+
+        #endregion GetSortedProducts
     }
 }
