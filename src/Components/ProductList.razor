@@ -1,4 +1,4 @@
-@using ContosoCrafts.WebSite.Models
+﻿@using ContosoCrafts.WebSite.Models
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
@@ -70,8 +70,23 @@
                 <div class="modal-body">
                     <!-- Card showing the detailed product description and image -->
                     <div class="card">
-                        <div class="card-img" style="background-image: url('@selectedProduct.Images[0]');">
+                        <!-- Custom Carousel -->
+                        <div class="carousel-container">
+                            <div class="carousel-track" style="transform: translateX(@GetCarouselTransform());">
+                                @foreach (var image in selectedProduct.Images)
+                                {
+                                    <div class="carousel-slide">
+                                        <img src="@image" alt="@selectedProduct.Title" class="img-fluid" />
+                                    </div>
+                                }
+                            </div>
+
+                            <!-- Carousel buttons -->
+                            <button class="carousel-button carousel-button-left" @onclick="MoveLeft">❮</button>
+                            <button class="carousel-button carousel-button-right" @onclick="MoveRight">❯</button>
                         </div>
+
+
                         <div class="card-body">
                             <!-- Display the product description -->
                             <p class="card-text">@selectedProduct.Description</p>
@@ -291,4 +306,33 @@
 
         return products;
     }
+
+        private int currentSlideIndex = 0;
+
+        /// <summary>
+        /// Move carousel to the left
+        /// </summary>
+        private void MoveLeft()
+        {
+            currentSlideIndex = (currentSlideIndex - 1 + selectedProduct.Images.Length) % selectedProduct.Images.Length;
+        }
+
+        /// <summary>
+        /// Move carousel to the right
+        /// </summary>
+        private void MoveRight()
+        {
+            currentSlideIndex = (currentSlideIndex + 1) % selectedProduct.Images.Length;
+
+        }
+
+        /// <summary>
+        /// Calculates the transform value for the carousel based on the current index
+        /// </summary>
+        /// <returns>Transform CSS value</returns>
+        private string GetCarouselTransform()
+        {
+            return $"-{currentSlideIndex * 100}%";
+        }
+    
 }
