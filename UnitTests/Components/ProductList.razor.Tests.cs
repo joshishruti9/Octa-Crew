@@ -638,15 +638,12 @@ namespace UnitTests.Components
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
 
-            // The list of products sorted in descending order by average rating
-            var sortedProductModels = productModels.OrderByDescending(x => x.GetCityRating());
-
             // The highest average rating in the database
-            int highestRating = sortedProductModels.First().GetCityRating();
+            int highestRating = productModels.Max(x => x.GetCityRating());
 
             // The lowest average rating in the database
-            int lowestRating = sortedProductModels.Last().GetCityRating();
-            
+            int lowestRating = productModels.Min(x => x.GetCityRating());
+
             // Find the productModels with the highest rating
             var highestRated = productModels.Where(x => x.GetCityRating() == highestRating);
 
