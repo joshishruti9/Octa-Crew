@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<select>
+<select @bind="@sortMethod">
     @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
     {
         <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
@@ -35,7 +35,7 @@
 
 <div class="card-columns">
     <!-- Loop through all filtered products and display them as cards -->
-    @foreach (var product in GetFilteredProducts())
+    @foreach (var product in GetSortedProducts())
     {
         <div class="card" id="card_@product.Id">
             <!-- Display the first image of the product -->
