@@ -24,7 +24,7 @@
 </div>
 
 <!-- Display drop down of sorting options -->
-<select @bind="@sortMethod">
+<select @bind="@sortMethod" id="sorting-dropdown">
     @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
     {
         <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
