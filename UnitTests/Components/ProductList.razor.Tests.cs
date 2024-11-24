@@ -711,6 +711,55 @@ namespace UnitTests.Components
             Assert.AreEqual(false, closestId.IsNullOrEmpty());
         }
 
+        /// <summary>
+        /// Test that cities appear in expected order after sorting by cost
+        /// </summary>
+        [Test]
+        public void GetSortedProducts_Valid_Cost_Selected_Should_Return_Cities_Sorted_By_Cost()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Find the select element for the sorting option dropdown
+            var select = page.Find("#sorting-dropdown");
+
+            // Act
+
+            // Select Rating from the dropdown
+            select.Change(SortingEnum.Cost);
+
+            // The list of cards representing each city
+            var products = page.FindAll(".card-columns div.card");
+
+            // The list of all ProductModel objects represented in the database
+            var productModels = TestHelper.ProductService.GetAllData();
+
+            // The highest average rating in the database
+            double highestCost = productModels.Max(x => x.Cost);
+
+            // The lowest average rating in the database
+            double lowestCost = productModels.Min(x => x.Cost);
+
+            // Find the productModels with the highest rating
+            var mostExpensiveCities = productModels.Where(x => x.Cost == highestCost);
+
+            // Find the productModels with the lowest rating
+            var cheapestCities = productModels.Where(x => x.Cost == lowestCost);
+
+            // Find the city among the highest rated productModels matching the first card rendered on the page
+            var mostExpensiveId = mostExpensiveCities.Where(x => products.Last().Id.Contains(x.Id));
+
+            // Find the city among the lowest rated productModels matching the last card rendered on the page
+            var cheapestId = cheapestCities.Where(x => products.First().Id.Contains(x.Id));
+
+            // Assert
+            Assert.AreEqual(false, mostExpensiveId.IsNullOrEmpty());
+            Assert.AreEqual(false, cheapestId.IsNullOrEmpty());
+        }
+
         #endregion GetSortedProducts
     }
 }
