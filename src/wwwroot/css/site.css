@@ -250,11 +250,11 @@ html {
     padding-top: .5rem;
 }
 
-.sorting-row .sorting-selection {
+.sorting-selection {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    width: 20%;
+    width: 15%;
     cursor: pointer;
 }
 
