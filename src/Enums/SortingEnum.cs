@@ -7,7 +7,8 @@
     {
         Undefined = 0,
         Rating = 10,
-        TravelTime = 20
+        TravelTime = 20,
+        Cost = 30
     }
 
     /// <summary>
@@ -26,6 +27,7 @@
             {
                 SortingEnum.Rating => "Rating",
                 SortingEnum.TravelTime => "Travel Time",
+                SortingEnum.Cost => "Cost",
 
                 // Default, Undefined
                 _ => "Sort by..."
