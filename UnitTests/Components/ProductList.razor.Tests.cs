@@ -679,7 +679,7 @@ namespace UnitTests.Components
 
             // Act
 
-            // Select Rating from the dropdown
+            // Select Travel Time from the dropdown
             select.Change(SortingEnum.TravelTime);
 
             // The list of cards representing each city
@@ -688,22 +688,22 @@ namespace UnitTests.Components
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
 
-            // The highest average rating in the database
+            // The highest travel time in the database
             double longestTravelTime = productModels.Max(x => x.TravelTime);
 
-            // The lowest average rating in the database
+            // The lowest travel time in the database
             double shortestTravelTime = productModels.Min(x => x.TravelTime);
 
-            // Find the productModels with the highest rating
+            // Find the productModels with the longest travel time
             var farthestCities = productModels.Where(x => x.TravelTime == longestTravelTime);
 
-            // Find the productModels with the lowest rating
+            // Find the productModels with the shortest travel time
             var closestCities = productModels.Where(x => x.TravelTime == shortestTravelTime);
 
-            // Find the city among the highest rated productModels matching the first card rendered on the page
+            // Find the city among the highest travel time productModels matching the last card rendered on the page
             var farthestId = farthestCities.Where(x => products.Last().Id.Contains(x.Id));
 
-            // Find the city among the lowest rated productModels matching the last card rendered on the page
+            // Find the city among the lowest travel time productModels matching the first card rendered on the page
             var closestId = closestCities.Where(x => products.First().Id.Contains(x.Id));
 
             // Assert
@@ -728,7 +728,7 @@ namespace UnitTests.Components
 
             // Act
 
-            // Select Rating from the dropdown
+            // Select Cost from the dropdown
             select.Change(SortingEnum.Cost);
 
             // The list of cards representing each city
@@ -737,22 +737,22 @@ namespace UnitTests.Components
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
 
-            // The highest average rating in the database
+            // The highest cost in the database
             double highestCost = productModels.Max(x => x.Cost);
 
-            // The lowest average rating in the database
+            // The lowest cost in the database
             double lowestCost = productModels.Min(x => x.Cost);
 
-            // Find the productModels with the highest rating
+            // Find the productModels with the highest cost
             var mostExpensiveCities = productModels.Where(x => x.Cost == highestCost);
 
-            // Find the productModels with the lowest rating
+            // Find the productModels with the lowest cost
             var cheapestCities = productModels.Where(x => x.Cost == lowestCost);
 
-            // Find the city among the highest rated productModels matching the first card rendered on the page
+            // Find the city among the highest cost productModels matching the last card rendered on the page
             var mostExpensiveId = mostExpensiveCities.Where(x => products.Last().Id.Contains(x.Id));
 
-            // Find the city among the lowest rated productModels matching the last card rendered on the page
+            // Find the city among the lowest cost productModels matching the first card rendered on the page
             var cheapestId = cheapestCities.Where(x => products.First().Id.Contains(x.Id));
 
             // Assert
