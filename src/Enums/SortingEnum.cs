@@ -6,7 +6,6 @@
     public enum SortingEnum
     {
         Undefined = 0,
-        Unsorted = 1,
         Rating = 10
     }
 
@@ -24,7 +23,6 @@
         {
             return data switch
             {
-                SortingEnum.Unsorted => "None",
                 SortingEnum.Rating => "Rating",
 
                 // Default, Undefined
