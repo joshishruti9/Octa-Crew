@@ -25,7 +25,10 @@
 
 <!-- Display drop down of sorting options -->
 <div class="sorting-row">
+    <img style="width:20px" src="Content/Icons/sort-down.svg" />
+
     <select class="sorting-selection" @bind="@sortMethod" id="sorting-dropdown">
+
         @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
         {
             if (sortingMethod == SortingEnum.Undefined)
