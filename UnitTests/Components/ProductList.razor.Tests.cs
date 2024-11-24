@@ -741,7 +741,7 @@ namespace UnitTests.Components
             int highestCost = productModels.Max(x => x.Cost);
 
             // The lowest cost in the database
-            double lowestCost = productModels.Min(x => x.Cost);
+            int lowestCost = productModels.Min(x => x.Cost);
 
             // Find the productModels with the highest cost
             var mostExpensiveCities = productModels.Where(x => x.Cost == highestCost);
