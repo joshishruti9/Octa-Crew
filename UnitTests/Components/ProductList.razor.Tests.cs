@@ -662,6 +662,55 @@ namespace UnitTests.Components
             Assert.AreEqual(false, lowestId.IsNullOrEmpty());
         }
 
+        /// <summary>
+        /// Test that cities appear in expected order after sorting by travel time
+        /// </summary>
+        [Test]
+        public void GetSortedProducts_Valid_TravelTime_Selected_Should_Return_Cities_Sorted_By_Travel_Time()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Find the select element for the sorting option dropdown
+            var select = page.Find("#sorting-dropdown");
+
+            // Act
+
+            // Select Rating from the dropdown
+            select.Change(SortingEnum.TravelTime);
+
+            // The list of cards representing each city
+            var products = page.FindAll(".card-columns div.card");
+
+            // The list of all ProductModel objects represented in the database
+            var productModels = TestHelper.ProductService.GetAllData();
+
+            // The highest average rating in the database
+            double longestTravelTime = productModels.Max(x => x.TravelTime);
+
+            // The lowest average rating in the database
+            double shortestTravelTime = productModels.Min(x => x.TravelTime);
+
+            // Find the productModels with the highest rating
+            var farthestCities = productModels.Where(x => x.TravelTime == longestTravelTime);
+
+            // Find the productModels with the lowest rating
+            var closestCities = productModels.Where(x => x.TravelTime == shortestTravelTime);
+
+            // Find the city among the highest rated productModels matching the first card rendered on the page
+            var farthestId = farthestCities.Where(x => products.Last().Id.Contains(x.Id));
+
+            // Find the city among the lowest rated productModels matching the last card rendered on the page
+            var closestId = closestCities.Where(x => products.First().Id.Contains(x.Id));
+
+            // Assert
+            Assert.AreEqual(false, farthestId.IsNullOrEmpty());
+            Assert.AreEqual(false, closestId.IsNullOrEmpty());
+        }
+
         #endregion GetSortedProducts
     }
 }
