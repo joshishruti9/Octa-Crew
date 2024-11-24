@@ -356,6 +356,10 @@
                 products = products.OrderBy(x => x.TravelTime);
                 break;
 
+            case SortingEnum.Cost:
+                products = products.OrderBy(x => x.Cost);
+                break;
+
             default:
                 break;
         }
