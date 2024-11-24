@@ -246,6 +246,18 @@ html {
     cursor: pointer;
 }
 
+.sorting-row {
+    padding-top: .5rem;
+}
+
+.sorting-row .sorting-selection {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    width: 20%;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     html {
        font-size: 16px;
