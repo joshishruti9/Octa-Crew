@@ -6,7 +6,8 @@
     public enum SortingEnum
     {
         Undefined = 0,
-        Rating = 10
+        Rating = 10,
+        TravelTime = 20
     }
 
     /// <summary>
@@ -24,6 +25,7 @@
             return data switch
             {
                 SortingEnum.Rating => "Rating",
+                SortingEnum.TravelTime => "Travel Time",
 
                 // Default, Undefined
                 _ => "Sort by..."
