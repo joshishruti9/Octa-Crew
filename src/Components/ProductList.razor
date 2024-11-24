@@ -352,6 +352,10 @@
                 products = products.OrderByDescending(x => x.GetCityRating());
                 break;
 
+            case SortingEnum.TravelTime:
+                products = products.OrderByDescending(x => x.TravelTime);
+                break;
+
             default:
                 break;
         }
