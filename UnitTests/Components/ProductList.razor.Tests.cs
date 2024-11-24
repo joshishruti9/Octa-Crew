@@ -738,7 +738,7 @@ namespace UnitTests.Components
             var productModels = TestHelper.ProductService.GetAllData();
 
             // The highest cost in the database
-            double highestCost = productModels.Max(x => x.Cost);
+            int highestCost = productModels.Max(x => x.Cost);
 
             // The lowest cost in the database
             double lowestCost = productModels.Min(x => x.Cost);
