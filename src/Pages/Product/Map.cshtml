@@ -1,26 +1,34 @@
 ﻿@page "{id}"
 @model ContosoCrafts.WebSite.Pages.Product.MapModel
 @using ContosoCrafts.WebSite.Services
+@using System.Drawing
+@using Microsoft.AspNetCore.Mvc
 @inject JsonFileProductService ProductService
 
 @{
     ViewData["Title"] = "Map Page";
 }
-<div class="custom-margin-top">
-@if(Model.Product != null)
-{
-    <div class="custom-margin-top text-center">
-        <h1 class="display4">
-            Map
-        </h1>
-    </div>
+<head>
+<link rel="stylesheet" href="~/css/site.css" />
+</head>
 
-    <div class="container">
 
-        <iframe class="map-frame col-12"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=@MapModel.APIKey&q=@Model.Product.Title">
-        </iframe>
-    </div>
-}
-    </div>
+<div class="custom-map-margin-top">
+ 
+<div class="map-page">
+    @if (Model.Product != null)
+    {
+        <header class="text-center">
+            <h1 class="page-title">Explore the Map</h1>
+        </header>
+
+        <div class="map-container">
+            <iframe class="map-frame"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed/v1/place?key=@MapModel.APIKey&q=@Model.Product.Title">
+            </iframe>
+        </div>
+    }
+</div>
+
+</div>
