@@ -621,8 +621,6 @@ header.text-center {
     background-size: cover;
     overflow: hidden;
 }
-
-    /* Translucent overlay using ::before */
 .map_background::before {
      content: '';
      position: absolute;
