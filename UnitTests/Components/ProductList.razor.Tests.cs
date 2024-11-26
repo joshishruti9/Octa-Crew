@@ -609,6 +609,38 @@ namespace UnitTests.Components
             Assert.AreEqual(false, pageMarkup.Contains("card_paris"));
         }
 
+        /// <summary>
+        /// Typing a maximum cost and pressing enter should filter productModels by cost
+        /// </summary>
+        [Test]
+        public void GetFilteredProducts_Filter_By_Cost_Should_Return_Matching_Cities()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Set the search text to "Tokyo"
+            var searchBox = page.Find("input[placeholder='Enter Maximum Cost...']");
+            searchBox.Change("1790");
+
+            // Get the rendered markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that Tokyo appears in the results
+            Assert.AreEqual(true, pageMarkup.Contains("card_bangkok"));
+
+            // Check that Paris does not appear because it doesn't match the title
+            Assert.AreEqual(false, pageMarkup.Contains("card_prague"));
+        }
+
         #endregion Filter
 
         #region GetSortedProducts
