@@ -333,7 +333,11 @@ ul {
 }
 
 .bg-footer {
-    background-color: #febb8a;
+    background-color: #fff8e7;
+}
+
+.container {
+    color: orangered; !important
 }
 
 .tabledata{
