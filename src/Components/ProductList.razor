@@ -20,6 +20,7 @@
             <option value="4">Winter</option>
         </select>
 
+        <input type="number" placeholder="Enter Maximum Cost..." min="250" step="250" @bind="maxCost" />
     </div>
 </div>
 
@@ -222,6 +223,9 @@
     // Set selectedSeason to empty string initially
     string selectedSeason = string.Empty;
 
+    // Set maxCost to empty string initially
+    int? maxCost = null;
+
     // Sorting type for the cities
     SortingEnum sortMethod;
 
@@ -333,6 +337,12 @@
                 products = products.Where(product => product.BestSeason == season);
             }
         }
+
+        // Apply cost filter
+        if (maxCost > 0)
+        {
+            products = products.Where(products => products.Cost <= maxCost);
+        } 
 
         return products;
     }
