@@ -637,7 +637,7 @@ namespace UnitTests.Components
             // Check that Bangkok appears in the results
             Assert.AreEqual(true, pageMarkup.Contains("card_bangkok"));
 
-            // Check that Prague does not appear because it doesn't match the title
+            // Check that Prague does not appear because its cost is too high
             Assert.AreEqual(false, pageMarkup.Contains("card_prague"));
         }
 
@@ -669,7 +669,7 @@ namespace UnitTests.Components
             // Check that Vancouver appears in the results
             Assert.AreEqual(true, pageMarkup.Contains("card_vancouver"));
 
-            // Check that New York does not appear because it doesn't match the title
+            // Check that New York does not appear because its travel time is too high
             Assert.AreEqual(false, pageMarkup.Contains("card_new-york-city"));
         }
 
