@@ -21,6 +21,8 @@
         </select>
 
         <input type="number" placeholder="Enter Maximum Cost..." min="250" step="250" @bind="maxCost" />
+
+        <input type="number" placeholder="Enter Maximum Travel Time..." min="1" step="1" @bind="maxTravelTime" />
     </div>
 </div>
 
@@ -223,8 +225,11 @@
     // Set selectedSeason to empty string initially
     string selectedSeason = string.Empty;
 
-    // Set maxCost to empty string initially
+    // Set maxCost to null initially
     int? maxCost = null;
+
+    // Set maxTravelTime to null initially
+    float? maxTravelTime = null;
 
     // Sorting type for the cities
     SortingEnum sortMethod;
@@ -342,6 +347,12 @@
         if (maxCost > 0)
         {
             products = products.Where(products => products.Cost <= maxCost);
+        } 
+
+        // Apply travel time filter
+        if (maxTravelTime > 0)
+        {
+            products = products.Where(products => products.TravelTime <= maxTravelTime);
         } 
 
         return products;
