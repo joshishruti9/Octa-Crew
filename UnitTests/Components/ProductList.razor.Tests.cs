@@ -641,6 +641,38 @@ namespace UnitTests.Components
             Assert.AreEqual(false, pageMarkup.Contains("card_prague"));
         }
 
+        /// <summary>
+        /// Typing a maximum travel time and pressing enter should filter productModels by travel time
+        /// </summary>
+        [Test]
+        public void GetFilteredProducts_Filter_By_TravelTime_Should_Return_Matching_Cities()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // Render the ProductList component
+            var page = RenderComponent<ProductList>();
+
+            // Act
+
+            // Set the search text to "Tokyo"
+            var searchBox = page.Find("input[placeholder='Enter Maximum Travel Time...']");
+            searchBox.Change("4.9");
+
+            // Get the rendered markup
+            var pageMarkup = page.Markup;
+
+            // Reset
+
+            // Assert
+
+            // Check that Vancouver appears in the results
+            Assert.AreEqual(true, pageMarkup.Contains("card_vancouver"));
+
+            // Check that New York does not appear because it doesn't match the title
+            Assert.AreEqual(false, pageMarkup.Contains("card_new-york-city"));
+        }
+
         #endregion Filter
 
         #region GetSortedProducts
