@@ -623,7 +623,7 @@ namespace UnitTests.Components
 
             // Act
 
-            // Set the search text to "Tokyo"
+            // Set the maximum cost to 1790
             var searchBox = page.Find("input[placeholder='Enter Maximum Cost...']");
             searchBox.Change("1790");
 
@@ -634,10 +634,10 @@ namespace UnitTests.Components
 
             // Assert
 
-            // Check that Tokyo appears in the results
+            // Check that Bangkok appears in the results
             Assert.AreEqual(true, pageMarkup.Contains("card_bangkok"));
 
-            // Check that Paris does not appear because it doesn't match the title
+            // Check that Prague does not appear because it doesn't match the title
             Assert.AreEqual(false, pageMarkup.Contains("card_prague"));
         }
 
@@ -655,7 +655,7 @@ namespace UnitTests.Components
 
             // Act
 
-            // Set the search text to "Tokyo"
+            // Set the maximum travel time to 4.9
             var searchBox = page.Find("input[placeholder='Enter Maximum Travel Time...']");
             searchBox.Change("4.9");
 
