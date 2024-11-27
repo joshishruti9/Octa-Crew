@@ -137,11 +137,8 @@ namespace UnitTests.Components
             // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
-            // Get the First star item from the list, it should not be checked
-            var starButton = starButtonList.First(m =>
-                string.IsNullOrEmpty(m.ClassName) == false
-                && m.ClassName.Contains("fa fa-star")
-            );
+            // Get the First star item, it should not be checked
+            var starButton = page.Find(".fa.fa-star");
 
             // Save the html for it to compare after the click
             var preStarChange = starButton.OuterHtml;
@@ -163,11 +160,8 @@ namespace UnitTests.Components
             // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
-            // Get the Last starred item from the list
-            starButton = starButtonList.First(m =>
-                string.IsNullOrEmpty(m.ClassName) == false
-                && m.ClassName.Contains("fa fa-star checked")
-            );
+            // Get the Last starred item
+            starButton = page.Find(".fa.fa-star.checked");
 
             // Save the html for it to compare after the click
             var postStarChange = starButton.OuterHtml;
@@ -227,11 +221,8 @@ namespace UnitTests.Components
             // String for vote count
             var preVoteCountString = preVoteCountSpan.OuterHtml;
 
-            // Get the First star item from the list, it should be checked
-            var starButton = starButtonList.First(m =>
-                string.IsNullOrEmpty(m.ClassName) == false
-                && m.ClassName.Contains("fa fa-star checked")
-            );
+            // Get the First star item, it should be checked
+            var starButton = page.Find(".fa.fa-star.checked");
 
             // Save the html for it to compare after the click
             var preStarChange = starButton.OuterHtml;
@@ -253,11 +244,8 @@ namespace UnitTests.Components
             // String for vote count
             var postVoteCountString = postVoteCountSpan.OuterHtml;
 
-            // Get the Last starred item from the list
-            starButton = starButtonList.First(m =>
-                string.IsNullOrEmpty(m.ClassName) == false
-                && m.ClassName.Contains("fa fa-star checked")
-            );
+            // Get the Last starred item
+            starButton = page.Find(".fa.fa-star.checked");
 
             // Save the html for it to compare after the click
             var postStarChange = starButton.OuterHtml;
