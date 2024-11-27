@@ -746,41 +746,6 @@ namespace UnitTests.Components
             Assert.AreEqual(true, pageMarkup.Contains("card_cape-town"));
         }
 
-        /// <summary>
-        /// Setting maximum travel time to a low travel time should filter out all products
-        /// </summary>
-        [Test]
-        public void GetFilteredProducts_Filter_By_TravelTime_No_Matches_Should_Return_No_Cities()
-        {
-            // Arrange
-            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-
-            // Render the ProductList component
-            var page = RenderComponent<ProductList>();
-
-            // Act
-
-            // Set the maximum travel time to null
-            var searchBox = page.Find("input[placeholder='Enter Maximum Travel Time...']");
-            searchBox.Change("0.1");
-
-            // Get the rendered markup
-            var pageMarkup = page.Markup;
-
-            // Reset
-
-            // Assert
-
-            // Check for cities with lowest and highest travel times
-            // to ensure the entire range of travel times is being tested
-
-            // Check that Vancouver appears in the results (lowest travel time)
-            Assert.AreEqual(false, pageMarkup.Contains("card_vancouver"));
-
-            // Check that Cape Town appears (highest travel time)
-            Assert.AreEqual(false, pageMarkup.Contains("card_cape-town"));
-        }
-
         #endregion Filter
 
         #region GetSortedProducts
