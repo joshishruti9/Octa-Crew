@@ -229,7 +229,7 @@
     int? maxCost = null;
 
     // Set maxTravelTime to null initially
-    float? maxTravelTime = null;
+    int? maxTravelTime = null;
 
     // Sorting type for the cities
     SortingEnum sortMethod;
@@ -352,8 +352,10 @@
         // Apply travel time filter
         if (maxTravelTime > 0)
         {
-            products = products.Where(products => products.TravelTime <= maxTravelTime);
-        } 
+            products = products.Where(
+                products => (int)Math.Ceiling(products.TravelTime) <= maxTravelTime
+            );
+        }
 
         return products;
     }
