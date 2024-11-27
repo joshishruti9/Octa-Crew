@@ -657,7 +657,7 @@ namespace UnitTests.Components
 
             // Set the maximum travel time to 5.1
             var searchBox = page.Find("input[placeholder='Enter Maximum Travel Time...']");
-            searchBox.Change("5.1");
+            searchBox.Change("5");
 
             // Get the rendered markup
             var pageMarkup = page.Markup;
