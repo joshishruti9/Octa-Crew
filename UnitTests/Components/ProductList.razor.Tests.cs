@@ -655,9 +655,9 @@ namespace UnitTests.Components
 
             // Act
 
-            // Set the maximum travel time to 4.9
+            // Set the maximum travel time to 5.1
             var searchBox = page.Find("input[placeholder='Enter Maximum Travel Time...']");
-            searchBox.Change("4.9");
+            searchBox.Change("5.1");
 
             // Get the rendered markup
             var pageMarkup = page.Markup;
@@ -669,8 +669,11 @@ namespace UnitTests.Components
             // Check that Vancouver appears in the results
             Assert.AreEqual(true, pageMarkup.Contains("card_vancouver"));
 
-            // Check that New York does not appear because its travel time is too high
-            Assert.AreEqual(false, pageMarkup.Contains("card_new-york-city"));
+            // Check that New York appears in the results
+            Assert.AreEqual(true, pageMarkup.Contains("card_new-york-city"));
+
+            // Check that Montreal does not appear because its travel time is too high
+            Assert.AreEqual(false, pageMarkup.Contains("card-montreal"));
         }
 
         /// <summary>
