@@ -87,7 +87,7 @@ namespace ContosoCrafts.WebSite.Models
         public double TravelTime { get; set; }
 
         // Store the Comments entered by the users on this product
-        [MaxLength(30, ErrorMessage = "Comment must be 30 characters or less.")]
+        [MaxLength(50, ErrorMessage = "Comment must be 50 characters or less.")]
         public List<string> CommentList { get; set; } = new List<string>();
 
 
