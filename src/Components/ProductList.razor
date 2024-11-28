@@ -426,4 +426,37 @@
         return $"-{currentSlideIndex * 100}%";
     }
 
+    /// <summary>
+    /// Execute when the Add comments button is clicked
+    /// </summary>
+    void SubmitComment()
+    {
+        // Property to hold the new comment
+        string newComment = "";
+
+        // Check if the comment is empty or whitespace
+        if (string.IsNullOrWhiteSpace(newComment))
+        {
+            Console.WriteLine("Comment exceeds the maximum length of 30 characters.");
+            return;
+        }
+
+        // Enforce a maximum length of 30 characters for the comment
+        if (newComment.Length > 30)
+        {
+            Console.WriteLine("Comment exceeds the maximum length of 30 characters.");
+            return;
+        }
+
+        // Add the comment to the product's comment list
+        Console.WriteLine($"Comments received for {selectedProduct.Id}: {newComment}");
+        ProductService.AddComment(selectedProductId, newComment);
+
+        // Refresh the selected product to display the updated comment list
+        SelectProduct(selectedProductId);
+
+        // Clear the input field after successfully adding the comment
+        newComment = "";
+    }
+    
 }
