@@ -43,8 +43,8 @@ namespace UnitTests.Services
 		/// Test UpdateData method when tip exists in the data source
 		/// </summary>
 		[Test]
-		public void UpdateData_Should_Update_Existing_TravelTip()
-		{
+		public void UpdateData_Valid_ExistingTravelTip_Should_Return_UpdatedTravelTip()
+        {
 			// Arrange
 
 			// the initial travel tip
@@ -92,8 +92,8 @@ namespace UnitTests.Services
 		/// Test UpdateData method when description has extra spaces
 		/// </summary>
 		[Test]
-		public void UpdateData_Should_Trim_Description()
-		{
+		public void UpdateData_Valid_Description_Should_Return_TrimmedDescription()
+        {
 			// Arrange
 			var data = new TravelTipsModel
 			{
