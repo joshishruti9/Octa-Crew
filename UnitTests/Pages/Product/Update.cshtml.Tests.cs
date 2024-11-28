@@ -99,7 +99,7 @@ namespace UnitTests.Pages.Product
         /// Test OnPost method to ensure it redirects to Index when ModelState is valid.
         /// </summary>
         [Test]
-        public void OnPost_ValidModelState_Should_RedirectTo_Index()
+        public void OnPost_Valid_ModelState_Test_Index_Should_Return_RedirectToIndex()
         {
             // Arrange
             pageModel.Product = new ProductModel { Id = "Paris", Title = "Paris(Test)" };
