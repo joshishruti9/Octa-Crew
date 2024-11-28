@@ -152,21 +152,23 @@
                                         <dd>@attraction</dd>
                                     }
                                 }
+
+                                <div class="comment">
+                                    <label for="commentInput">Leave a Comment:</label><br />
+                                    <input id="commentInput" type="text" class="form-control"
+                                           @bind="newComment"
+                                           maxlength="50"
+                                           placeholder="Enter your comment (max 50 characters)" /><br />
+                                    <button class="btn btn-success" @onclick="SubmitComment">Add Comment</button>
+                                </div>
+                                
                             </dl>
 
-                            <div class="form-group">
-                                <label for="commentInput">Leave a Comment:</label>
-                                <input id="commentInput" type="text" class="form-control"
-                                       tabindex="newComment"
-                                       maxlength="30"
-                                       placeholder="Enter your comment (max 30 characters)" />
-                                <button class="btn btn-success" @onclick="SubmitComment" id="Add_comment">Add Comment</button>
-                            </div>
-
+                         
                             <ul class="list-group">
-                                @foreach (var comment in selectedProduct.CommentList)
+                                @foreach (string comment in selectedProduct.CommentList)
                                 {
-                                    <li class="list-group-item">@comment</li>
+                                    <li list-group-item>@comment</li>
                                 }
                             </ul>
 
@@ -230,9 +232,13 @@
             Attractions = new string[3],
             Cost = 0,
             TravelTime = 0.0,
-            Ratings = null
+            Ratings = null,
+            CommentList = new List<string>()
 
         };
+
+    // Property to hold the new comment
+    string newComment = "";
 
     // Stores the ID of the selected product
     string selectedProductId;
@@ -440,20 +446,17 @@
     /// </summary>
     void SubmitComment()
     {
-        // Property to hold the new comment
-        string newComment = "";
-
         // Check if the comment is empty or whitespace
         if (string.IsNullOrWhiteSpace(newComment))
         {
-            Console.WriteLine("Comment exceeds the maximum length of 30 characters.");
+            Console.WriteLine("Empty Comment");
             return;
         }
 
         // Enforce a maximum length of 30 characters for the comment
-        if (newComment.Length > 30)
+        if (newComment.Length > 50)
         {
-            Console.WriteLine("Comment exceeds the maximum length of 30 characters.");
+            Console.WriteLine("Comment exceeds the maximum length of 50 characters.");
             return;
         }
 
@@ -465,7 +468,7 @@
         SelectProduct(selectedProductId);
 
         // Clear the input field after successfully adding the comment
-        newComment = "";
+        newComment = string.Empty;
     }
     
 }
