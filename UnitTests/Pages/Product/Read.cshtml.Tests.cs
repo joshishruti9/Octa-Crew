@@ -33,7 +33,7 @@ namespace UnitTests.Pages.Product
         /// Test for correct output when null id is passed
         /// </summary>
         [Test]
-        public void ReadData_Null_Id_Default_Should_Return_Null()
+        public void ReadData_NullId_Default_Should_Return_Null()
         {
             // Arrange
 
