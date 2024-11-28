@@ -153,6 +153,15 @@
                                     }
                                 }
                             </dl>
+
+                            <div class="form-group">
+                                <label for="commentInput">Leave a Comment:</label>
+                                <input id="commentInput" type="text" class="form-control"
+                                       tabindex="newComment"
+                                       maxlength="30"
+                                       placeholder="Enter your comment (max 30 characters)" />
+                                <button class="btn btn-success" @onclick="SubmitComment" id="Add_comment">Add Comment</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -390,32 +399,31 @@
         return products;
     }
 
-        private int currentSlideIndex = 0;
+    private int currentSlideIndex = 0;
 
-        /// <summary>
-        /// Move carousel to the left
-        /// </summary>
-        private void MoveLeft()
-        {
-            currentSlideIndex = (currentSlideIndex - 1 + selectedProduct.Images.Length) % selectedProduct.Images.Length;
-        }
+    /// <summary>
+    /// Move carousel to the left
+    /// </summary>
+    private void MoveLeft()
+    {
+        currentSlideIndex = (currentSlideIndex - 1 + selectedProduct.Images.Length) % selectedProduct.Images.Length;
+    }
 
-        /// <summary>
-        /// Move carousel to the right
-        /// </summary>
-        private void MoveRight()
-        {
-            currentSlideIndex = (currentSlideIndex + 1) % selectedProduct.Images.Length;
+    /// <summary>
+    /// Move carousel to the right
+    /// </summary>
+    private void MoveRight()
+    {
+        currentSlideIndex = (currentSlideIndex + 1) % selectedProduct.Images.Length;
+    }
 
-        }
+    /// <summary>
+    /// Calculates the transform value for the carousel based on the current index
+    /// </summary>
+    /// <returns>Transform CSS value</returns>
+    private string GetCarouselTransform()
+    {
+        return $"-{currentSlideIndex * 100}%";
+    }
 
-        /// <summary>
-        /// Calculates the transform value for the carousel based on the current index
-        /// </summary>
-        /// <returns>Transform CSS value</returns>
-        private string GetCarouselTransform()
-        {
-            return $"-{currentSlideIndex * 100}%";
-        }
-    
 }
