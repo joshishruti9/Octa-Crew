@@ -886,5 +886,103 @@ namespace UnitTests.Components
         }
 
         #endregion GetSortedProducts
+
+        #region SwipeImage
+
+        /// <summary>
+        /// Selecting the right button for a valid city image should show next image
+        /// </summary>
+        [Test]
+        public void MoveRight_Valid_Should_Return_Next_Image()
+        {
+            // Arrange
+            var previousSlideIndex = 0;
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Button to test clicking
+            var id = "ExploreMoreButton_paris";
+
+            // Find the Buttons (explore more)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Click on the button
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Find the carousel's right button
+            var rightButton = page.Find(".carousel-button.carousel-button-right");
+
+            // Find the carousel track element before clicking the button
+            var carouselTrack = page.Find(".carousel-track");
+
+            // Assert the initial style before clicking the button
+            var initialTransform = carouselTrack.GetAttribute("style");
+            Assert.AreEqual("transform: translateX(-0%);", initialTransform);
+
+            // Act: Click the right button to move to the second image
+            rightButton.Click();
+
+            // Assert the style has changed to "translateX(-100%)" after clicking the right button
+            var updatedTransform = carouselTrack.GetAttribute("style");
+            Assert.AreEqual("transform: translateX(-100%);", updatedTransform);
+
+        }
+
+        /// <summary>
+        /// Selecting the left button for a valid city image should show previous image
+        /// </summary>
+        [Test]
+        public void MoveLeft_Valid_Should_Return_Previous_Image()
+        {
+            // Arrange
+            var previousSlideIndex = 0;
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Button to test clicking
+            var id = "ExploreMoreButton_paris";
+
+            // Find the Buttons (explore more)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Click on the button
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Find the carousel's right button
+            var leftButton = page.Find(".carousel-button.carousel-button-left");
+
+            // Find the carousel track element before clicking the button
+            var carouselTrack = page.Find(".carousel-track");
+
+            // Assert the initial style before clicking the button
+            var initialTransform = carouselTrack.GetAttribute("style");
+            Assert.AreEqual("transform: translateX(-0%);", initialTransform);
+
+            // Act: Click the right button to move to the second image
+            leftButton.Click();
+
+            // Assert the style has changed to "translateX(-100%)" after clicking the right button
+            var updatedTransform = carouselTrack.GetAttribute("style");
+            Assert.AreEqual("transform: translateX(-200%);", updatedTransform);
+
+        }
+
+        #endregion SwipeImage
     }
 }
