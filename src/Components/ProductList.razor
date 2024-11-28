@@ -162,6 +162,15 @@
                                        placeholder="Enter your comment (max 30 characters)" />
                                 <button class="btn btn-success" @onclick="SubmitComment" id="Add_comment">Add Comment</button>
                             </div>
+
+                            <ul class="list-group">
+                                @foreach (var comment in selectedProduct.CommentList)
+                                {
+                                    <li class="list-group-item">@comment</li>
+                                }
+                            </ul>
+
+
                         </div>
                     </div>
                 </div>
