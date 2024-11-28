@@ -21,7 +21,8 @@
       2,
       1,
       5
-    ]
+    ],
+    "CommentList": []
   },
   {
     "Id": "rome",
@@ -38,7 +39,8 @@
     "Attractions": [ "Colosseum", "Vatican Museums & Sistine Chapel", "Trevi Fountain" ],
     "Cost": 2050,
     "TravelTime": 13,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "london",
@@ -55,7 +57,8 @@
     "Attractions": [ "Big Ben & Houses of Parliament", "Tower of London", "British Museum" ],
     "Cost": 3100,
     "TravelTime": 9.5,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "tokyo",
@@ -72,7 +75,8 @@
     "Attractions": [ "Shibuya Crossing", "Senso-ji Temple", "Tokyo Skytree" ],
     "Cost": 2900,
     "TravelTime": 10,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "vancouver",
@@ -89,7 +93,8 @@
     "Attractions": [ "Stanley Park", "Granville Island", "Capilano Suspension Bridge" ],
     "Cost": 2450,
     "TravelTime": 1,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "amsterdam",
@@ -106,7 +111,8 @@
     "Attractions": [ "Rijksmuseum", "Anne Frank House", "Van Gogh Museum" ],
     "Cost": 2450,
     "TravelTime": 10,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "honolulu",
@@ -123,7 +129,8 @@
     "Attractions": [ "Waikiki Beach", "Diamond Head", "Pearl Harbor Memorial" ],
     "Cost": 3300,
     "TravelTime": 6,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "barcelona",
@@ -146,7 +153,8 @@
     "TravelTime": 12.5,
     "Ratings": [
       4
-    ]
+    ],
+    "CommentList": []
   },
   {
     "Id": "sydney",
@@ -163,7 +171,8 @@
     "Attractions": [ "Sydney Opera House", "Sydney Harbour Bridge", "Bondi Beach" ],
     "Cost": 3100,
     "TravelTime": 15,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "cape-town",
@@ -180,7 +189,8 @@
     "Attractions": [ "Table Mountain", "V&A Waterfront", "Cape of Good Hope" ],
     "Cost": 1800,
     "TravelTime": 21,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "istanbul",
@@ -197,7 +207,8 @@
     "Attractions": [ "Hagia Sophia", "Blue Mosque", "Grand Bazaar" ],
     "Cost": 1450,
     "TravelTime": 13,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "singapore",
@@ -214,7 +225,8 @@
     "Attractions": [ "Marina Bay Sands", "Gardens by the Bay", "Sentosa Island" ],
     "Cost": 2650,
     "TravelTime": 16,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "kyoto",
@@ -231,7 +243,8 @@
     "Attractions": [ "Fushimi Inari Shrine", "Kinkaku-ji (Golden Pavilion)", "Arashiyama Bamboo Grove" ],
     "Cost": 2050,
     "TravelTime": 10,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "hong-kong",
@@ -248,7 +261,8 @@
     "Attractions": [ "Victoria Peak", "Star Ferry", "Temple Street Night Market" ],
     "Cost": 3100,
     "TravelTime": 13,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "new-york-city",
@@ -265,7 +279,8 @@
     "Attractions": [ "Statue of Liberty", "Central Park", "Times Square" ],
     "Cost": 3300,
     "TravelTime": 5,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "athens",
@@ -282,7 +297,8 @@
     "Attractions": [ "Acropolis", "Temple of Olympian Zeus", "Plaka" ],
     "Cost": 1800,
     "TravelTime": 14,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "montreal",
@@ -303,7 +319,8 @@
     ],
     "Cost": 2200,
     "TravelTime": 5.5,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "dubai",
@@ -320,7 +337,8 @@
     "Attractions": [ "Burj Khalifa", "The Dubai Mall", "Palm Jumeirah" ],
     "Cost": 3100,
     "TravelTime": 15,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "bangkok",
@@ -337,7 +355,8 @@
     "Attractions": [ "Grand Palace & Wat Phra Kaew", "Wat Arun (Temple of Dawn)", "Chatuchak Market" ],
     "Cost": 1350,
     "TravelTime": 16,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   },
   {
     "Id": "prague",
@@ -354,6 +373,7 @@
     "Attractions": [ "Charles Bridge", "Prague Castle", "Old Town Square & Astronomical Clock" ],
     "Cost": 1800,
     "TravelTime": 12.5,
-    "Ratings": null
+    "Ratings": null,
+    "CommentList": []
   }
 ]
