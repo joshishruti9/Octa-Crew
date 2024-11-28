@@ -117,7 +117,7 @@ namespace UnitTests.Pages.TravelTipsProduct
 		/// When Index has been created, update this test.)
 		/// </summary>
 		[Test]
-		public void OnPost_ValidModelState_Should_RedirectTo_Index()
+		public void OnPost_Valid_ModelState_Test_Index_Should_Return_RedirectToIndex()
         {
 			// Arrange
 			pageModel.TravelTip = new TravelTipsModel
