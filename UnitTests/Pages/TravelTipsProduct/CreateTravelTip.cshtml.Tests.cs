@@ -71,7 +71,7 @@ namespace UnitTests.Pages.TravelTipsProduct
         /// Test that a city is not added to the database if the ModelState is invalid
         /// </summary>
         [Test]
-        public void OnPost_InValid_Invalid_ModelState_Should_Not_Add_Travel_Tip()
+        public void OnPost_Invalid_ModelState_Test_AddTravelTip_Should_Return_NoChange()
         {
             // Arrange
             pageModel.ModelState.AddModelError("Title", "Invalid title");
