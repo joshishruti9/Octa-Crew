@@ -2,6 +2,7 @@ using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.ValidationAttributes;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Json;
@@ -84,6 +85,11 @@ namespace ContosoCrafts.WebSite.Models
         [Range(minimum: 0.1, maximum: 48.0, ErrorMessage = "Travel time should be between {1} and {2}")]
         [RegularExpression(@"([0-9]+)?(\.[0-9]{0,1})?$", ErrorMessage = "Travel time cannot have more than 1 decimal place")]
         public double TravelTime { get; set; }
+
+        // Store the Comments entered by the users on this product
+        [MaxLength(30, ErrorMessage = "Comment must be 30 characters or less.")]
+        public List<string> CommentList { get; set; } = new List<string>();
+
 
         /// <summary>
         /// Represents the ProductModel as a json string
