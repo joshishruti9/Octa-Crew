@@ -196,7 +196,7 @@ namespace UnitTests.Services
         /// Test UpdateData method when product exists in the data source
         /// </summary>
         [Test]
-        public void UpdateData_Should_Update_Existing_Product()
+        public void UpdateData_Valid_ExistingProduct_Should_Return_UpdatedProduct()
         {
             // Arrange
 
@@ -237,7 +237,7 @@ namespace UnitTests.Services
         /// Test that UpdateData returns null if the city is not in the database
         /// </summary>
         [Test]
-        public void UpdateData_Should_Return_Null_If_Product_Not_Found()
+        public void UpdateData_Product_NotFound_Test_Should_Return_Null()
         {
             // Arrange
 
@@ -286,7 +286,7 @@ namespace UnitTests.Services
         /// Test that UpdateData will update the description without leading or trailing white space
         /// </summary>
         [Test]
-        public void UpdateData_Should_Trim_Description()
+        public void UpdateData_Valid_Description_Should_Return_TrimmedDescription()
         {
             // Arrange
 
