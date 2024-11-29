@@ -48,33 +48,35 @@
 <br/>
 <br/>
 
-<div class="card-columns">
-    <!-- Loop through all filtered and sorted products and display them as cards -->
-    @foreach (var product in GetSortedProducts())
-    {
-        <div class="card" id="card_@product.Id">
-            <!-- Display the first image of the product -->
-            <div class="card-img" style="background-image: url('@product.Images[0]');">
-            </div>
+<div class="container card-rows">
+    <div class="row">
+        <!-- Loop through all filtered and sorted products and display them as cards -->
+        @foreach (var product in GetSortedProducts())
+        {
+            <div class="card col-sm-4" id="card_@product.Id">
+                <!-- Display the first image of the product -->
+                <div class="card-img" style="background-image: url('@product.Images[0]');">
+                </div>
 
-            <div class="card-body">
-                <!-- Display the product title -->
-                <h5 class="card-title">@product.Title</h5>
-            </div>
+                <div class="card-body">
+                    <!-- Display the product title -->
+                    <h5 class="card-title">@product.Title</h5>
+                </div>
 
-            <div class="card-footer">
-                <!-- Button to explore more details about the product -->
-                <small class="text-muted">
-                    <button @onclick="(e => SelectProduct(product.Id))"
-                            id="ExploreMoreButton_@product.Id"
-                            data-toggle="modal" data-target="#productModal"
-                            class="btn btn-primary">
-                        Explore More...
-                    </button>
-                </small>
+                <div class="card-footer">
+                    <!-- Button to explore more details about the product -->
+                    <small class="text-muted">
+                        <button @onclick="(e => SelectProduct(product.Id))"
+                                id="ExploreMoreButton_@product.Id"
+                                data-toggle="modal" data-target="#productModal"
+                                class="btn btn-primary">
+                            Explore More...
+                        </button>
+                    </small>
+                </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
 
 <!-- Modal to display detailed product information -->

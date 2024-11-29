@@ -759,7 +759,7 @@ namespace UnitTests.Components
             select.Change(SortingEnum.Rating.DisplayName());
 
             // The list of cards representing each city
-            var products = page.FindAll(".card-columns div.card");
+            var products = page.FindAll(".card-rows div.card");
 
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
@@ -808,7 +808,7 @@ namespace UnitTests.Components
             select.Change(SortingEnum.TravelTime);
 
             // The list of cards representing each city
-            var products = page.FindAll(".card-columns div.card");
+            var products = page.FindAll(".card-rows div.card");
 
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
@@ -857,7 +857,7 @@ namespace UnitTests.Components
             select.Change(SortingEnum.Cost);
 
             // The list of cards representing each city
-            var products = page.FindAll(".card-columns div.card");
+            var products = page.FindAll(".card-rows div.card");
 
             // The list of all ProductModel objects represented in the database
             var productModels = TestHelper.ProductService.GetAllData();
