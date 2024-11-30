@@ -35,6 +35,7 @@ namespace ContosoCrafts.WebSite.Models
         [StringLength(
             maximumLength: 33, MinimumLength = 1, ErrorMessage = "The Title should have a length of more than {2} and less than {1}"
         )]
+        [UniqueCityTitle]
         public string Title { get; set; }
 
         // Description about the city
