@@ -5,6 +5,7 @@ using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
 using UnitTests.Pages;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace UnitTests.Services
@@ -338,6 +339,32 @@ namespace UnitTests.Services
 
         #endregion UpdateData
 
+        #region AddComment
+
+        [Test]
+        /// <summary>
+        /// Comment gets added when for valid product
+        /// </summary>
+        public void AddComment_Valid_Product_Should_Add_Comment()
+        {
+            // Arrange
+            var comment = "Great Place to visit";
+
+            // Get the first data item
+            var data = TestHelper.ProductService.GetAllData().First();
+
+            //Act
+            var result = TestHelper.ProductService.AddComment(data.Id, comment);
+
+            // Get the city on which AddComment was just applied
+            var dataNewList = TestHelper.ProductService.GetAllData().First();
+
+            // Assert
+            Assert.That(result, Is.True);
+            Assert.That(dataNewList.CommentList, Contains.Item(comment));
+        }
+
+        #endregion AddComment
 
 
 
