@@ -364,6 +364,28 @@ namespace UnitTests.Services
             Assert.That(dataNewList.CommentList, Contains.Item(comment));
         }
 
+        [Test]
+        public void AddComment_Valid_Duplicate_Comment_Should_Return_Add_Comment()
+        {
+          
+            // Arrange
+            var comment = "Great Place to visit";
+
+            // Get the first data item
+            var data = TestHelper.ProductService.GetAllData().Last();
+
+            // Act
+            var firstComment = TestHelper.ProductService.AddComment(data.Id, comment);
+            var result = TestHelper.ProductService.AddComment(data.Id, comment);
+
+            // Get the city on which AddComment was just applied
+            var dataNewList = TestHelper.ProductService.GetAllData().Last();
+
+            // Assert
+            //Added 2 comments
+            Assert.That(dataNewList.CommentList.Count, Is.EqualTo(2));
+        }
+
         #endregion AddComment
 
 
