@@ -984,5 +984,56 @@ namespace UnitTests.Components
         }
 
         #endregion SwipeImage
+
+        #region AddComment
+
+        /// <summary>
+        /// Adding new comment to add comment to city
+        /// </summary>
+
+        [Test]
+        public void Submit_Comment_Valid_Should_Add_New_Comment_To_City()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Button to test clicking
+            var id = "ExploreMoreButton_paris";
+
+            // Find the Buttons (explore more)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Click on the button
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Find the input box to add comment 
+            var commentInput = page.Find("input#commentInput");
+
+            // Add comment for a city
+            commentInput.Change("This city is beautiful");
+
+            // Find a button to add comment(submit)
+            var addCommentButton = page.Find(".btn-success");
+
+            // Click on the button
+            addCommentButton.Click();
+
+            // The HTML page
+            pageMarkup = page.Markup;
+
+            // Assert
+            Assert.That(pageMarkup.Contains("This city is beautiful"), Is.EqualTo(true));
+        }
+
+        #endregion AddComment
     }
 }
