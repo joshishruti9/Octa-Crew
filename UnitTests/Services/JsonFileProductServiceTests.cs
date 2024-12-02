@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
-using UnitTests.Pages;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace UnitTests.Services
