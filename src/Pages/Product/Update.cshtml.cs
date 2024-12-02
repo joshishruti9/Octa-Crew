@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+
     /// <summary>
     /// Model for the Update page allows user to update values in the database
     /// </summary>
     public class UpdateModel : PageModel
     {
+
         // Data #middletier
         public JsonFileProductService ProductService { get; }
 
@@ -62,5 +64,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
             ProductService.UpdateData(Product);
             return RedirectToPage("./Read", new { id = Product.Id});
         }
+
     }
+
 }
