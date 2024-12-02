@@ -52,7 +52,7 @@ namespace UnitTests.Pages.Product
             // Assert
             Assert.AreEqual(null, pageModel.Product);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace UnitTests.Pages.Product
             // Assert
             Assert.AreEqual(null, pageModel.Product);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
