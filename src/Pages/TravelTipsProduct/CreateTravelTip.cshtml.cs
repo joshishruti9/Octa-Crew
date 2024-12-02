@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
+
     /// <summary>
     /// Model for the CreateTravelTip page.  Uses input data to add a new travel tip to the database.
     /// </summary>
     public class CreateTravelTipModel : PageModel
     {
+
         // Accesses travel tip data from the database
         public JsonFileTravelTipService TravelTipService { get; }
 
@@ -54,5 +56,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 
             return RedirectToPage("./TravelTips");
         }
+
     }
+
 }
