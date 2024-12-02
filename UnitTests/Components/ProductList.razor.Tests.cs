@@ -1040,6 +1040,59 @@ namespace UnitTests.Components
         }
 
         /// <summary>
+        /// Adding comment with more than 50 characters to add comment should not add any comment to city
+        /// </summary>
+        [Test]
+        public void Submit_Max_Length_Comment_Should_Not_Add_Excessive_Length_Comment_To_Product()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+
+            var excessiveComment = "ndbqlidconhhznzmufeiqxiindbqlidconhhznzmufeiqxiiabcdef";
+
+            // The HTML page
+            var page = RenderComponent<ProductList>();
+
+            // Button to test clicking
+            var id = "ExploreMoreButton_paris";
+
+            // Find the Buttons (explore more)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Click on the button
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Find the input box to add comment 
+            var commentInput = page.Find("input#commentInput");
+
+            // Add blank comment for a city
+            commentInput.Change("ndbqlidconhhznzmufeiqxiindbqlidconhhznzmufeiqxiiabcdeffghjfgj");
+
+            // Find a button to add comment(submit)
+            var addCommentButton = page.Find(".btn-success");
+
+            // Click on the button
+            addCommentButton.Click();
+
+            // The HTML page
+            pageMarkup = page.Markup;
+
+            // Get the city on which AddComment was just applied
+            JsonFileProductService productService = Services.GetService<JsonFileProductService>();
+            var comments = productService.GetAllData().First(x => x.Id == "paris").CommentList;
+
+            // Assert
+            // check if only 50 characters are getting added
+            Assert.That(comments.Contains("ndbqlidconhhznzmufeiqxiindbqlidconhhznzmufeiqxiiabcdeffghjfgj"), Is.EqualTo(false));
+        }
+
+        /// <summary>
         /// Adding new comment to add comment to city
         /// </summary>
         [Test]
