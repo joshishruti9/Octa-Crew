@@ -3,12 +3,14 @@ using Microsoft.Extensions.Logging;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+
     /// <summary>
     /// Model for Privacy page
     /// </summary>
     public class PrivacyModel : PageModel
     {
         // Logs information, errors, etc. for Privacy page
+
         private readonly ILogger<PrivacyModel> _logger;
 
         /// <summary>
@@ -25,6 +27,9 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         public void OnGet()
         {
+
         }
+
     }
+
 }
