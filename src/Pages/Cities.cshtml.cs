@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+
     /// <summary>
     /// Model for cities page
     /// </summary>
     public class CitiesModel : PageModel
     {
+
         /// <summary>
         /// Initializer constructor
         /// </summary>
@@ -34,5 +34,7 @@ namespace ContosoCrafts.WebSite.Pages
         {
             Products = ProductService.GetAllData();
         }
+
     }
+
 }
