@@ -5,11 +5,13 @@ using System.Collections.Generic;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
+
     /// <summary>
     /// Model for TravelTips page
     /// </summary>
     public class TravelTipsPageModel : PageModel
     {
+
         /// <summary>
         /// Initializer constructor
         /// </summary>
@@ -33,5 +35,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
         {
             TravelTips = TravelTipService.GetAllData();
         }
+
     }
+
 }
