@@ -85,6 +85,24 @@ namespace UnitTests.Pages.Error
             Assert.That(pageModel.ShowRequestId, Is.EqualTo(true));
         }
 
+        /// <summary>
+        /// Test that OnGet with a status code of 404 sets the error message to "Page Not Found"
+        /// </summary>
+        [Test]
+        public void OnGet_Status_Code_404_Should_Set_Error_Message_To_Page_Not_Found()
+        {
+            // Arrange
+
+            // Act
+            pageModel.OnGet(statusCode: 404);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual("Page Not Found", pageModel.ErrorMessage);
+        }
+
         #endregion OnGet
     }
 }
