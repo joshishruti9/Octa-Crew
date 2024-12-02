@@ -9,7 +9,7 @@
 <div class="filter-columns">
     <!-- Display the search box to filter cities -->
     <div>
-        <input type="text" placeholder="Search by Title..." @bind="searchText" />
+        <input type="text" placeholder="Search by Title..." @bind="searchText" @bind:event="oninput" />
 
         <!-- Display the seasons to filter cities based on season-->
         <select class="seasonDropDown" @onchange="(e => OnSeasonFilterChange(e.Value?.ToString()))">
