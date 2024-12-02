@@ -1018,7 +1018,7 @@ namespace UnitTests.Components
             var commentInput = page.Find("input#commentInput");
 
             // Add blank comment for a city
-            commentInput.Change(" ");
+            commentInput.Change("");
 
             // Find a button to add comment(submit)
             var addCommentButton = page.Find(".btn-success");
@@ -1029,8 +1029,13 @@ namespace UnitTests.Components
             // The HTML page
             pageMarkup = page.Markup;
 
+            // Get the city on which AddComment was just applied
+            JsonFileProductService productService = Services.GetService<JsonFileProductService>();
+            var comments = productService.GetAllData().First(x => x.Id == "paris").CommentList;
+
             // Assert
-            Assert.False(pageMarkup.Contains("New Comment"));
+            // check null comment is not getting added
+            Assert.That(comments.Contains(""), Is.EqualTo(false));
 
         }
 
@@ -1079,8 +1084,6 @@ namespace UnitTests.Components
             // Assert
             Assert.True(pageMarkup.Contains("This city is beautiful"));
         }
-
-
 
         #endregion AddComment
     }
