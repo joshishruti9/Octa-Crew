@@ -1,17 +1,18 @@
 using System.Diagnostics;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace ContosoCrafts.WebSite.Pages
 {
+
     /// <summary>
     /// Model for handling the error page and displaying error information
     /// </summary>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
     {
+
         // ID for HTTP request
         public string RequestId { get; set; }
 
@@ -49,6 +50,9 @@ namespace ContosoCrafts.WebSite.Pages
             {
                 ErrorMessage = "Page Not Found";
             }
+
         }
+
     }
+
 }
