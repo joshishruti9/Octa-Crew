@@ -580,7 +580,7 @@ namespace UnitTests.Components
 
             // Set the search text to "Tokyo"
             var searchBox = page.Find("input[placeholder='Search by Title...']");
-            searchBox.Change("Tokyo");
+            searchBox.Input("To");
 
             // Get the rendered markup
             var pageMarkup = page.Markup;
