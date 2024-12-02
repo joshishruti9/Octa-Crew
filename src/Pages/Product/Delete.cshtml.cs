@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+
     /// <summary>
     /// Model for Delete CRUDi page
     /// </summary>
     public class DeleteModel : PageModel
     {
+
         // Data #middletier
         public JsonFileProductService ProductService { get; }
 
@@ -55,4 +57,5 @@ namespace ContosoCrafts.WebSite.Pages.Product
         }
 
     }
+
 }
