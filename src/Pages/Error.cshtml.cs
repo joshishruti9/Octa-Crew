@@ -20,6 +20,9 @@ namespace ContosoCrafts.WebSite.Pages
         /// </summary>
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
+        // The message to be displayed
+        public string ErrorMessage { get; set; }
+
         // Records logs
         private readonly ILogger<ErrorModel> _logger;
 
@@ -33,11 +36,12 @@ namespace ContosoCrafts.WebSite.Pages
         }
 
         /// <summary>
-        /// When the error page is requested, RequestId is set
+        /// When the error page is requested, RequestId and ErrorMessage are set
         /// </summary>
-        public void OnGet()
+        public void OnGet(string message = null)
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            ErrorMessage = message;
         }
     }
 }
