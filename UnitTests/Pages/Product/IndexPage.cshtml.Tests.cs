@@ -14,6 +14,7 @@ namespace UnitTests.Pages.Product
     {
         // Database MiddleTier
         #region TestSetup
+
         public static IndexPageModel pageModel;
         /// <summary>
         /// Initialize of Test
