@@ -404,9 +404,21 @@ img {
 .paracolor {
     font-weight: bold;
     color: #ca3433;
-    font-family: 'Century Gothic';
-    text-align:center;
-    font-size:25px;
+    font-family: 'Century Gothic', sans-serif; /* Added fallback font */
+    text-align: center;
+    font-size: 2vw; /* Use viewport width for responsiveness */
+    margin: 0 auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .textcolor {
+        font-size: 6vw; /* Adjust font size for mobile */
+    }
+
+    .paracolor {
+        font-size: 5vw; /* Adjust font size for mobile */
+    }
 }
 
 .centeredHome {
