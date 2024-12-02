@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+
     /// <summary>
     /// Model for the Map page.
     /// </summary>
     public class MapModel : PageModel
     {
+
         // Accesses city data from database
         public JsonFileProductService ProductService { get; }
 
@@ -55,5 +57,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         {
             return ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
+
     }
+
 }
