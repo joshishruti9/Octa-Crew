@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 {
+
     /// <summary>
     /// Model for the Update Travel Tip page allows user to update values for a travel tip in the travel tips database
     /// </summary>
     public class UpdateTravelTipModel : PageModel
     {
+
         // Data middletier
         public JsonFileTravelTipService TravelTipService { get; }
         
@@ -66,5 +68,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 
             return Page();
         }
+
     }
+
 }
