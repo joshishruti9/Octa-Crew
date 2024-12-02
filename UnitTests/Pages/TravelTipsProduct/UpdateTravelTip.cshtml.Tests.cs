@@ -4,11 +4,7 @@ using ContosoCrafts.WebSite.Pages.TravelTipsProduct;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
-using Microsoft.VisualStudio.TestPlatform.Utilities;
 using NUnit.Framework;
-using System;
-using System.Data;
 using System.Linq;
 
 namespace UnitTests.Pages.TravelTipsProduct
