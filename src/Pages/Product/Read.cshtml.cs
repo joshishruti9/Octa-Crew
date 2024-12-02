@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+
     /// <summary>
     /// Displays city details based on city's ID
     /// </summary>
@@ -52,5 +53,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
         {
             return ProductService.GetAllData().FirstOrDefault(x => x.Id.Equals(id));
         }
+
     }
+
 }
