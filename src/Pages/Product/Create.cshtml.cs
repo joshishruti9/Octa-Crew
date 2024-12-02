@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
 {
+
     /// <summary>
     /// Model for the Create page.  Uses input data to add a new city to the database.
     /// </summary>
     public class CreateModel : PageModel
     {
+
         // Accesses city data from database
         public JsonFileProductService ProductService { get; }
 
