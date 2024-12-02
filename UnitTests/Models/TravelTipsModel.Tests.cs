@@ -1,6 +1,4 @@
-﻿
-using ContosoCrafts.WebSite.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
