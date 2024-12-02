@@ -1,9 +1,6 @@
 ﻿using ContosoCrafts.WebSite.Enums;
 using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.ValidationAttributes;
-using Moq;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
