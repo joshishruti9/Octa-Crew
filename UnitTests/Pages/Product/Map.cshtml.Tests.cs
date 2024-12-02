@@ -84,7 +84,7 @@ namespace UnitTests.Pages.Product
         /// when null id is passed
         /// </summary>
         [Test]
-        public void OnGet_Invalid_Null_Id_Should_Return_Null()
+        public void OnGet_Invalid_Null_Id_Should_Redirect_To_Error_Page()
         {
             // Arrange
 
@@ -94,7 +94,7 @@ namespace UnitTests.Pages.Product
             // Assert
             Assert.AreEqual(null, pageModel.Product);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace UnitTests.Pages.Product
         /// when invalid id is passed
         /// </summary>
         [Test]
-        public void OnGet_Invalid_Invalid_Id_Should_Return_Null()
+        public void OnGet_Invalid_Invalid_Id_Should_Redirect_To_Error_Page()
         {
             // Arrange
 
@@ -112,7 +112,7 @@ namespace UnitTests.Pages.Product
             // Assert
             Assert.AreEqual(null, pageModel.Product);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
