@@ -40,7 +40,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
 
             if (Product == null)
             {
-                return RedirectToPage("./IndexPage");
+                return RedirectToPage("/Error", new { message = "City was not found" });
             }
 
             return Page();
