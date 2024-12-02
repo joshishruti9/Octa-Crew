@@ -38,10 +38,17 @@ namespace ContosoCrafts.WebSite.Pages
         /// <summary>
         /// When the error page is requested, RequestId and ErrorMessage are set
         /// </summary>
-        public void OnGet(string message = null)
+        public void OnGet(
+            string message = "An error occurred while processing your request",
+            int? statusCode = null
+        )
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
             ErrorMessage = message;
+            if (statusCode == 404)
+            {
+                ErrorMessage = "Page Not Found";
+            }
         }
     }
 }
