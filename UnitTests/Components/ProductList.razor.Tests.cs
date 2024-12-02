@@ -5,7 +5,6 @@ using ContosoCrafts.WebSite.Components;
 using ContosoCrafts.WebSite.Services;
 using Bunit;
 using System.Linq;
-using ContosoCrafts.WebSite.Models;
 using Bunit.Extensions;
 using ContosoCrafts.WebSite.Enums;
 
