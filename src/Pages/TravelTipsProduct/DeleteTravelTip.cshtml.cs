@@ -39,7 +39,7 @@ namespace ContosoCrafts.WebSite.Pages.TravelTipsProduct
 
             if (TravelTip == null)
             {
-                return RedirectToPage("./TravelTips");
+                return RedirectToPage("/Error", new { message = "Travel Tip was not found" });
             }
 
             return Page();

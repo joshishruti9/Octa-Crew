@@ -109,7 +109,7 @@ namespace UnitTests.Pages.TravelTipsProduct
             // Assert
             Assert.AreEqual(null, pageModel.TravelTip);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./TravelTips", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace UnitTests.Pages.TravelTipsProduct
             // Assert
             Assert.AreEqual(null, pageModel.TravelTip);
             Assert.AreEqual(typeof(RedirectToPageResult), result.GetType());
-            Assert.AreEqual("./TravelTips", (result as RedirectToPageResult).PageName);
+            Assert.AreEqual("/Error", (result as RedirectToPageResult).PageName);
         }
 
         /// <summary>
