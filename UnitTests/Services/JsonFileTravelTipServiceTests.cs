@@ -1,7 +1,5 @@
-﻿
-using ContosoCrafts.WebSite.Models;
+﻿using ContosoCrafts.WebSite.Models;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace UnitTests.Services
