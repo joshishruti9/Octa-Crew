@@ -20,29 +20,29 @@
             <option value="4">Winter</option>
         </select>
 
-        <input type="number" placeholder="Enter Maximum Cost..." min="250" step="250" @bind="maxCost" />
+        <!-- Display drop down of sorting options -->
+           
+            <select class="sorting-selection" @bind="@sortMethod" id="sorting-dropdown">
 
-        <input type="number" placeholder="Enter Maximum Travel Time..." min="1" step="1" @bind="maxTravelTime" />
+                @foreach (SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
+                {
+                    if (sortingMethod == SortingEnum.Undefined)
+                    {
+                        <option value="@SortingEnum.Undefined" disabled selected>Sort by...</option>
+                        continue;
+                    }
+
+                    <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
+                }
+            </select>
+
+       
+            <input type="number" placeholder="Enter Maximum Cost..." min="250" step="250" @bind="maxCost" />
+
+        <!-- Maximum Travel Time field -->
+            <input type="number" placeholder="Enter Maximum Travel Time..." min="1" step="1" @bind="maxTravelTime" />
+
     </div>
-</div>
-
-<!-- Display drop down of sorting options -->
-<div class="sorting-row">
-    <img class="sorting-icon" src="Content/Icons/sort-down.svg" />
-
-    <select class="sorting-selection" @bind="@sortMethod" id="sorting-dropdown">
-
-        @foreach(SortingEnum sortingMethod in Enum.GetValues(typeof(SortingEnum)))
-        {
-            if (sortingMethod == SortingEnum.Undefined)
-            {
-                <option value="@SortingEnum.Undefined" disabled selected>Sort by...</option>
-                continue;
-            }
-
-            <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
-        }
-    </select>
 </div>
 
 <br/>
@@ -119,10 +119,7 @@
 
 
                             <dl>
-                                <dd>
-                                    <a href="../Product/Map/@selectedProduct.Id" class="btn btn-map">Map</a>
-                                </dd>
-
+                               
                                 <dt>Information:</dt>
 
                                 @* Check BestSeason has been set *@
@@ -180,6 +177,10 @@
                 </div>
 
                 <div class="modal-footer">
+
+                    <a href="/Product/Map/@selectedProduct.Id" class="map-link">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> View on Map
+                    </a>
 
                     <!-- Voting section -->
                     @if(voteCount == 0)
@@ -471,6 +472,5 @@
 
         // Clear the input field after successfully adding the comment
         newComment = string.Empty;
-    }
-    
+    } 
 }
