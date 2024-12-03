@@ -214,9 +214,9 @@ a {
     margin-right: 10px;
 }
 
-    .btn-map:hover {
-        background-color: var(--cyan);
-    }
+.btn-map:hover {
+   background-color: var(--cyan);
+}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
@@ -235,22 +235,19 @@ html {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    width: 75%;
+    width: 60%;
 }
 
 .filter-columns .seasonDropDown {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    width: 20%;
+    width: 15%;
     cursor: pointer;
 }
 
-.sorting-row {
-    padding-top: .5rem;
-}
 
-.sorting-selection {
+.filter-columns .sorting-selection {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 4px;
@@ -554,6 +551,7 @@ img {
 
 .carousel-slide img {
     width: 100%;
+    height: 330px;
     display: block;
     border-radius: 8px;
 }
@@ -632,9 +630,11 @@ header.text-center {
     border: 0;
     align-content: center;
 }
+
 .custom-map-margin-top {
     margin-top: 120px;
 }
+
 .map_background {
     position: relative;
     height: 100vh;
@@ -642,13 +642,14 @@ header.text-center {
     background: url('../Content/world-map.jpeg');
     overflow: hidden;
 }
-    .map_background::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.6); /* Translucent white overlay */
-        z-index: 0; /* Keep it behind the content */
-    }
+
+.map_background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent white overlay */
+    z-index: 0; /* Keep it behind the content */
+}
