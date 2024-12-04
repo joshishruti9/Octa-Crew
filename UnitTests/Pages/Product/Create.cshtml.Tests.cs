@@ -179,6 +179,27 @@ namespace UnitTests.Pages.Product
             Assert.AreEqual("./IndexPage", (result as RedirectToPageResult).PageName);
         }
 
+        /// <summary>
+        /// Test that OnPost does not add a city to the database when a duplicate title 
+        /// is provided, ensuring validation prevents duplicates.
+        /// </summary>
+        [Test]
+        public void OnPost_InValid_Duplicate_Title_Should_Not_Add_City()
+        {
+            // Arrange
+            pageModel.Product = defaultModel;
+            pageModel.Product.Title = "Paris";
+
+            // number of cities in the database before calling OnPost
+            var countOriginal = TestHelper.ProductService.GetAllData().Count();
+
+            // Act
+            var result = pageModel.OnPost();
+
+            // Assert
+            Assert.AreEqual(true, result.GetType().Equals(typeof(PageResult)));
+            Assert.AreEqual(countOriginal, TestHelper.ProductService.GetAllData().Count());
+        }
         #endregion OnPost
     }
 }
