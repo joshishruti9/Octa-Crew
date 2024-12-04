@@ -235,7 +235,7 @@ html {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    width: 60%;
+    width: 66%;
 }
 
 .filter-columns .seasonDropDown {
@@ -246,6 +246,13 @@ html {
     cursor: pointer;
 }
 
+.filter-columns .maxcost input {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    width: 48%;
+    cursor: pointer;
+}
 
 .filter-columns .sorting-selection {
     padding: 0.5rem;
