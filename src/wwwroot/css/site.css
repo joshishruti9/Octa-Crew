@@ -489,7 +489,7 @@ img {
 .index-styled-button {
     background-color: transparent; /* Initial background color */
     color: black; /* Text color */
-    text-decoration:underline;
+    
     padding: 12px 25px; /* Adjusted padding for responsiveness */
     border: none; /* Removes border */
     border-radius: 90px; /* Rounded corners */
