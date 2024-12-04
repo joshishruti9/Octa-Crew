@@ -55,11 +55,10 @@
         <!-- Loop through all filtered and sorted products and display them as cards -->
         @foreach (var product in GetSortedProducts())
         {
-            <div class="card col-sm-4" id="card_@product.Id">
+            <div class="card col-sm-4"  @onclick="(e => SelectProduct(product.Id))"
+                     data-toggle="modal" data-target="#productModal" id="card_@product.Id">
                 <!-- Display the first image of the product -->
-                <div class="card-img" @onclick="(e => SelectProduct(product.Id))"
-                     id="ExploreMoreButton_@product.Id"
-                     data-toggle="modal" data-target="#productModal" style="background-image: url('@product.Images[0]');">
+                <div class="card-img" style="background-image: url('@product.Images[0]');">
                 </div>
 
                 <div class="card-body">
