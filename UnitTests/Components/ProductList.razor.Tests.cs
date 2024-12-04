@@ -189,6 +189,9 @@ namespace UnitTests.Components
             // Find the one that matches the ID looking for and click it
             var button = page.Find("#card_paris");
 
+            //click the button
+            button.Click();
+
             // Get the markup of the page post the Click action
             var buttonMarkup = page.Markup;
 
