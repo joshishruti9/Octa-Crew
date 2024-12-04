@@ -2,6 +2,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Linq;
 
 namespace ContosoCrafts.WebSite.Pages.Product
@@ -12,7 +13,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
     /// </summary>
     public class CreateModel : PageModel
     {
-
+        
         // Accesses city data from database
         public JsonFileProductService ProductService { get; }
 
@@ -47,7 +48,11 @@ namespace ContosoCrafts.WebSite.Pages.Product
             {
                 return Page();
             }
-
+            if (ProductService.GetAllData().Any(p => p.Title.Equals(Product.Title, StringComparison.OrdinalIgnoreCase)))
+            {
+                ModelState.AddModelError("Product.Title", "The city title already exists. Please choose a different title.");
+                return Page();
+            }
             // the set of cities in the database
             var dataSet = ProductService.GetAllData();
 
