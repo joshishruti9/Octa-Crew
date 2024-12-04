@@ -654,6 +654,7 @@ img {
     align-content: center;
     background-color: #ffcc99;
     z-index: 1;
+    overflow: auto;
 }
 
 /* Page Header */
@@ -678,11 +679,11 @@ header.text-center {
     padding-bottom: 56.25%; /* Maintain 16:9 Aspect Ratio */
     border: 2px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     height: 70%;
     align-content: center;
     z-index: 2;
+    overflow:auto;
 }
 
 .map-frame {
@@ -696,7 +697,7 @@ header.text-center {
 }
 
 .custom-map-margin-top {
-    margin-top: 120px; /* Default margin for larger screens */
+    margin-top: 100px; /* Default margin for larger screens */
 }
 
 /* For small screens (phones, tablets) */
@@ -728,7 +729,7 @@ header.text-center {
     height: 100vh; /* Full height of the viewport */
     background: url('../Content/world-map.jpeg') no-repeat center center; /* Single image, centered */
     background-size: cover; /* Ensures the image covers the area proportionally */
-    overflow: hidden; /* Prevents any overflow content */
+    overflow: auto; /* Prevents any overflow content */
 }
 
 .map_background::before {
