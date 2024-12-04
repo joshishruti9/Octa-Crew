@@ -58,17 +58,11 @@ namespace UnitTests.Components
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
             // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Act
             button.Click();
@@ -110,17 +104,12 @@ namespace UnitTests.Components
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
-            // Button for city to rate
-            var id = "ExploreMoreButton_rome";
-
             // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
-            // Find the Buttons (Explore More)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_rome");
+
             button.Click();
 
             // Get the markup of the page post the Click action
@@ -194,18 +183,11 @@ namespace UnitTests.Components
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
 
-            // Button for city to rate
-            var id = "ExploreMoreButton_paris";
-
             // Render the ProductList component
             var page = RenderComponent<ProductList>();
 
-            // Find the Buttons (Explore More)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
-            button.Click();
+            var button = page.Find("#card_paris");
 
             // Get the markup of the page post the Click action
             var buttonMarkup = page.Markup;
@@ -901,14 +883,8 @@ namespace UnitTests.Components
             // The HTML page
             var page = RenderComponent<ProductList>();
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Click on the button
             button.Click();
@@ -948,14 +924,8 @@ namespace UnitTests.Components
             // The HTML page
             var page = RenderComponent<ProductList>();
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Click on the button
             button.Click();
@@ -998,14 +968,8 @@ namespace UnitTests.Components
             // The HTML page
             var page = RenderComponent<ProductList>();
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Click on the button
             button.Click();
@@ -1052,14 +1016,8 @@ namespace UnitTests.Components
             // The HTML page
             var page = RenderComponent<ProductList>();
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Click on the button
             button.Click();
@@ -1103,14 +1061,8 @@ namespace UnitTests.Components
             // The HTML page
             var page = RenderComponent<ProductList>();
 
-            // Button to test clicking
-            var id = "ExploreMoreButton_paris";
-
-            // Find the Buttons (explore more)
-            var buttonList = page.FindAll("Button");
-
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+            var button = page.Find("#card_paris");
 
             // Click on the button
             button.Click();
