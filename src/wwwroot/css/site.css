@@ -574,6 +574,19 @@ img {
     margin-bottom: 25px;
 }
 
+.col-sm-4 .card-img {
+    transition: transform 0.3s ease-in-out; /* Smooth animation for scaling */
+    background-size: cover; /* Ensure the background scales properly */
+    background-position: center; /* Keep the image centered */
+    transition: transform 0.3s ease-in-out; /* Smooth animation for scaling */
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+.col-sm-4 .card-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06)
+}
+
 .privacyparacolor {
     font-weight: 500;
     color: #3d2022;
