@@ -360,7 +360,7 @@ ul {
 }
 
 img {
-    width: 100%;
+    width: 100%; 
     vertical-align: middle;
 }
 
@@ -476,32 +476,61 @@ img {
     height: 600px;
 }
 .buttoncentered {
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center horizontally */
+     /* Center vertically */
     position: absolute;
-    top: 80%;
-    left:50%;
-    gap:30%;
-    transform: translate(-50%, -50%);
+    top: 80%; /* Center vertically in the viewport */
+    left: 50%; /* Center horizontally in the viewport */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    gap: 90px;
 }
+
 .index-styled-button {
-    background-color: #f5f5dc; /* Initial background color */
-    color: red; /* Text color */
-    padding: 10px 20px; /* Padding around the text */
+    background-color: transparent; /* Initial background color */
+    color: black; /* Text color */
+    text-decoration:underline;
+    padding: 12px 25px; /* Adjusted padding for responsiveness */
     border: none; /* Removes border */
     border-radius: 90px; /* Rounded corners */
     cursor: pointer; /* Changes cursor to pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     display: inline-block;
-    margin-right: 20px;
-    padding-top: 20px;
-    color: orangered;
+    margin-right: 5%; /* Adjusted margin for better spacing */
     font-family: 'Century Gothic';
+    font-size: 10rem;
+    font-weight: bolder;
 }
 
-.index-styled-button:hover {
-    background-color: #ffd3a5; /* Color when hovered */
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
+    .index-styled-button:hover {
+        background-color: #ffd3a5; /* Color when hovered */
+        transform: scale(1.1); /* Smooth scaling */
+        box-shadow: 0 10px 30px rgba(37, 33, 82, 0.12), 0 4px 10px rgba(37, 33, 82, 0.06); /* Enhanced shadow */
+        text-decoration:none;
+    }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    
+
+    .index-styled-button {
+        padding: 8px 18px; /* Reduce padding on smaller screens */
+        font-size: 5rem; /* Adjust font size */
+    }
+
+    .buttoncentered {
+        top: 90%; /* Adjust position for smaller screens */
+        gap: 5%; /* Reduce gap for smaller screens */
+    }
 }
+
+@media (max-width: 480px) {
+    .index-styled-button {
+        padding: 6px 15px; /* Further reduce padding for very small screens */
+        font-size: 5rem; /* Further adjust font size */
+    }
+}
+
 .custom-margin-top {
     margin-top: 100px; /* Default margin for larger screens */
 }
