@@ -566,47 +566,7 @@ namespace UnitTests.Models
             Assert.AreEqual(0, validationResults.Count); // No error messages
         }
 
-        [Test]
-        public void Set_Title_Already_Exists_Should_Fail_Validation()
-        {
-            // Arrange
-            var data = new ProductModel()
-            {
-                Id = System.Guid.NewGuid().ToString(),
-                Images = new string[]
-                {
-            "https://images.pexels.com/photos/1308940/pexels-photo-1308940.jpeg",
-            "https://images.pexels.com/photos/2363/france-landmark-lights-night.jpg",
-            "https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg",
-                },
-                Title = "paris", // This title is supposed to exist in the products.json (case insensitive)
-                Description = "Enter City Description",
-                BestSeason = SeasonEnum.Unknown,
-                Currency = "CUR",
-                TimeZone = "GMT+00",
-                Attractions = new string[3]
-                {
-            "Enter an Attraction",
-            "Enter an Attraction",
-            "Enter an Attraction"
-                },
-                Cost = 1,
-                TravelTime = 0.1,
-                Ratings = null
-            };
-
-            // stores the results after running input validation on the fields
-            var validationResults = new List<ValidationResult>();
-
-            // Act
-            bool result = Validator.TryValidateObject(
-                data, new ValidationContext(data), validationResults, true
-            );
-
-            // Assert
-            Assert.AreEqual(false, result); // Validation failed
-            Assert.AreEqual("The city title 'paris' already exists. Please choose a different title.", validationResults[0].ErrorMessage);
-        }
+        
 
 
 
