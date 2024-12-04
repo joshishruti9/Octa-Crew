@@ -35,12 +35,14 @@
                     <option value=@sortingMethod>@sortingMethod.DisplayName()</option>
                 }
             </select>
+            <br/><br/>
 
-       
+        <div class="maxcost">
             <input type="number" placeholder="Enter Maximum Cost..." min="250" step="250" @bind="maxCost" />
 
-        <!-- Maximum Travel Time field -->
+            <!-- Maximum Travel Time field -->
             <input type="number" placeholder="Enter Maximum Travel Time..." min="1" step="1" @bind="maxTravelTime" />
+        </div>
 
     </div>
 </div>
